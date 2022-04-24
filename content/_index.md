@@ -15,7 +15,7 @@ Amphitheatre is an open source developer platform that facilitates continuous de
       and deploy your application automatically with **policy-based image
       tagging** and **highly optimized, fast local workflows**
 
-    - **Continuous feedback** - Skaffold automatically manages deployment
+    - **Continuous feedback** - Amphitheatre automatically manages deployment
       logging and resource port-forwarding
 
 - Amphitheatre projects work everywhere
