@@ -1,9 +1,16 @@
 # Documentation for Amphitheatre
 
-This site is built with [Zola](https://www.getzola.org/). Content is written in
-[CommonMark](https://commonmark.org/), a strongly defined, highly compatible
-specification of [Markdown](https://www.markdownguide.org/). Pull requests
-welcome!
+This website is built with [Zola](https://www.getzola.org/). Content includes
+all Amphitheatre usage guides, desktop and terminal command line manuals, as
+well as API interface definitions and other documentation, written using
+[CommonMark](https://commonmark.org/), a well-defined and highly compatible
+[Markdown](https://www.markdownguide.org/) specification. Pull requests welcome!
+
+[![Website](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Fdocs.amphitheatre.app)](https://docs.amphitheatre.app)
+[![Netlify](https://img.shields.io/netlify/07946a37-c35c-4294-8152-20a537906c0e)](https://docs.amphitheatre.app)
+[![License](https://img.shields.io/github/license/amphitheatre-app/docs)](https://github.com/amphitheatre-app/docs/blob/master/LICENSE)
+[![GitHub contributors](https://img.shields.io/github/contributors/amphitheatre-app/docs)](https://github.com/amphitheatre-app/docs/graphs/contributors)
+[![GitHub issues](https://img.shields.io/github/issues/amphitheatre-app/docs)](https://github.com/amphitheatre-app/docs/issues)
 
 ## Developing
 
