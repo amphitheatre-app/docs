@@ -1,24 +1,127 @@
 +++
 title = "index"
-insert_anchor_links = "right"
 +++
 
-## An easy way to create a document library for your project
+# Amphitheatre Documentation
 
-Demo: [https://easydocs.codeandmedia.com/](https://easydocs.codeandmedia.com/)
+Amphitheatre is an open source developer platform that facilitates continuous development of applications and microservices. You can iterate your application source code locally, then deploy to a local or remote Kubernetes cluster, just like docker build && kubectl apply or docker-compose up. Amphitheatre handles the workflow of building, pushing, and deploying applications. It also provides building blocks and describes customization of CI/CD pipelines.
 
-This theme for [Zola](https://getzola.org) (static site engine) helps you build and publish your project docs easily and fast. Zola is just one binary that outputs html-pages and additional static assets after building your docs written in Markdown. Thus, you can take the theme, your md-files, Zola and gain flexible and simple website for documentation. 
+## Features
 
-### Step-by-step
+- Fast local Kubernetes Development
 
-As you may have heard Zola is quite flexible :) So, the scenario below is one of hundreds possible ways to make things done, feel free to find your best. Also, Zola provides their own mechanism to install and use themes, see [the docs](https://www.getzola.org/documentation/themes/installing-and-using-themes/). 
+    - **Optimized “Source to Kubernetes”** - Amphitheatre detects changes in
+      your source code and handles the pipeline to **build**, **push**, **test**
+      and deploy your application automatically with **policy-based image
+      tagging** and **highly optimized, fast local workflows**
 
-1. Fork the repo and replace demo-content inside content folder with yours. But take a look to _index.md files. It contains `title` and when you want to have anchor right of your headers add `insert_anchor_links = "right"` to each index. `theme.toml`, screenshot and readme may be deleted too. 
-2. Inside `config.toml` change URL and title on your own. In extra section you can specify path to your GitHub API for version below the logo on nav, favicon and logo itself. Or just remove the lines if you don't need it. Also, you can configure or turn on some additional settings related to Zola. [Specification is here](https://www.getzola.org/documentation/getting-started/configuration/).
-3. In sass/_variables.scss you may change font, color or backgound if you want. 
-4. Almost done. Now, you should decide how you want to build and where will be hosted your website. You can build it locally and upload to somewhere. Or build in GitHub Actions and host on GitHub Pages / Netlify / CloudFlare Pages / AnyS3CloudStorage. [Howto for GitHub Pages](https://www.getzola.org/documentation/deployment/github-pages/). [My example](https://github.com/o365hq/o365hq.com/blob/main/.github/workflows/main.yml) of GitHub workflow with 2-steps build (the first checks for links and spelling errors, the second uploads to Azure). [Dockerfile](https://github.com/codeandmedia/zola_docsascode_theme/blob/master/Dockerfile) to make Docker image.
+    - **Continuous feedback** - Skaffold automatically manages deployment
+      logging and resource port-forwarding
 
-Enjoy your docs!
+- Amphitheatre projects work everywhere
 
-* _Icons: [Office UI Fabric Icons](https://uifabricicons.azurewebsites.net/)_
-* _Copy-code-button: [Aaron Luna](https://aaronluna.dev/blog/add-copy-button-to-code-blocks-hugo-chroma/)_
+    - **Share with other developers** - Amphitheatre is the easiest way to
+      **share your project** with the world: `git clone` and `amp run`
+
+    - **Context aware** - use Amphitheatre profiles, local user config, environment
+      variables, and flags to easily incorporate differences across environments
+
+    - **CI/CD building blocks** - use `amp build`, `amp test` and `amp deploy`
+      as part of your CI/CD pipeline, or simply `amp run` end-to-end
+
+    - **GitOps integration** - use `amp render` to build your images and render
+      templated Kubernetes manifests for use in GitOps workflows
+    
+- .amp.yml - a single pluggable, declarative configuration for your project
+
+    - **amp init** - Amphitheatre can discover your build and deployment
+      configuration and generate a Amphitheatre config
+    
+    - **Multi-component apps** - Amphitheatre supports applications with many
+      components, making it great for microservice-based applications
+
+    - **Bring your own tools** - Amphitheatre has a pluggable architecture, allowing
+      for different implementations of the build and deploy stages
+    
+- Lightweight
+
+    - **Client-side only** - Amphitheatre has no cluster-side component, so there’s
+      no overhead or maintenance burden to your cluster
+    
+    - **Minimal pipeline** - Amphitheatre provides an opinionated, minimal pipeline
+      to keep things simple
+
+## Amphitheatre Workflow and Architecture 
+
+Amphitheatre simplifies your development workflow by organizing common development stages into one simple command. Every time you run `amp dev`, the system
+
+1. Collects and watches your source code for changes
+2. Syncs files directly to pods if user marks them as syncable
+3. Builds artifacts from the source code
+4. Tests the built artifacts using
+   [container-structure-tests](https://github.com/GoogleContainerTools/container-structure-test)
+   or custom scripts
+5. Tags the artifacts
+6. Pushes the artifacts
+7. Deploys the artifacts
+8. Monitors the deployed artifacts
+9. Cleans up deployed artifacts on exit (Ctrl+C)
+
+> **Note**\
+Any of these stages can be skipped.
+
+The pluggable architecture is central to Amphitheatre's design, allowing you to use your preferred tool or technology in each stage. Also, Amphitheatre's profiles feature grants you the freedom to switch tools on the fly with a simple flag.
+
+For example, if you are coding on a local machine, you can configure Amphitheatre to build artifacts with your local Docker daemon and deploy them to minikube using kubectl. When you finalize your design, you can switch to your production profile and start building with Google Cloud Build and deploy with Helm.
+
+Amphitheatre supports the following tools:
+
+#### IMAGE BUILDERS
+
+- [Dockerfile](https://docs.docker.com/engine/reference/builder/)
+    - locally with Docker
+    - in-cluster with [Kaniko](https://github.com/GoogleContainerTools/kaniko)
+    - on cloud with [Google Cloud Build](https://cloud.google.com/cloud-build/docs/)
+- [Jib](https://github.com/GoogleContainerTools/jib) Maven and Gradle
+    - locally
+    - on cloud with Google Cloud Build
+- [Bazel](https://bazel.build/) locally
+- [Cloud Native Buildpacks](https://buildpacks.io/)
+    - locally with Docker
+    - on cloud with [Google Cloud Build](https://cloud.google.com/cloud-build/docs/)
+- Custom script
+    - locally
+    - in-cluster
+
+#### TESTERS
+
+- [container-structure-test](https://github.com/GoogleContainerTools/container-structure-test)
+- custom script
+
+#### DEPLOYERS
+
+- Kubernetes Command-Line Interface (kubectl)
+- Helm
+- kustomize
+
+
+#### TAG POLICIES
+
+- ag by git commit
+- tag by current date & time
+- tag by environment variables based template
+- tag by digest of the Docker image
+
+
+#### PUSH STRATEGIES
+
+- don’t push - keep the image on the local daemon
+- push to registry
+
+![Architecture](/images/architecture.png)
+
+Besides the above steps, Amphitheatre also automatically manages the following utilities for you:
+
+- port-forwarding of deployed resources to your local machine using `kubectl
+  port-forward`
+- log aggregation from the deployed pods

@@ -48,4 +48,5 @@ inform others that you're doing the translation and go for it.
 ## Credits
 
 Heavily inspired by
-https://github.com/GoogleContainerTools/skaffold/tree/main/docs
+- https://github.com/GoogleContainerTools/skaffold/tree/main/docs
+- https://docs.k8slens.dev/main/
