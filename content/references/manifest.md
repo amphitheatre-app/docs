@@ -24,7 +24,6 @@ in the [TOML] format. Every manifest file consists of the following sections:
 * Partner tables:
   * [`[partners]`](specifying-partners) — Partner dependencies.
 
-<a id="charactor-metadata"></a>
 ### The `[charactor]` section
 
 The first section in a `.amp.toml` is `[charactor]`.
@@ -59,7 +58,6 @@ Amphitheatre bakes in the concept of [Semantic
 Versioning](https://semver.org/), so make sure you follow some basic rules:
 * Use version numbers with three numeric parts such as 1.0.0 rather than 1.0.
 
-<a id="the-authors-field-optional"></a>
 #### The `authors` field
 
 The optional `authors` field lists people or organizations that are considered
@@ -194,7 +192,6 @@ categories = ["command-line-utilities", "development-tools::build-plugins"]
 > match one of the strings available at <https://registry.amphitheatre.app/category_slugs>, and
 > must match exactly.
 
-<a id="the-exclude-and-include-fields-optional"></a>
 #### The `exclude` and `include` fields
 
 The `exclude` and `include` fields can be used to explicitly specify which
@@ -275,7 +272,6 @@ The patterns should be [gitignore]-style patterns. Briefly:
 
 [gitignore]: https://git-scm.com/docs/gitignore
 
-<a id="the-publish--field-optional"></a>
 #### The `publish` field
 
 The `publish` field can be used to prevent a charactor from being published to a
@@ -305,8 +301,8 @@ it when `--registry` flag is not specified.
 See the [specifying partners page](specifying-partners) for
 information on the `[partners]` section.
 
-[`amp init`]: ../cli/init
-[`amp run`]: ../cli/run
+[`amp init`]: @/cli/init.md
+[`amp run`]: @/cli/run.md
 [registry]: https://registry.amphitheatre.app/
 [publishing]: publishing
 [spdx-2.1-license-expressions]: https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60
