@@ -3,16 +3,16 @@ title = "amp schema"
 weight = 1
 +++
 
-List JSON schemas used to validate .amp.yaml configuration
+List JSON schemas used to validate .amp.toml configuration
 
 ## Available Commands
-- [get](#amp-schema-get)         Print a given .amp.yaml's json schema
+- [get](#amp-schema-get)         Print a given .amp.toml's json schema
 
 > Use "amp <command> --help" for more information about a given command.
 
 ### amp schema get
 
-Print a given .amp.yaml's json schema
+Print a given .amp.toml's json schema
 
 ### Usage
 ```

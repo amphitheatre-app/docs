@@ -32,7 +32,7 @@ Amphitheatre is an open source developer platform that facilitates continuous de
     - **GitOps integration** - use `amp render` to build your images and render
       templated Kubernetes manifests for use in GitOps workflows
     
-- .amp.yml - a single pluggable, declarative configuration for your project
+- .amp.toml - a single pluggable, declarative configuration for your project
 
     - **amp init** - Amphitheatre can discover your build and deployment
       configuration and generate a Amphitheatre config

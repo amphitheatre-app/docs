@@ -14,14 +14,14 @@ amp diagnose [options]
 ```
     --assume-yes=false: If true, amp will skip yes/no confirmation from the user and default to yes
 -c, --config='': File for global configurations (defaults to $HOME/.amp/config)
--f, --filename='.amp.yaml': Path or URL to the Amphitheatre config file
+-f, --filename='.amp.toml': Path or URL to the Amphitheatre config file
 -m, --module=[]: Filter Amphitheatre configs to only the provided named modules
 -p, --profile=[]: Activate profiles by name (prefixed with `-` to disable a profile)
     --profile-auto-activation=true: Set to false to disable profile auto activation
-    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.yaml' file are activated.
+    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.toml' file are activated.
     --remote-cache-dir='': Specify the location of the git repositories cache (default $HOME/.amp/repos)
     --sync-remote-cache='missing': Controls how Amphitheatre manages the remote config cache (see `remote-cache-dir`). One of `always` (default), `missing`, or `never`. `always` syncs remote repositories to latest on access. `missing` only clones remote repositories if they do not exist locally. `never` means the user takes responsibility for updating remote repositories.
-    --yaml-only=false: Only prints the effective .amp.yaml configuration
+    --toml-only=false: Only prints the effective .amp.toml configuration
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -32,9 +32,9 @@ amp diagnose [options]
 amp diagnose
 ```
 
-#### Print the effective .amp.yaml configuration for given profile
+#### Print the effective .amp.toml configuration for given profile
 ```
-amp diagnose --yaml-only --profile PROFILE
+amp diagnose --toml-only --profile PROFILE
 ```
 
 ## Environment vars
@@ -48,4 +48,4 @@ amp diagnose --yaml-only --profile PROFILE
 * `AMP_PROPAGATE_PROFILES` (same as `--propagate-profiles`)
 * `AMP_REMOTE_CACHE_DIR` (same as `--remote-cache-dir`)
 * `AMP_SYNC_REMOTE_CACHE` (same as `--sync-remote-cache`)
-* `AMP_YAML_ONLY` (same as `--yaml-only`)
+* `AMP_TOML_ONLY` (same as `--toml-only`)

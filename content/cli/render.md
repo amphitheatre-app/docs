@@ -19,7 +19,7 @@ amp render [options]
     --cache-artifacts=true: Set to false to disable default caching of artifacts
 -d, --default-repo='': Default repository value (overrides global config)
     --digest-source='remote': Set to 'remote' to skip builds and resolve the digest of images by tag from the remote registry. Set to 'local' to build images locally and use digests from built images. Set to 'tag' to use tags directly from the build. Set to 'none' to use tags directly from the Kubernetes manifests.
--f, --filename='.amp.yaml': Path or URL to the Amphitheatre config file
+-f, --filename='.amp.toml': Path or URL to the Amphitheatre config file
     --hydration-dir='.kpt-pipeline': The directory to where the (kpt) hydration takes place. Default to a hidden directory .kpt-pipeline.
 -i, --images=: A list of pre-built images to deploy, either tagged images or NAME=TAG pairs
 -l, --label=[]: Add custom labels to deployed objects. Set multiple times for multiple labels
@@ -30,7 +30,7 @@ amp render [options]
 -o, --output='': File to write rendered manifests to
 -p, --profile=[]: Activate profiles by name (prefixed with `-` to disable a profile)
     --profile-auto-activation=true: Set to false to disable profile auto activation
-    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.yaml' file are activated.
+    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.toml' file are activated.
     --remote-cache-dir='': Specify the location of the git repositories cache (default $HOME/.amp/repos)
     --resource-selector-rules-file='': Path to JSON file specifying the deny list of yaml objects for amp to NOT transform with 'image' and 'label' field replacements.  NOTE: this list is additive to amp's default denylist and denylist has priority over allowlist
     --sync-remote-cache='always': Controls how Amphitheatre manages the remote config cache (see `remote-cache-dir`). One of `always` (default), `missing`, or `never`. `always` syncs remote repositories to latest on access. `missing` only clones remote repositories if they do not exist locally. `never` means the user takes responsibility for updating remote repositories.

@@ -25,8 +25,8 @@ Pipeline building blocks for CI/CD:
 Getting started with a new project:
 
 * [amp init](@/cli/init.md) - to bootstrap Amphitheatre config
-* [amp fix](@/cli/fix.md) - to upgrade from older .amp.yaml schema version to newer
-  .amp.yaml schema version 
+* [amp fix](@/cli/fix.md) - to upgrade from older .amp.toml schema version to newer
+  .amp.toml schema version 
 
 Other Commands:
 
@@ -39,7 +39,7 @@ Other Commands:
 * [amp diagnose](@/cli/diagnose.md) - diagnostics of Amphitheatre works in your
   project
 * [amp schema](@/cli/schema.md) - list and print json schemas used to validate
-  .amp.yaml configuration
+  .amp.toml configuration
 
 ## Global flags
 

@@ -19,7 +19,7 @@ amp init [options]
     --assume-yes=false: If true, amp will skip yes/no confirmation from the user and default to yes
     --compose-file='': Initialize from a docker-compose file
     --default-kustomization='': Default Kustomization overlay path (others will be added as profiles)
--f, --filename='.amp.yaml': Path or URL to the Amphitheatre config file
+-f, --filename='.amp.toml': Path or URL to the Amphitheatre config file
     --force=false: Force the generation of the Amphitheatre config
     --generate-manifests=false: Allows amp to try and generate basic kubernetes resources to get your project started
 -k, --kubernetes-manifest=[]: A path or a glob pattern to kubernetes manifests (can be non-existent) to be added to the kubectl deployer (overrides detection of kubernetes manifests). Repeat the flag for multiple entries. E.g.: amp init -k pod.yaml -k k8s/*.yml

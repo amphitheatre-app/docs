@@ -23,18 +23,18 @@ amp build [options]
     --detect-minikube=true: Use heuristics to detect a minikube cluster
     --dry-run=false: Don't build images, just compute the tag for each artifact.
     --file-output='': Filename to write build images to
--f, --filename='.amp.yaml': Path or URL to the Amphitheatre config file
+-f, --filename='.amp.toml': Path or URL to the Amphitheatre config file
     --insecure-registry=[]: Target registries for built images which are not secure
     --kube-context='': Deploy to this Kubernetes context
     --kubeconfig='': Path to the kubeconfig file to use for CLI requests.
 -m, --module=[]: Filter Amphitheatre configs to only the provided named modules
     --mute-logs=[]: mute logs for specified stages in pipeline (build, deploy, status-check, none, all)
 -n, --namespace='': Run deployments in the specified namespace
--o, --output={{json .}}: Used in conjunction with --quiet flag. Format output with go-template. For full struct documentation, see https://godoc.org/github.com/GoogleContainerTools/amp/cmd/amp/app/flags#BuildOutput
+-o, --output={{json .}}: Used in conjunction with --quiet flag.
     --platform=[]: The platform to target for the build artifacts
 -p, --profile=[]: Activate profiles by name (prefixed with `-` to disable a profile)
     --profile-auto-activation=true: Set to false to disable profile auto activation
-    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.yaml' file are activated.
+    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.toml' file are activated.
     --push=: Push the built images to the specified image repository.
 -q, --quiet=false: Suppress the build output and print image built on success. See --output to format output.
     --remote-cache-dir='': Specify the location of the git repositories cache (default $HOME/.amp/repos)

@@ -15,7 +15,7 @@ amp apply [options]
 ```
     --assume-yes=false: If true, amp will skip yes/no confirmation from the user and default to yes
 -c, --config='': File for global configurations (defaults to $HOME/.amp/config)
--f, --filename='.amp.yaml': Path or URL to the Amphitheatre config file
+-f, --filename='.amp.toml': Path or URL to the Amphitheatre config file
     --force=false: Recreate Kubernetes resources if necessary for deployment, warning: might cause downtime!
     --iterative-status-check=false: Run `status-check` iteratively after each deploy step, instead of all-together at the end of all deploys (default).
     --kube-context='': Deploy to this Kubernetes context

@@ -16,12 +16,12 @@ amp test [options]
     --assume-yes=false: If true, amp will skip yes/no confirmation from the user and default to yes
 -a, --build-artifacts=: File containing build result from a previous 'amp build --file-output'
 -c, --config='': File for global configurations (defaults to $HOME/.amp/config)
--f, --filename='.amp.yaml': Path or URL to the Amphitheatre config file
+-f, --filename='.amp.toml': Path or URL to the Amphitheatre config file
 -i, --images=: A list of pre-built images to deploy, either tagged images or NAME=TAG pairs
 -m, --module=[]: Filter Amphitheatre configs to only the provided named modules
 -p, --profile=[]: Activate profiles by name (prefixed with `-` to disable a profile)
     --profile-auto-activation=true: Set to false to disable profile auto activation
-    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.yaml' file are activated.
+    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.toml' file are activated.
     --remote-cache-dir='': Specify the location of the git repositories cache (default $HOME/.amp/repos)
     --rpc-http-port=: tcp port to expose the Amphitheatre API over HTTP REST
     --rpc-port=: tcp port to expose the Amphitheatre API over gRPC

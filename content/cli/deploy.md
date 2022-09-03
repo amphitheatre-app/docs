@@ -19,7 +19,7 @@ amp deploy [options]
 -c, --config='': File for global configurations (defaults to $HOME/.amp/config)
 -d, --default-repo='': Default repository value (overrides global config)
     --detect-minikube=true: Use heuristics to detect a minikube cluster
--f, --filename='.amp.yaml': Path or URL to the Amphitheatre config file
+-f, --filename='.amp.toml': Path or URL to the Amphitheatre config file
     --force=false: Recreate Kubernetes resources if necessary for deployment, warning: might cause downtime!
     --hydration-dir='.kpt-pipeline': The directory to where the (kpt) hydration takes place. Default to a hidden directory .kpt-pipeline.
 -i, --images=: A list of pre-built images to deploy, either tagged images or NAME=TAG pairs
@@ -35,7 +35,7 @@ amp deploy [options]
     --port-forward=off: Port-forward exposes service ports and container ports within pods and other resources (off, user, services, debug, pods)
 -p, --profile=[]: Activate profiles by name (prefixed with `-` to disable a profile)
     --profile-auto-activation=true: Set to false to disable profile auto activation
-    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.yaml' file are activated.
+    --propagate-profiles=true: Setting '--propagate-profiles=false' disables propagating profiles set by the '--profile' flag across config dependencies. This mean that only profiles defined directly in the target '.amp.toml' file are activated.
     --remote-cache-dir='': Specify the location of the git repositories cache (default $HOME/.amp/repos)
     --resource-selector-rules-file='': Path to JSON file specifying the deny list of yaml objects for amp to NOT transform with 'image' and 'label' field replacements.  NOTE: this list is additive to amp's default denylist and denylist has priority over allowlist
     --rpc-http-port=: tcp port to expose the Amphitheatre API over HTTP REST
