@@ -1,6 +1,61 @@
-{% extends "index.html" %}
-{% block title %} {{ config.title }} | {{ page.title }} {% endblock title %}
+{# Default page.html template #}
+
+{% extends "base.html" %}
+
+{% block seo %}
+  {{ super() }}
+  {% set title_addition = "" %}
+  {% if page.title and config.title %}
+    {% set title = page.title %}
+    {% set title_addition = title_separator ~ config.title %}
+  {% elif page.title %}
+    {% set title = page.title %}
+  {% else %}
+    {% set title = config.title %}
+  {% endif %}
+  
+  {% if page.description %}
+    {% set description = page.description %}
+  {% else %}
+    {% set description = config.description %}
+  {% endif %}
+  {% if current_section %}
+    {% set page_section = current_section %}
+  {% else %}
+    {% set page_section = "" %}
+  {% endif %}
+  
+  {{ macros_head::seo(title=title, title_addition=title_addition, description=description, type="article", is_page=true, page_section=page_section) }}
+{% endblock seo %}
+
+{% block header %}
+  {{ macros_header::header(current_section=current_section)}}
+{% endblock header %}
+
+{% block body %}
+  {% if section.extra.class %}
+    {% set page_class = page.extra.class %}
+  {% else %}
+    {% set page_class = "page single" %}
+  {% endif %}
+{% endblock body %}
+
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    {{ page.content | safe }}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row flex-xl-nowrap">
+	  {{ macros_sidebar::docs_sidebar(current_section=current_section) }}
+	  {{ macros_toc::docs_toc(page=page) }}
+      <main class="docs-content col-lg-11 col-xl-9">
+        <h1>{{ page.title }}</h1>
+        {% if page.extra.lead %}<p class="lead">{{ page.extra.lead | safe }}</p>{% endif %}
+        {{ page.content | safe }}
+        {% if config.extra.edit_page %}
+          {{ macros_edit_page::docs_edit_page(current_path=current_path) }}
+        {% endif %}
+        {{ macros_navigation::docs_navigation(page=page, current_section=current_section) }}
+      </main>
+    </div>
+  </div>
+</div>
 {% endblock content %}

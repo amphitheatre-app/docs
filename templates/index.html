@@ -1,70 +1,43 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="UTF-8">
-      <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
-    {% if config.extra.favicon %}
-      <link rel="icon" href="{{ config.extra.favicon | safe }}">
-    {% endif %}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-      <title>{% block title %}{{ config.title }}{% endblock title %}</title> 
-  </head>
-  <body>
-    <main>
-      {% block nav %}
-        <aside>
-            <h1><a href="{{ config.base_url }}">{{ config.title }}</a></h1>
+{% extends "base.html" %}
+
+{% block seo %}
+  {{ super() }}
+
+  {% if config.title %}
+    {% set title = config.title %}
+  {% else %}
+    {% set title = "" %}
+  {% endif %}
   
-            <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
+  {% if config.extra.title_addition and title %}
+    {% set title_addition = title_separator ~ config.extra.title_addition %}
+  {% elif config.extra.title_addition %}
+    {% set title_addition = config.extra.title_addition %}
+  {% else %}
+    {% set title_addition = "" %}
+  {% endif %}
+  
+  {% set description = config.description %}
+  
+  {{ macros_head::seo(title=title, title_addition=title_addition, description=description, is_home=true) }}
+{% endblock seo %}
 
-            <div id="trees">
-                {% set section = get_section(path="_index.md") %}       
-                  {% for p in section.subsections %}
-                    {% set subsection = get_section(path=p) %} 
-                    <input class="tree-toggle" type="checkbox" id="{{ subsection.title | slugify  }}" 
-                    {% if current_path is starting_with(subsection.path) %}checked{% endif %} />
-                    <label class="tree-toggle-label" for="{{ subsection.title | slugify  }}">{{ subsection.title }}</label>
-                                
-                    <ul class="subtree">
-                      {% for page in subsection.pages %}
-                        <li {% if current_path == page.path %}class="active"{% endif %}>
-                          <a href="{{page.permalink | safe }}">{{page.title}}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>         
-                  {% endfor %}
-              </div>    
-        </aside>
-      {% endblock nav %}
+{% block header %}
+  {{ macros_header::header(current_section=current_section)}}
+{% endblock header %}
 
-      <article>
-        <div id="wrap">
-          {% block content %}
-            {{ section.content | safe }}
-          {% endblock content %}
-        </div>
-      </article>
-      
-      {% if page.toc %}
-        <nav>
-          <div id="toc-wrapper">
-            <h5>On this page</h5>
-            <ul id="toc">
-              {% for h1 in page.toc %}
-                <li><a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                  {% if h1.children %}
-                    <ul>        
-                      {% for h2 in h1.children %}
-                        <li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </nav>
-      {% endif %}
-    </main>
-  </body>
-</html>
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row flex-xl-nowrap">
+	  {{ macros_sidebar::docs_sidebar(current_section=current_section) }}
+    {{ macros_toc::docs_toc(page=section) }}
+      <main class="docs-content col-lg-11 col-xl-9">
+        <h1>{{ section.title }}</h1>
+        {% if section.extra.lead %}<p class="lead">{{ section.extra.lead | safe }}</p>{% endif %}
+        {{ section.content | safe }}
+      </main>
+    </div>
+  </div>
+</div>
+{% endblock content %}
