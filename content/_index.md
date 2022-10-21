@@ -1,8 +1,10 @@
 +++
 title = "Introduction"
+description = "Welcome to the Amphitheatre documentation site!"
 +++
 
 ## What is Amphitheatre?
+
 Amphitheatre is an open source developer platform that facilitates continuous
 development of applications and microservices. You can iterate your application
 source code locally, then deploy to a local or remote Kubernetes cluster, just
