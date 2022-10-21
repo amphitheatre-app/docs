@@ -53,9 +53,9 @@ body.dark .navbar {
   border-bottom: 1px solid $border-dark;
 }
 
-body.dark.home .navbar {
-  border-bottom: 0;
-}
+// body.dark.home .navbar {
+//   border-bottom: 0;
+// }
 
 body.dark .navbar-light .navbar-brand {
   color: $navbar-dark-color !important;
