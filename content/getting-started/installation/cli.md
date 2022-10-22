@@ -162,3 +162,16 @@ docker run amphitheatre/amp:edge amp <command>
 ```
 
 {{ end() }}
+
+## Verify
+
+After you install Amphitheatre CLI, verify that you installed it correctly with:
+
+```
+amp version
+```
+
+## Troubleshooting
+
+If you have any trouble installing Amphitheatre CLI, look for the error message
+in the Troubleshooting FAQ.
