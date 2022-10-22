@@ -1,6 +1,6 @@
 +++
-title = "Initialize Amphitheatre in your local environment"
-description = "Fetch the Dapr sidecar binaries and install them locally using dapr init"
+title = "WIP: Initialize Amphitheatre in your infrastructure"
+description = "Configure your local environment or remote Kubernetes cluster"
 weight = 2
 
 [extra.sidebar]

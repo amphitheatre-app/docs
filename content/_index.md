@@ -12,6 +12,13 @@ like docker build && kubectl apply or docker-compose up. Amphitheatre handles
 the workflow of building, pushing, and deploying applications. It also provides
 building blocks and describes customization of CI/CD pipelines.
 
+> **IMPORTANT!!!**\
+This document is still in progress, content will be updated at any time, some
+links or guides are previews and do not represent real availability, please do
+not use them for official production environments.
+
+{{ button(title="Getting Started", url="/getting-started/") }}
+
 ## Features
 
 - Fast local Kubernetes Development
