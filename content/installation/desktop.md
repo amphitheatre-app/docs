@@ -51,8 +51,7 @@ versions here.
   Windows.
 - Install Amphitheatre Desktop by running the
   Amphitheatre-Desktop-Setup-{version}.exe installer. By default, Amphitheatre
-  Desktop installs under
-  C:\users\{username}\AppData\Local\Programs\AmphitheatreDesktop.
+  Desktop installs under `C:\users\{username}\AppData\Local\Programs\AmphitheatreDesktop`.
 
 {{ end() }}
 
@@ -101,13 +100,13 @@ such as .deb or .rpm) the following will need to be done to allow protocol
 handling. This assumes that your linux distribution uses xdg-open and the xdg-*
 suite of programs for determining which application can handle custom URIs.
 
-- Create a file called amphitheatre-desktop.desktop in one of the following directions:
+- Create a file called `amphitheatre-desktop.desktop` in one of the following directions:
 
-- ~/.local/share/applications/ to install for all users
+- `~/.local/share/applications/` to install for all users
 
-- /usr/share/applications to install for your user
+- `/usr/share/applications` to install for your user
 
-- That file should have the following contents, with <path/to/executable> being
+- That file should have the following contents, with `<path/to/executable>` being
   the absolute path to where you have installed the unpacked Amphitheatre
   Desktop executable:
 
