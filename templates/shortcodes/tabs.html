@@ -1,0 +1,11 @@
+<div>
+    <ul class="nav nav-tabs" id="tabs-{{id}}" role="tablist">
+        {% for item in items %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link {% if loop.first %}active{% endif %}" id="{{id}}-tab-{{loop.index}}"
+                data-bs-toggle="tab" data-bs-target="#{{id}}-tab-pane-{{loop.index}}" type="button" role="tab"
+                aria-controls="#{{id}}-tab-pane-{{loop.index}}" aria-selected="true">{{ item }}</button>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
