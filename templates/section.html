@@ -45,9 +45,25 @@
         <h1>{{ section.title }}</h1>
         {% if section.description %}<p>{{ section.description | safe }}</p>{% endif %}
         {{ section.content | safe }}
+
         <div class="card-list">
           {% set index_path = current_path ~ "_index.md" | trim_start_matches(pat="/") %}
           {% set index = get_section(path=index_path) %}
+
+          {% for s in index.subsections %}
+            {% set subsection = get_section(path=s) %}
+            {% if subsection.pages %}
+            <div class="card my-3">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a class="stretched-link" href="{{ subsection.permalink }}">{{ subsection.title }} &rarr;</a>
+                </h5>
+                {% if subsection.description %}<p class="card-text">{{ subsection.description | safe }}</p>{% endif %}
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+
           {% for page in index.pages %}
             <div class="card my-3">
               <div class="card-body">
@@ -57,20 +73,6 @@
                 {% if page.description %}<p class="card-text">{{ page.description | safe }}</p>{% endif %}
               </div>
             </div>
-          {% endfor %}
-          {% for s in index.subsections %}
-            {% set subsection = get_section(path=s) %}
-            {% if subsection.pages %}
-            <div class="card-body">{{ subsection.title }} </div>
-
-              {% for page in subsection.pages %}
-              <div class="card my-3">
-                <div class="card-body">
-                  <a class="stretched-link" href="{{ page.permalink }}">{{ page.title }} &rarr;</a>
-                </div>
-              </div>
-              {% endfor %}                                    
-            {% endif %}
           {% endfor %}
         </div>
       </main>
