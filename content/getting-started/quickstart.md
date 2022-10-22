@@ -16,7 +16,7 @@ you can explore Amphitheatre through our tutorials.
 
 ## Requirements
 
-Before you begin, you need to [Set up your local Amphitheatre environment](@/getting-started/installation/_index.md).
+Before you begin, you need to [Set up your local Amphitheatre environment](@/installation/_index.md).
 
 ## Templates
 

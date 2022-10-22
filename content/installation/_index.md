@@ -1,8 +1,11 @@
 +++
-title = "Install the Amphitheatre"
+title = "Installation Guide"
 description = "Learn how to install Amphitheatre in your infrastructure."
-weight = 1
+weight = 2
 sort_by = "weight"
+
+[extra.sidebar]
+linkable = true
 +++
 
 We also offer Amphitheatre Cloud, our software as a service (SaaS)

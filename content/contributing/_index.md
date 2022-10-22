@@ -1,5 +1,5 @@
 +++
 title = "Contributing"
-weight = 6
+weight = 5
 sort_by = "weight"
 +++

@@ -1,5 +1,5 @@
 +++
-title = "Installing Amphitheatre CLI"
+title = "Installing CLI"
 description = "Install the Amphitheatre Command Line Tool, It's optional."
 weight = 3
 

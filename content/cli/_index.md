@@ -1,5 +1,5 @@
 +++
 title = "CLI Manual"
-weight = 2
+weight = 3
 sort_by = "weight"
 +++

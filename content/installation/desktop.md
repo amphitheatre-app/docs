@@ -1,5 +1,5 @@
 +++
-title = "Installing Amphitheatre Desktop"
+title = "Installing Desktop"
 description = "Install the Amphitheatre Desktop Application"
 weight = 1
 +++

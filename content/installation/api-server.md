@@ -1,5 +1,5 @@
 +++
-title = "Installing Amphitheatre API Server"
+title = "Installing API Server"
 description = "Installing the Amphitheatre API Server with Helm on a Kubernetes cluster."
 weight = 1
 +++
