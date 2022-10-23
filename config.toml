@@ -73,6 +73,7 @@ math = false
 library = "katex"  # options: "katex", "mathjax". default is "katex".
 
 toc = true
+listing = true
 
 [[extra.menu.social]]
 name = "GitHub"

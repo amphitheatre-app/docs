@@ -3,6 +3,9 @@ title = "CLI Manual"
 weight = 3
 sort_by = "weight"
 
+[extra]
+listing = false
+
 [extra.sidebar]
 linkable = true
 +++
