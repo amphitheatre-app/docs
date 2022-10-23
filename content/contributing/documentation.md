@@ -1,6 +1,7 @@
 +++
 title = "Documentation"
-weight = 3
+description = "Help improve Amphitheatre documentation."
+weight = 20
 +++
 
 We are glad to see you're interested in contributing to the Amphitheatre
@@ -10,7 +11,9 @@ Source](https://opensource.guide/how-to-contribute).
 
 ## Finding Documentation Issues to Work On
 
-You can find a list of open documentation-related issues [here](https://github.com/amphitheatre-app/docs/issues). When you find something you would like to work on:
+You can find a list of open documentation-related issues
+[here](https://github.com/amphitheatre-app/docs/issues). When you find something
+you would like to work on:
 
 - Express your interest to start working on an issue via comments.
 - One of the maintainers will assign the issue for you.

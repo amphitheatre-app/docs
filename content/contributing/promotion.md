@@ -1,6 +1,7 @@
 +++
 title = "Promotion"
-weight = 5
+description = "Show your support, be an ambassador to Amphitheatre, write blogs, and make videos!"
+weight = 40
 +++
 
 Help promote Amphitheatre! If you are not a developer (or even if you are), you can
@@ -21,9 +22,4 @@ There are many sites where you can vote, recommend, favorite, and star us.
 
 ## Write Blogs or Make Videos About Us
 
-Here are some nice blog posts and videos about our project for you to get some
-inspiration:
-
-- [Kubernetes for production, Amphitheatre for development!](https://amphitheatre.app)
-
-Psst... If you have created some content around Lens, let us know!
+Psst... If you have created some content around Amphitheatre, let us know!
