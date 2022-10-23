@@ -1,36 +1,35 @@
 {% macro docs_sidebar() %}
 <div class="col-lg-5 col-xl-4 docs-sidebar">
-    <nav class="docs-links" role="navigation">
-        <ul class="list-unstyled">
-            {% set index = get_section(path="_index.md") %}
-            {% for s in index.subsections %}
-                {% set subsection = get_section(path=s) %}
+  <nav class="docs-links" role="navigation">
+    <ul class="list-unstyled">
+      {% set index = get_section(path="_index.md") %}
+      {% for s in index.subsections %}
+        {% set subsection = get_section(path=s) %}
+        <li>
+          <h3>
+            {% if subsection.extra.sidebar.linkable %}
+              <a href="{{ subsection.permalink }}"
+                class="docs-link {% if current_path == subsection.path %}active{% endif %}">
+                {{ subsection.extra.sidebar.title | default(value=subsection.title) }}
+              </a>
+            {% else %}
+              {{ subsection.title }}
+            {% endif %}
+          </h3>
+          {% if subsection.pages %}
+            <ul class="list-unstyled">
+              {% for p in subsection.pages %}
                 <li>
-                    <h3>
-                        {% if subsection.extra.sidebar.linkable %}
-                            <a href="{{ subsection.permalink }}"
-                                class="docs-link {% if current_path == subsection.path %}active{% endif %}">
-                                {{ subsection.extra.sidebar.title | default(value=subsection.title) }}
-                            </a>
-                        {% else %}
-                            {{ subsection.title }}
-                        {% endif %}
-                    </h3>
-                    {% if subsection.pages %}
-                        <ul class="list-unstyled">
-                            {% for p in subsection.pages %}
-                                <li>
-                                    <a href="{{ p.permalink }}"
-                                        class="docs-link {% if current_path == p.path %}active{% endif %}">
-                                        {{ p.extra.sidebar.title | default(value=p.title) }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
+                  <a href="{{ p.permalink }}" class="docs-link {% if current_path == p.path %}active{% endif %}">
+                    {{ p.extra.sidebar.title | default(value=p.title) }}
+                  </a>
                 </li>
-            {% endfor %}
-        </ul>
-    </nav>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
 </div>
 {% endmacro %}
