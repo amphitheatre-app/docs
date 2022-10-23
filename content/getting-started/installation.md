@@ -2,7 +2,6 @@
 title = "Installing Amphitheatre"
 description = "Quick installation of Amphitheatre just in a single page"
 weight = 1
-sort_by = "weight"
 
 [extra.sidebar]
 linkable = true
