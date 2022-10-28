@@ -24,16 +24,6 @@ h4:hover a {
   margin-top: 2.25rem;
 }
 
-.edit-page {
-  margin-top: 3rem;
-  font-size: $font-size-base;
-}
-
-.edit-page svg {
-  margin-right: 0.5rem;
-  margin-bottom: 0.25rem;
-}
-
 p.meta {
   margin-top: 0.5rem;
   font-size: $font-size-base;
@@ -47,4 +37,10 @@ p.meta {
 .page-header {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.bi {
+  width: 1em;
+  height: 1em;
+  fill: currentcolor;
 }

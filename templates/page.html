@@ -41,22 +41,24 @@
 {% endblock body %}
 
 {% block content %}
-<div class="wrap container" role="document">
-  <div class="content">
-    <div class="row flex-xl-nowrap">
-	  {{ macros_sidebar::docs_sidebar() }}
-	  {{ macros_toc::docs_toc(page=page) }}
-      <main class="docs-content col-lg-11 col-xl-9">
-        <h1>{{ page.title }}</h1>
-        {% if page.description %}<p class="text-muted">{{ page.description | safe }}</p>{% endif %}
-        {{ page.content | safe }}
-        {% if config.extra.edit_page %}
-          {{ macros_edit_page::docs_edit_page(current_path=current_path) }}
-        {% endif %}
+	{{ macros_sidebar::docs_sidebar() }}
 
-        {{ macros_navigation::page(page=page) }}
-      </main>
+  <main class="docs-main order-1">
+    <div class="docs-intro pt-2 ps-lg-2">
+      <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+        {% if config.extra.edit_page %}
+        {{ macros_edit_page::docs_edit_page(current_path=current_path) }}
+      {% endif %}
+        <h1 class="docs-title mb-0" id="content">{{ page.title }}</h1>
+      </div>
+      {% if page.description %}<p class="text-muted">{{ page.description | safe }}</p>{% endif %}
     </div>
-  </div>
-</div>
+
+    {{ macros_toc::docs_toc(page=page) }}
+    
+      <div class="docs-content ps-lg-2">
+        {{ page.content | safe }}
+      </div>
+      {{ macros_navigation::page(page=page) }}
+  </main>
 {% endblock content %}

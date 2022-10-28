@@ -7,9 +7,18 @@
 {% endif %}
 
 {% if toc and page.toc %}
-<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
-	<div class="page-links">
-		<h3>On this page</h3>
+<div class="docs-toc mt-3 my-lg-0 ps-xl-3 mb-lg-5 text-muted">
+	<button class="btn btn-link link-dark p-md-0 mb-2 mb-md-0 text-decoration-none docs-toc-toggle d-md-none"
+		type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false"
+		aria-controls="tocContents">
+		On this page
+		<svg class="bi d-md-none ms-2" aria-hidden="true">
+			<path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"></path>
+		</svg>
+	</button>
+	<strong class="d-none d-md-block h6 my-2">On this page</strong>
+	<hr class="d-none d-md-block my-2">
+	<div class="collapse docs-toc-collapse" id="tocContents">
 		<nav id="TableOfContents">
 			<ul>
 				{% for h1 in page.toc %}
@@ -25,6 +34,7 @@
 			</ul>
 		</nav>
 	</div>
-</nav>
+</div>
 {% endif %}
+
 {% endmacro %}

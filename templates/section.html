@@ -37,55 +37,60 @@
 {% endblock body %}
 
 {% block content %}
-<div class="wrap container" role="document">
-  <div class="content">
-    <div class="row flex-xl-nowrap">
-	  {{ macros_sidebar::docs_sidebar() }}
-      <main class="docs-content col-lg-11 col-xl-9">
-        <h1>{{ section.title }}</h1>
-        {% if section.description %}<p class="text-muted">{{ section.description | safe }}</p>{% endif %}
-        {{ section.content | safe }}
+{{ macros_sidebar::docs_sidebar() }}
 
-        {% set listing = config.extra.listing %}
-        {% if section.extra.listing is defined %}
-          {% set listing =  section.extra.listing %}
-        {% endif %}
-
-        {% if listing %}
-          <div class="card-list">
-            {% set index_path = current_path ~ "_index.md" | trim_start_matches(pat="/") %}
-            {% set index = get_section(path=index_path) %}
-
-            {% for s in index.subsections %}
-              {% set subsection = get_section(path=s) %}
-              {% if subsection.pages %}
-              <div class="card my-3">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a class="stretched-link" href="{{ subsection.permalink }}">{{ subsection.title }} &rarr;</a>
-                  </h5>
-                  {% if subsection.description %}<p class="card-text">{{ subsection.description | safe }}</p>{% endif %}
-                </div>
-              </div>
-              {% endif %}
-            {% endfor %}
-
-            {% for page in index.pages %}
-              <div class="card my-3">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a class="stretched-link" href="{{ page.permalink }}">{{ page.title }} &rarr;</a>
-                  </h5>
-                  {% if page.description %}<p class="card-text">{{ page.description | safe }}</p>{% endif %}
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        {% endif %}
-
-        {{ macros_navigation::section(section=section) }}
-      </main>
+<main class="docs-main order-1">
+  <div class="docs-intro pt-2 ps-lg-2">
+    <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+      {% if config.extra.edit_page %}
+      {{ macros_edit_page::docs_edit_page(current_path=current_path) }}
+    {% endif %}
+      <h1 class="docs-title mb-0" id="content">{{ section.title }}</h1>
     </div>
+    {% if section.description %}<p class="text-muted">{{ section.description | safe }}</p>{% endif %}
   </div>
-</div>
+  
+    <div class="docs-content ps-lg-2">
+      {{ section.content | safe }}
+
+
+      {% set listing = config.extra.listing %}
+      {% if section.extra.listing is defined %}
+        {% set listing =  section.extra.listing %}
+      {% endif %}
+
+      {% if listing %}
+        <div class="card-list">
+          {% set index_path = current_path ~ "_index.md" | trim_start_matches(pat="/") %}
+          {% set index = get_section(path=index_path) %}
+
+          {% for s in index.subsections %}
+            {% set subsection = get_section(path=s) %}
+            {% if subsection.pages %}
+            <div class="card my-3">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a class="stretched-link" href="{{ subsection.permalink }}">{{ subsection.title }} &rarr;</a>
+                </h5>
+                {% if subsection.description %}<p class="card-text">{{ subsection.description | safe }}</p>{% endif %}
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+
+          {% for page in index.pages %}
+            <div class="card my-3">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a class="stretched-link" href="{{ page.permalink }}">{{ page.title }} &rarr;</a>
+                </h5>
+                {% if page.description %}<p class="card-text">{{ page.description | safe }}</p>{% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    {{ macros_navigation::section(section=section) }}
+</main>
 {% endblock content %}

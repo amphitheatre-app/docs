@@ -27,17 +27,18 @@
 {% endblock header %}
 
 {% block content %}
-<div class="wrap container" role="document">
-  <div class="content">
-    <div class="row flex-xl-nowrap">
-	  {{ macros_sidebar::docs_sidebar() }}
-    {{ macros_toc::docs_toc(page=section) }}
-      <main class="docs-content col-lg-11 col-xl-9">
-        <h1>{{ section.title }}</h1>
-        {% if section.description %}<p class="text-muted">{{ section.description | safe }}</p>{% endif %}
-        {{ section.content | safe }}
-      </main>
-    </div>
+{{ macros_sidebar::docs_sidebar() }}
+
+<main class="docs-main order-1">
+  <div class="docs-intro pt-2 ps-lg-2">
+    <h1 class="docs-title mb-0" id="content">{{ section.title }}</h1>
+    {% if section.description %}<p class="text-muted">{{ section.description | safe }}</p>{% endif %}
   </div>
-</div>
+
+  {{ macros_toc::docs_toc(page=section) }}
+  
+    <div class="docs-content ps-lg-2">
+      {{ section.content | safe }}
+    </div>
+</main>
 {% endblock content %}

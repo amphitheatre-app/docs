@@ -204,7 +204,7 @@
   /* display: inline-block; */
 
   /* float: right; */
-  padding: 1.125rem 0.625rem;
+  padding: 0rem 0.625rem;
   margin: 0 0 0 -0.625rem;
 
   /* position: relative; */
@@ -250,19 +250,43 @@
   max-height: 100vh;
 }
 
-.navbar .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
+// .navbar .menu-btn:checked ~ .menu-icon .navicon {
+//   background: transparent;
+// }
 
-.navbar .menu-btn:checked ~ .menu-icon .navicon::before {
-  transform: rotate(-45deg);
-}
+// .navbar .menu-btn:checked ~ .menu-icon .navicon::before {
+//   transform: rotate(-45deg);
+// }
 
-.navbar .menu-btn:checked ~ .menu-icon .navicon::after {
-  transform: rotate(45deg);
-}
+// .navbar .menu-btn:checked ~ .menu-icon .navicon::after {
+//   transform: rotate(45deg);
+// }
 
-.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before,
-.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::after {
-  top: 0;
+// .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before,
+// .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::after {
+//   top: 0;
+// }
+
+.docs-navbar {
+  // background-color: transparent;
+  // background-image: linear-gradient(to bottom, rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), .95));
+  // box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15), inset 0 -1px 0 rgba(0, 0, 0, .15);
+
+  .navbar-toggler {
+    padding: 0;
+    border: 0;
+
+    &:first-child {
+      margin-left: -1rem;
+    }
+
+    .bi {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
 }
