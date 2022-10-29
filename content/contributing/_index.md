@@ -1,6 +1,6 @@
 +++
 title = "Contributing"
-weight = 5
+weight = 80
 sort_by = "weight"
 
 [extra.sidebar]

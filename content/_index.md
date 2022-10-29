@@ -3,88 +3,46 @@ title = "Introduction"
 description = "Welcome to the Amphitheatre documentation site!"
 +++
 
-## What is Amphitheatre?
-
-Amphitheatre is an open source developer platform that facilitates continuous
-development of applications and microservices. You can iterate your application
-source code locally, then deploy to a local or remote Kubernetes cluster, just
-like docker build && kubectl apply or docker-compose up. Amphitheatre handles
-the workflow of building, pushing, and deploying applications. It also provides
-building blocks and describes customization of CI/CD pipelines.
-
 > **IMPORTANT!!!**\
 This document is still in progress, content will be updated at any time, some
 links or guides are previews and do not represent real availability, please do
 not use them for official production environments.
 
+## What is Amphitheatre?
+
+Amphitheatre is an open source developer platform that facilitates continuous
+development of applications and microservices. You can iterate your application
+source code locally, then deploy to a local or remote Kubernetes cluster, just
+like docker build && kubectl apply or docker-compose up.
+
+Amphitheatre handles the workflow of building, pushing, and deploying
+applications. It also provides building blocks and describes customization of
+CI/CD pipelines.
+
 {{ button(title="Getting Started", url="/getting-started/") }}
 
-## Features
+## Start developing with Amphitheatre
 
-- Fast local Kubernetes Development
+{{ grid(columns=3)}}
+{{ column() }}{{ card(title="Getting started", text="How to get up and running with Amphitheatre in your environment in minutes.", url="/getting-started/") }}{{ end() }}
+{{ column() }}{{ card(title="Quickstarts", text="A collection of tutorials with code samples to get you started quickly with Amphitheatre.", url="/getting-started/quickstart/") }} {{ end() }}
+{{ column() }}{{ card(title="Concepts", text="Learn about Amphitheatre, including its main features and capabilities.", url="/concepts/") }} {{ end() }}
+{{ end() }}
 
-    - **Optimized “Source to Kubernetes”** - Amphitheatre detects changes in
-      your source code and handles the pipeline to **build**, **push**, **test**
-      and deploy your application automatically with **policy-based image
-      tagging** and **highly optimized, fast local workflows**
+## Language & Framework Guides
 
-    - **Continuous feedback** - Amphitheatre automatically manages deployment
-      logging and resource port-forwarding
+{{ grid(columns=3)}}
+{{ column() }}{{ card(title="Golang", text="Learn how to deploy a Go application.", url="/examples/golang/") }}{{ end() }}
+{{ column() }}{{ card(title="Python", text="Learn how to deploy a Python application.", url="/examples/python/") }}{{ end() }}
+{{ column() }}{{ card(title="Java", text="Learn how to deploy a Java application.", url="/examples/java/") }}{{ end() }}
+{{ column() }}{{ card(title="NodeJs", text="Learn how to deploy a NodeJs application.", url="/examples/nodejs") }}{{ end() }}
+{{ column() }}{{ card(title="Rust", text="Learn how to deploy a Rust application.", url="/examples/rust") }}{{ end() }}
+{{ column() }}{{ card(title="PHP", text="Learn how to deploy a PHP application.", url="/examples/php") }}{{ end() }}
+{{ end() }}
 
-- Amphitheatre projects work everywhere
+## Additional info
 
-    - **Share with other developers** - Amphitheatre is the easiest way to
-      **share your project** with the world: `git clone` and `amp run`
-
-    - **Context aware** - use Amphitheatre profiles, local user config,
-      environment variables, and flags to easily incorporate differences across
-      environments
-
-    - **CI/CD building blocks** - use `amp build`, `amp test` and `amp deploy`
-      as part of your CI/CD pipeline, or simply `amp run` end-to-end
-
-    - **GitOps integration** - use `amp render` to build your images and render
-      templated Kubernetes manifests for use in GitOps workflows
-    
-- .amp.toml - a single pluggable, declarative configuration for your project
-
-    - **amp init** - Amphitheatre can discover your build and deployment
-      configuration and generate a Amphitheatre config
-    
-    - **Multi-component apps** - Amphitheatre supports applications with many
-      components, making it great for microservice-based applications
-
-    - **Bring your own tools** - Amphitheatre has a pluggable architecture,
-      allowing for different implementations of the build and deploy stages
-    
-- Lightweight
-    
-    - **Minimal pipeline** - Amphitheatre provides an opinionated, minimal
-      pipeline to keep things simple
-
-## Workflow 
-
-Amphitheatre simplifies your development workflow by organizing common
-development stages into one simple command. Every time you run `amp dev`, the
-system
-
-1. Collects and watches your source code for changes
-2. Syncs files directly to pods if user marks them as syncable
-3. Builds artifacts from the source code
-4. Tests the built artifacts using
-   [container-structure-tests](https://github.com/GoogleContainerTools/container-structure-test)
-   or custom scripts
-5. Tags the artifacts
-6. Pushes the artifacts
-7. Deploys the artifacts
-8. Monitors the deployed artifacts
-9. Cleans up deployed artifacts on exit (Ctrl+C)
-
-> **Note**\
-Any of these stages can be skipped.
-
-Amphitheatre also automatically manages the following utilities for you:
-
-- port-forwarding of deployed resources to your local machine using `kubectl
-  port-forward`
-- log aggregation from the deployed pods
+{{ grid(columns=2)}}
+{{ column() }}{{ card(title="References", text="Detailed documentation on the Amphitheatre API, CLI and more.", url="/references/") }}{{ end() }}
+{{ column() }}{{ card(title="Contributing", text="How to contribute to the Amphitheatre project and the various repositories.", url="/contributing/") }} {{ end() }} 
+{{ end() }}

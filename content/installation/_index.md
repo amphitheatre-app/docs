@@ -1,7 +1,7 @@
 +++
 title = "Installation Guide"
 description = "Learn how to install Amphitheatre in your infrastructure."
-weight = 2
+weight = 30
 sort_by = "weight"
 
 [extra.sidebar]
