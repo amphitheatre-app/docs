@@ -23,7 +23,7 @@ Before you begin, you need to [Set up your local Amphitheatre environment](@/get
 All templates are pre-configured to use Amphitheatre and ready-to-code:
 
 {{ grid(columns=2) }}
-{{ column() }}{{ card(title="More on Golang", url="/getting-started/quickstart/go", color="text-bg-light") }}{{ end() }}
+{{ column() }}{{ card(title="More on Golang", url="/getting-started/quickstart/go") }}{{ end() }}
 {{ column() }}{{ card(title="More on Java Spring", url="/getting-started/quickstart/java") }}{{ end() }}
 {{ column() }}{{ card(title="More on NodeJs - Express", url="/getting-started/quickstart/nodejs") }}{{ end() }}
 {{ column() }}{{ card(title="More on Python Flask", url="/getting-started/quickstart/python") }}{{ end() }}
