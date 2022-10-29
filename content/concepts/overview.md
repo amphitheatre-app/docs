@@ -1,6 +1,6 @@
 +++
 title = "Overview"
-description = "Introduction to the Distributed Application Runtime"
+description = "Introduction to the Amphitheatre, including its main features and workflow."
 weight = 1
 +++
 
