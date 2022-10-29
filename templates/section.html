@@ -47,7 +47,7 @@
     {% endif %}
       <h1 class="docs-title mb-0" id="content">{{ section.title }}</h1>
     </div>
-    {% if section.description %}<p class="text-muted">{{ section.description | safe }}</p>{% endif %}
+    {% if section.description %}<p class="text-muted mb-0">{{ section.description | safe }}</p>{% endif %}
   </div>
   
     <div class="docs-content ps-lg-2">
@@ -72,7 +72,7 @@
                 <h5 class="card-title">
                   <a class="stretched-link" href="{{ subsection.permalink }}">{{ subsection.title }} &rarr;</a>
                 </h5>
-                {% if subsection.description %}<p class="card-text">{{ subsection.description | safe }}</p>{% endif %}
+                {% if subsection.description %}<p class="card-text text-muted">{{ subsection.description | safe }}</p>{% endif %}
               </div>
             </div>
             {% endif %}
@@ -84,7 +84,7 @@
                 <h5 class="card-title">
                   <a class="stretched-link" href="{{ page.permalink }}">{{ page.title }} &rarr;</a>
                 </h5>
-                {% if page.description %}<p class="card-text">{{ page.description | safe }}</p>{% endif %}
+                {% if page.description %}<p class="card-text text-muted">{{ page.description | safe }}</p>{% endif %}
               </div>
             </div>
           {% endfor %}

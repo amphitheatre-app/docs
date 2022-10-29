@@ -51,7 +51,7 @@
       {% endif %}
         <h1 class="docs-title mb-0" id="content">{{ page.title }}</h1>
       </div>
-      {% if page.description %}<p class="text-muted">{{ page.description | safe }}</p>{% endif %}
+      {% if page.description %}<p class="text-muted mb-0">{{ page.description | safe }}</p>{% endif %}
     </div>
 
     {{ macros_toc::docs_toc(page=page) }}

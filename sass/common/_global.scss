@@ -107,7 +107,7 @@ body {
 }
 
 .docs-content {
-  padding: calc(var(--bs-gutter-x) / 2);
+  padding: 0 calc(var(--bs-gutter-x) / 2) calc(var(--bs-gutter-x) / 2) 0.5rem;
   order: 1;
 }
 
