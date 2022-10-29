@@ -12,7 +12,7 @@ environment.
 
 > **Note**\
 We are actively working on adding to our quickstart library. In the meantime,
-you can explore Amphitheatre through our tutorials.
+you can explore Amphitheatre through our [examples](@/examples/_index.md).
 
 ## Requirements
 
@@ -22,13 +22,13 @@ Before you begin, you need to [Set up your local Amphitheatre environment](@/get
 
 All templates are pre-configured to use Amphitheatre and ready-to-code:
 
-{{ grid(columns=2) }}
-{{ column() }}{{ card(title="More on Golang", url="/getting-started/quickstart/go") }}{{ end() }}
-{{ column() }}{{ card(title="More on Java Spring", url="/getting-started/quickstart/java") }}{{ end() }}
-{{ column() }}{{ card(title="More on NodeJs - Express", url="/getting-started/quickstart/nodejs") }}{{ end() }}
-{{ column() }}{{ card(title="More on Python Flask", url="/getting-started/quickstart/python") }}{{ end() }}
-{{ column() }}{{ card(title="More on Rust", url="/getting-started/quickstart/rust") }}{{ end() }}
-{{ column() }}{{ card(title="More on Svelte", url="/getting-started/quickstart/svelte") }}{{ end() }}
+{{ grid(columns=3)}}
+{{ column() }}{{ card(title="Golang", text="Learn how to deploy a Go application.", url="/examples/golang/") }}{{ end() }}
+{{ column() }}{{ card(title="Python", text="Learn how to deploy a Python application.", url="/examples/python/") }}{{ end() }}
+{{ column() }}{{ card(title="Java", text="Learn how to deploy a Java application.", url="/examples/java/") }}{{ end() }}
+{{ column() }}{{ card(title="NodeJs", text="Learn how to deploy a NodeJs application.", url="/examples/nodejs") }}{{ end() }}
+{{ column() }}{{ card(title="Rust", text="Learn how to deploy a Rust application.", url="/examples/rust") }}{{ end() }}
+{{ column() }}{{ card(title="PHP", text="Learn how to deploy a PHP application.", url="/examples/php") }}{{ end() }}
 {{ end() }}
 
 If you encounter any errors during this process, check that you have installed
