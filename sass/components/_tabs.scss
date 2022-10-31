@@ -1,0 +1,10 @@
+.nav-tabs-wrapper {
+    overflow-y: scroll;
+}
+
+
+@include media-breakpoint-up(xs) {
+    .nav-tabs {
+        flex-wrap: nowrap;
+    }
+}
