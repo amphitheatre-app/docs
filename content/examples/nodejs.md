@@ -120,7 +120,7 @@ To deploy your Character, just run:
 amp run
 ```
 
-This will lookup our `.amp.toml` file, and get the Character name amp-example-nodejs
+This will lookup our `.amp.toml` file, and get the Character name `amp-example-nodejs`
 from there. Then `amp` will start the process of deploying our Character to the
 Amphitheatre platform. `amp` will return you to the command line when it's done.
 
