@@ -60,7 +60,7 @@ $ FLASK_APP=hellofly flask run
 ```
 
 This will run our web app and you should be able to connect to it locally
-on localhost:5000.
+on `localhost:5000`.
 
 Now, let's move on to deploying this app to Amphitheatre.
 

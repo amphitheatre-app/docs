@@ -1,7 +1,7 @@
 +++
-title = "Run a Java application"
-description = "Learn how to deploy a Java application on Amphitheatre"
-weight = 2
+title = "Run a PHP application"
+description = "Learn how to deploy a PHP application on Amphitheatre"
+weight = 4
 +++
 
 Getting an application running on Amphitheatre is essentially working out how to
@@ -10,60 +10,25 @@ Amphitheatre platform.
 
 ## The Example Application
 
-Our example will be a basic "hello world" example using Java and [Spring
-Boot](https://spring.io/projects/spring-boot).
-
 You can get the code for the example from [the GitHub
-repository](https://github.com/amphitheatre-app/amp-example-java). Just `git clone
-https://github.com/amphitheatre-app/amp-example-java` to get a local copy. 
+repository](https://github.com/amphitheatre-app/amp-example-php). Just `git clone
+https://github.com/amphitheatre-app/amp-example-php` to get a local copy.
 
-### Create a Simple Web Application
+The `amp-example-php` application is, as you'd expect for an example, small. It's a PHP
+application that print the 'Hello world'. Here's all the code from
+`public_html/index.php`:
 
-Now you can create a web controller for a simple web application, as the
-following listing (from `src/main/java/hello/HelloController.java`) shows:
-
-```java
-package hello;
-
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@RestController
-public class HelloController {
-    @RequestMapping("/")
-    public String index() {
-        return "Hello, World!";
-    }
-}
+```php
+<?php
+$message = "Hello World!";
+echo($message);
 ```
 
-### Create an Application class
+## Running the Application
 
-The Spring Initializr creates a simple application class for you. However, in
-this case, it is too simple. You need to modify the application class to match
-the following listing (from `src/main/java/hello/Application.java`):
-
-```java
-package hello;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-}
-```
-
-## Run the Application
-
-To run the application, run the following command in a terminal window (in the
-`complete`) directory:
-
-```
-./mvnw spring-boot:run
+```sh
+cd ~/public_html
+php -S localhost:8080
 ```
 
 Now run the service with curl (in a separate terminal window), by running the
@@ -90,10 +55,10 @@ code, then prompt you to deploy.
 $ amp init
 
 Scanning source code
- Detected Java app
+ Detected PHP app
  Using the following build configuration
-         Builder: paketobuildpacks/builder:base
-		 Buildpacks: gcr.io/paketo-buildpacks/java
+         Builder: paketobuildpacks/builder:full
+         Buildpacks: paketo-buildpacks/php
 Wrote config file .amp.toml
 Your Character is ready. run with `amp run`
 ...
@@ -117,18 +82,22 @@ The `.amp.toml` file now contains a default configuration for deploying your
 version = 1
 
 [character]
-name = "amp-example-java"
+name = "amp-example-php"
 version = "0.0.1"
 authors = ["Eguo Wang <wangeguo@gmail.com>"]
 edition = "v1"
-description = "A simple Java example app"
+description = "A simple PHP example app"
 readme = "README.md"
-homepage = "https://github.com/amphitheatre-app/amp-example-java"
-repository = "https://github.com/amphitheatre-app/amp-example-java"
+homepage = "https://github.com/amphitheatre-app/amp-example-php"
+repository = "https://github.com/amphitheatre-app/amp-example-php"
 license = "Apache-2.0"
 license-file = "LICENSE"
-keywords = ["example", "java", "getting-started"]
+keywords = ["example", "php", "getting-started"]
 categories = ["example"]
+
+[[build.env]]
+name = "BP_PHP_WEB_DIR"
+value = "public_html"
 ```
 
 The amp command will always refer to this file in the current directory if it
@@ -136,8 +105,8 @@ exists, specifically for the Character name value at the start. That name will
 be used to identify the Character to the Amphitheatre platform. The rest of the
 file contains settings to be applied to the Character when it deploys.
 
-See the [Paketo Java Buildpack
-documentation](https://paketo.io/docs/howto/java/)
+See the [Paketo PHP Buildpack
+documentation](https://paketo.io/docs/howto/php/)
 for more options.
 
 ## Deploying to Amphitheatre
@@ -148,10 +117,10 @@ To deploy your Character, just run:
 amp run
 ```
 
-This will lookup our `.amp.toml` file, and get the Character name `amp-example-java`
+This will lookup our `.amp.toml` file, and get the Character name `amp-example-php`
 from there. Then `amp` will start the process of deploying our Character to the
 Amphitheatre platform. `amp` will return you to the command line when it's done.
 
 ## Arrived at Destination
 
-You have successfully built, deployed your first Java application on Amphitheatre.
+You have successfully built, deployed your first PHP application on Amphitheatre.
