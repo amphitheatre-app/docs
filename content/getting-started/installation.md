@@ -10,7 +10,7 @@ title = "Installing Amphitheatre quickly"
 
 This page describes how to quickly install Amphitheatre, which is only used for
 subsequent quick start related tasks. For more information please see the
-[installation guide]((@/installation/_index.md)) documentation.
+[installation guide](@/installation/_index.md) documentation.
 
 This is the installation workflow you will follow:
 
