@@ -28,9 +28,7 @@ amp context show [options]
 ### Options
 
 ```
--v, --verbose...  More output per occurrence
--q, --quiet...    Less output per occurrence
--h, --help        Print help information
+-c, --config <CONFIG>  File for global configurations [default: ~/.amp/config]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all
@@ -65,9 +63,7 @@ amp context list [options]
 ### Options
 
 ```
--v, --verbose...  More output per occurrence
--q, --quiet...    Less output per occurrence
--h, --help        Print help information
+-c, --config <CONFIG>  File for global configurations [default: ~/.amp/config]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -95,9 +91,7 @@ amp context use [OPTIONS] [URL]
 
 ### Options
 ```
--v, --verbose...  More output per occurrence
--q, --quiet...    Less output per occurrence
--h, --help        Print help information
+-c, --config <CONFIG>  File for global configurations [default: ~/.amp/config]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -128,9 +122,7 @@ amp context delete [OPTIONS] <URL>
 
 ### Options
 ```
--v, --verbose...  More output per occurrence
--q, --quiet...    Less output per occurrence
--h, --help        Print help information
+-c, --config <CONFIG>  File for global configurations [default: ~/.amp/config]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).

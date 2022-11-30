@@ -12,7 +12,7 @@ amp clean [options]
 ## Options
 ```
     --assume-yes <ASSUME_YES>  If true, amp will skip yes/no confirmation from the user [default: true] [possible values: true, false]
--c, --config <CONFIG>          File for global configurations (defaults to $HOME/.amp/config) [default: ~/.amp/config]
+-c, --config <CONFIG>          File for global configurations [default: ~/.amp/config]
     --dry-run                  If true, amp will skip yes/no confirmation from the user and default to yes
 -f, --filename <FILENAME>      Path or URL to the Amphitheatre config file [default: .amp.toml]
 ```
