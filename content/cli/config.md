@@ -16,12 +16,12 @@ weight = 1
 
 ## amp config find
 
-Locate the config file [options]
+Locate the config file
 
 
 ### Usage
 ```
-amp config find
+amp config find [options]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
