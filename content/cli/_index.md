@@ -38,6 +38,7 @@ Other Commands:
 * [amp version](@/cli/version.md) - get Amphitheatre version
 * [amp completion](@/cli/completion.md) - setup tab completion for the CLI
 * [amp config](@/cli/config.md) - interact with the global config file
+* [amp context](@/cli/context.md) - configure access to multiple clusters
 * [amp diagnose](@/cli/diagnose.md) - diagnostics of Amphitheatre works in your
   project
 
