@@ -43,8 +43,9 @@ Other Commands:
 
 ## Global flags
 
-* `-h, --help`: Prints the HELP file for the current command.
-* `-v, --verbosity LOG-LEVEL`: Uses a specific log level. Available log levels are `info`, `warn`, `error`, `fatal` `debug` and `trace`. Default value is `warn`.
+* `-v, --verbose...`         More output per occurrence
+* `-q, --quiet...`           Less output per occurrence
+* `-h, --help`               Print help information
 
 
 ## Global environment variables
