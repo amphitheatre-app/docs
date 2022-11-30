@@ -1,16 +1,30 @@
 +++
 title = "amp config"
+description = "Interact with the global Amphitheatre config file (defaults to `~/.amp/config`)"
 weight = 1
 +++
 
-Interact with the global Amphitheatre config file (defaults to `$HOME/.amp/config`)
+
 
 ## Available Commands
-- [list](#amp-config-list)        List all values set in the global Amphitheatre config
-- [set](#amp-config-set)         Set a value in the global Amphitheatre config
-- [unset](#amp-config-unset)       Unset a value in the global Amphitheatre config
+- [find](#amp-config-find)      Locate the config file
+- [list](#amp-config-list)      List all values set in the global Amphitheatre config
+- [set](#amp-config-set)        Set a value in the global Amphitheatre config
+- [unset](#amp-config-unset)    Unset a value in the global Amphitheatre config
 
 > Use "amp <command> --help" for more information about a given command.
+
+## amp config find
+
+Locate the config file [options]
+
+
+### Usage
+```
+amp config find
+```
+
+> Use "amp options" for a list of global command-line options (applies to all commands).
 
 ## amp config list
 
@@ -25,9 +39,8 @@ amp config list [options]
 ### Options
 
 ```
--a, --all=false: Show values for all kubecontexts
--c, --config='': Path to Amphitheatre config
--k, --kube-context='': Kubectl context to set values against
+-a, --all              Show values for all configs
+-c, --config <CONFIG>  Path to Amphitheatre config [default: $~/.amp/config]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -36,7 +49,6 @@ amp config list [options]
 
 * `AMP_ALL` (same as `--all`)
 * `AMP_CONFIG` (same as `--config`)
-* `AMP_KUBE_CONTEXT` (same as `--kube-context`)
 
 ## amp config set
 
@@ -44,14 +56,13 @@ Set a value in the global Amphitheatre config
 
 ### Usage
 ```
-amp config set [options]
+amp config set [OPTIONS] <KEY> <VALUE>
 ```
 
 ### Options
 ```
--c, --config='': Path to Amphitheatre config
--g, --global=false: Set value for global config
--k, --kube-context='': Kubectl context to set values against
+  -c, --config <CONFIG>  Path to Amphitheatre config [default: ~/.amp/config]
+  -g, --global           Set value for global config
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -73,16 +84,10 @@ amp config set default-repo <myrepo>
 amp config set multi-level-repo true
 ```
 
-#### Disable pushing images for a given Kubernetes context
-```
-amp config set --kube-context <mycluster> local-cluster true
-```
-
 ### Environment vars
 
 * `AMP_CONFIG` (same as `--config`)
 * `AMP_GLOBAL` (same as `--global`)
-* `AMP_KUBE_CONTEXT` (same as `--kube-context`)
 
 ## amp config unset
 
@@ -90,14 +95,13 @@ Unset a value in the global Amphitheatre config
 
 ### Usage
 ```
-amp config unset [options]
+amp config unset [OPTIONS] <KEY>
 ```
 
 ### Options
 ```
--c, --config='': Path to Amphitheatre config
--g, --global=false: Set value for global config
--k, --kube-context='': Kubectl context to set values against
+-c, --config <CONFIG>  Path to Amphitheatre config [default: $HOME/.amp/config]
+-g, --global           Set value for global config
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -106,4 +110,3 @@ amp config unset [options]
 
 * `AMP_CONFIG` (same as `--config`)
 * `AMP_GLOBAL` (same as `--global`)
-* `AMP_KUBE_CONTEXT` (same as `--kube-context`)
