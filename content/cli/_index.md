@@ -22,7 +22,6 @@ End-to-end pipelines:
 
 Pipeline building blocks for CI/CD:
 
-* [amp build](@/cli/build.md) - to just build and tag your image(s)
 * [amp deploy](@/cli/deploy.md) - to deploy the given image(s)
 * [amp clean](@/cli/clean.md) - to cleanup the deployed artifacts
 * [amp render](@/cli/render.md) - build and tag images, and output templated
