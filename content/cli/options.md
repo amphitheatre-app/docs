@@ -1,5 +1,6 @@
 +++
 title = "amp options"
+description = "List of global command-line options (applies to all commands)"
 weight = 1
 +++
 
@@ -12,9 +13,10 @@ amp options
 The following options can be passed to any command:
 
 ```
-    --color=34: Specify the default output color in ANSI escape codes
-    --interactive=true: Allow user prompts for more information
-    --timestamps=false: Print timestamps in logs
-    --update-check=true: Check for a more recent version of Amphitheatre
--v, --verbosity='warning': Log level: one of [panic fatal error warning info debug trace]
+-h, --help          Print help information
+    --interactive   Allow user prompts for more information
+-q, --quiet...      Less output per occurrence
+    --timestamps    Print timestamps in logs
+    --update-check  Check for a more recent version of Amphitheatre
+-v, --verbose...    More output per occurrence
 ```
