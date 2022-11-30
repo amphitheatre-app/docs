@@ -1,9 +1,8 @@
 +++
 title = "amp clean"
+description = "Delete any resources deployed by Amphitheatre"
 weight = 1
 +++
-
-Delete any resources deployed by Amphitheatre
 
 ## Usage
 ```
@@ -12,15 +11,19 @@ amp clean [options]
 
 ## Options
 ```
-    --assume-yes=false: If true, amp will skip yes/no confirmation from the user and default to yes
--c, --config='': File for global configurations (defaults to $HOME/.amp/config)
-    --dry-run=false: Don't delete resources, just print them.
--f, --filename='.amp.toml': Path or URL to the Amphitheatre config file
+    --assume-yes <ASSUME_YES>  If true, amp will skip yes/no confirmation from the user [default: true] [possible values: true, false]
+-v, --verbose...               More output per occurrence
+-c, --config <CONFIG>          File for global configurations (defaults to $HOME/.amp/config) [default: ~/.amp/config]
+-q, --quiet...                 Less output per occurrence
+    --dry-run                  If true, amp will skip yes/no confirmation from the user and default to yes
+-f, --filename <FILENAME>      Path or URL to the Amphitheatre config file [default: .amp.toml]
+-h, --help                     Print help information
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
 
 ## Examples
+
 #### Print the resources to be deleted
 ```
 amp clean --dry-run
