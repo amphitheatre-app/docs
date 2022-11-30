@@ -1,9 +1,8 @@
 +++
 title = "amp completion"
+description = "Output shell completion for the given shell (bash or zsh)"
 weight = 1
 +++
-
-Output shell completion for the given shell (bash or zsh)
 
 ## Usage
 ```
