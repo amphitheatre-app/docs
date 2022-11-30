@@ -38,8 +38,7 @@ Other Commands:
 * [amp completion](@/cli/completion.md) - setup tab completion for the CLI
 * [amp config](@/cli/config.md) - interact with the global config file
 * [amp context](@/cli/context.md) - configure access to multiple clusters
-* [amp diagnose](@/cli/diagnose.md) - diagnostics of Amphitheatre works in your
-  project
+* [amp diagnose](@/cli/diagnose.md) - diagnostics of Amphitheatre works in your project
 
 ## Global flags
 
@@ -54,7 +53,6 @@ Other Commands:
 
 ## Environment vars
 
-* `AMP_COLOR` (same as `--color`)
 * `AMP_INTERACTIVE` (same as `--interactive`)
 * `AMP_TIMESTAMPS` (same as `--timestamps`)
 * `AMP_UPDATE_CHECK` (same as `--update-check`)
