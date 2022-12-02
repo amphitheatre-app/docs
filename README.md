@@ -51,3 +51,5 @@ Heavily inspired by
 - https://github.com/GoogleContainerTools/skaffold/tree/main/docs
 - https://docs.k8slens.dev/main/
 - https://doc.rust-lang.org/cargo/index.html
+- https://cli.github.com/manual/
+- https://www.okteto.com/docs/
