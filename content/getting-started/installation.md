@@ -19,13 +19,13 @@ This is the installation workflow you will follow:
 Once Helm has been set up correctly, add the repo as follows:
 
 ```
-helm repo add amphitheatre https://repo.amphitheatre.app/charts
+  helm repo add amphitheatre https://charts.amphitheatre.app
 ```
 
-To install the chart with the release name my-amphitheatre:
+To install the chart with the release name amp:
 
 ```
-helm install my-amphitheatre amphitheatre/amphitheatre
+helm install amp amphitheatre/amphitheatre --create-namespace --namespace amp-system
 ```
 
 ## 2. Install Desktop Application

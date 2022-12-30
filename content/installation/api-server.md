@@ -15,12 +15,12 @@ running becomes unavailable, users do not experience interruptions of service.
 - PV provisioner support in the underlying infrastructure
 - ReadWriteMany volumes for deployment scaling
 
-## Add Repository 
+## Add Repository
 
 Once Helm has been set up correctly, add the repo as follows:
 
 ```sh
-  helm repo add amphitheatre https://repo.amphitheatre.app/charts
+  helm repo add amphitheatre https://charts.amphitheatre.app
 ```
 
 If you had already added this repo earlier, run `helm repo update` to retrieve
@@ -29,10 +29,10 @@ amphitheatre` to see the charts.
 
 ## Installation
 
-To install the chart with the release name `my-amphitheatre`:
+To install the chart with the release name `amp`:
 
 ```sh
-  helm install my-amphitheatre amphitheatre/amphitheatre
+  helm install amp amphitheatre/amphitheatre --create-namespace --namespace=amp-system
 ```
 
 The command deploys Amphitheatre API Server on the Kubernetes cluster in the
@@ -41,7 +41,7 @@ default configuration.
 ## Uninstall
 
 ```sh
-  helm delete my-amphitheatre
+  helm delete amp
 ```
 
 The command removes all the Kubernetes components associated with the chart and
