@@ -1,8 +1,151 @@
 +++
-title = "WIP: Initialize Amphitheatre in your infrastructure"
+title = "Initialize Amphitheatre in your infrastructure"
 description = "Configure your local environment or remote Kubernetes cluster"
 weight = 2
 
 [extra.sidebar]
 title = "Init Amphitheatre locally"
 +++
+
+## Configure the cluster
+
+We use [kpack](https://github.com/pivotal/kpack) to perform the build of the code to the image, kpack extends Kubernetes and utilizes unprivileged kubernetes primitives to provide builds of OCI images as a platform implementation of [Cloud Native Buildpacks](https://buildpacks.io/) (CNB).
+
+kpack provides a declarative builder resource that configures a Cloud Native Buildpacks build configuration with the desired buildpack order and operating system stack.
+
+So, after installing Amphitheatre, you need to initialize some configurations, one of the more important ones being the configuration of kpack custom resources.
+
+### 1. Create a secret configuration
+
+Create a secret with push credentials for the docker registry that you plan on publishing OCI images to with kpack. Your secret create should look something like this:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: basic-docker-user-pass
+  annotations:
+    kpack.io/docker: https://index.docker.io/v1/
+type: kubernetes.io/basic-auth
+stringData:
+  username: <username>
+  password: <password>
+```
+
+Apply that secret to the cluster
+
+```bash
+kubectl apply -n amp-system -f secret.yaml
+```
+
+> Note: Learn more about kpack secrets with the [kpack secret documentation](https://github.com/pivotal/kpack/blob/main/docs/secrets.md)
+
+### 2. Create a service account configuration
+
+The Service Account that references the registry secret created above
+
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: amp-default-builder-service-account
+secrets:
+  - name: basic-docker-user-pass
+imagePullSecrets:
+  - name: basic-docker-user-pass
+```
+
+Apply that service account to the cluster
+
+```bash
+kubectl apply -n amp-system -f service-account.yaml
+```
+
+### 3. Create a cluster store configuration
+
+A store resource is a repository of [buildpacks](http://buildpacks.io/) packaged in [buildpackages](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) that can be used by kpack to build OCI images. Later in this tutorial you will reference this store in a Cluster Builder configuration.
+
+We recommend starting with buildpacks from the [paketo project](https://github.com/paketo-buildpacks). The example below pulls in java and nodejs buildpacks from the paketo project.
+
+```yaml
+apiVersion: kpack.io/v1alpha2
+kind: ClusterStore
+metadata:
+  name: amp-default-cluster-store
+spec:
+  sources:
+  - image: gcr.io/paketo-buildpacks/java
+  - image: gcr.io/paketo-buildpacks/nodejs
+```
+
+Apply this store to the cluster
+
+```bash
+kubectl apply -f cluster-store.yaml
+```
+
+> Note: Buildpacks are packaged and distributed as buildpackages which are docker images available on a docker registry. Buildpackages for other languages are available from [paketo](https://github.com/paketo-buildpacks).
+
+### 4. Create a cluster stack configuration
+
+A stack resource is the specification for a [cloud native buildpacks stack](https://buildpacks.io/docs/concepts/components/stack/) used during build and in the resulting app image.
+
+We recommend starting with the [paketo base stack](https://github.com/paketo-buildpacks/stacks) as shown below:
+
+```yaml
+apiVersion: kpack.io/v1alpha2
+kind: ClusterStack
+metadata:
+  name: amp-default-cluster-stack
+spec:
+  id: "io.buildpacks.stacks.bionic"
+  buildImage:
+    image: "paketobuildpacks/build:base-cnb"
+  runImage:
+    image: "paketobuildpacks/run:base-cnb"
+```
+
+Apply this stack to the cluster
+
+```bash
+kubectl apply -f cluster-stack.yaml
+```
+
+### 5. Create a Cluster Builder configuration
+
+A Cluster Builder is the kpack configuration for a builder image that includes the stack and buildpacks needed to build an OCI image from your app source code.
+
+The Cluster Builder configuration will write to the registry with the secret configured in step one and will reference the stack and store created in step three and four. The builder order will determine the order in which buildpacks are used in the builder.
+
+```yaml
+apiVersion: kpack.io/v1alpha2
+kind: ClusterBuilder
+metadata:
+  name: amp-default-cluster-builder
+spec:
+  tag: <namespace>/amp-default-cluster-builder
+  stack:
+    name: amp-default-cluster-stack
+    kind: ClusterStack
+  store:
+    name: amp-default-cluster-store
+    kind: ClusterStore
+  serviceAccountRef:
+    name: amp-default-builder-service-account
+    namespace: amp-system
+  order:
+  - group:
+    - id: gcr.io/paketo-buildpacks/java
+  - group:
+    - id: gcr.io/paketo-buildpacks/nodejs
+```
+
+Apply this builder to the cluster
+
+```bash
+kubectl apply -f cluster-builder.yaml
+```
+
+The execution time of the above resources depends on the internet speed at the time of pulling the image, you may have to wait a few minutes or so for all resources to be applied successfully and then you can access Amphithreatre.
+
+> Note: Learn more buildpacks and kpack with the [kpack documentation](https://github.com/pivotal/kpack)
