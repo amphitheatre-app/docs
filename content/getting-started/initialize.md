@@ -24,6 +24,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: basic-docker-user-pass
+  namespace: amp-system
   annotations:
     kpack.io/docker: https://index.docker.io/v1/
 type: kubernetes.io/basic-auth
@@ -49,6 +50,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: amp-default-builder-service-account
+  namespace: amp-system
 secrets:
   - name: basic-docker-user-pass
 imagePullSecrets:
@@ -74,8 +76,14 @@ metadata:
   name: amp-default-cluster-store
 spec:
   sources:
+  - image: gcr.io/paketo-buildpacks/go
   - image: gcr.io/paketo-buildpacks/java
   - image: gcr.io/paketo-buildpacks/nodejs
+  - image: gcr.io/paketo-buildpacks/php
+  - image: gcr.io/paketo-buildpacks/python
+  - image: gcr.io/paketo-buildpacks/ruby
+  - image: docker.io/paketocommunity/rust
+  - image: gcr.io/paketo-buildpacks/dotnet-core
 ```
 
 Apply this store to the cluster
@@ -100,9 +108,9 @@ metadata:
 spec:
   id: "io.buildpacks.stacks.bionic"
   buildImage:
-    image: "paketobuildpacks/build:base-cnb"
+    image: "paketobuildpacks/build:full-cnb"
   runImage:
-    image: "paketobuildpacks/run:base-cnb"
+    image: "paketobuildpacks/run:full-cnb"
 ```
 
 Apply this stack to the cluster
@@ -123,7 +131,7 @@ kind: ClusterBuilder
 metadata:
   name: amp-default-cluster-builder
 spec:
-  tag: <namespace>/amp-default-cluster-builder
+  tag: wangeguo/amp-default-cluster-builder
   stack:
     name: amp-default-cluster-stack
     kind: ClusterStack
@@ -135,9 +143,21 @@ spec:
     namespace: amp-system
   order:
   - group:
-    - id: gcr.io/paketo-buildpacks/java
+    - id: paketo-buildpacks/go
   - group:
-    - id: gcr.io/paketo-buildpacks/nodejs
+    - id: paketo-buildpacks/java
+  - group:
+    - id: paketo-buildpacks/nodejs
+  - group:
+    - id: paketo-buildpacks/php
+  - group:
+    - id: paketo-buildpacks/python
+  - group:
+    - id: paketo-buildpacks/ruby
+  - group:
+    - id: paketo-community/rust
+  - group:
+    - id: paketo-buildpacks/dotnet-core
 ```
 
 Apply this builder to the cluster
