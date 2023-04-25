@@ -15,55 +15,32 @@ kpack provides a declarative builder resource that configures a Cloud Native Bui
 
 So, after installing Amphitheatre, you need to initialize some configurations, one of the more important ones being the configuration of kpack custom resources.
 
-### 1. Create a secret configuration
+### 1. Create a credentials configuration
 
-Create a secret with push credentials for the docker registry that you plan on publishing OCI images to with kpack. Your secret create should look something like this:
-
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: basic-docker-user-pass
-  namespace: amp-system
-  annotations:
-    kpack.io/docker: https://index.docker.io/v1/
-type: kubernetes.io/basic-auth
-stringData:
-  username: <username>
-  password: <password>
-```
-
-Apply that secret to the cluster
-
-```bash
-kubectl apply -n amp-system -f secret.yaml
-```
-
-> Note: Learn more about kpack secrets with the [kpack secret documentation](https://github.com/pivotal/kpack/blob/main/docs/secrets.md)
-
-### 2. Create a service account configuration
-
-The Service Account that references the registry secret created above
+Create a ConfigMap with push credentials for the docker registry that you plan on publishing OCI images to with kpack. Your configuration create should look something like this:
 
 ```yaml
 apiVersion: v1
-kind: ServiceAccount
+kind: ConfigMap
 metadata:
-  name: amp-default-builder-service-account
+  name: amp-configurations
   namespace: amp-system
-secrets:
-  - name: basic-docker-user-pass
-imagePullSecrets:
-  - name: basic-docker-user-pass
+data:
+  confgiuration.toml: |
+    [registry."https://index.docker.io/v1/"]
+    username = '<username>'
+    password = '<password>'
+
+    [repositories]
 ```
 
-Apply that service account to the cluster
+Apply that configuration to the cluster
 
 ```bash
-kubectl apply -n amp-system -f service-account.yaml
+kubectl apply -n amp-system -f amp-configurations.yaml
 ```
 
-### 3. Create a cluster store configuration
+### 2. Create a cluster store configuration
 
 A store resource is a repository of [buildpacks](http://buildpacks.io/) packaged in [buildpackages](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) that can be used by kpack to build OCI images. Later in this tutorial you will reference this store in a Cluster Builder configuration.
 
@@ -94,7 +71,7 @@ kubectl apply -f cluster-store.yaml
 
 > Note: Buildpacks are packaged and distributed as buildpackages which are docker images available on a docker registry. Buildpackages for other languages are available from [paketo](https://github.com/paketo-buildpacks).
 
-### 4. Create a cluster stack configuration
+### 3. Create a cluster stack configuration
 
 A stack resource is the specification for a [cloud native buildpacks stack](https://buildpacks.io/docs/concepts/components/stack/) used during build and in the resulting app image.
 
@@ -119,7 +96,7 @@ Apply this stack to the cluster
 kubectl apply -f cluster-stack.yaml
 ```
 
-### 5. Create a Cluster Builder configuration
+### 4. Create a Cluster Builder configuration
 
 A Cluster Builder is the kpack configuration for a builder image that includes the stack and buildpacks needed to build an OCI image from your app source code.
 
@@ -131,7 +108,7 @@ kind: ClusterBuilder
 metadata:
   name: amp-default-cluster-builder
 spec:
-  tag: wangeguo/amp-default-cluster-builder
+  tag: <namespace>/amp-default-cluster-builder
   stack:
     name: amp-default-cluster-stack
     kind: ClusterStack
@@ -139,7 +116,7 @@ spec:
     name: amp-default-cluster-store
     kind: ClusterStore
   serviceAccountRef:
-    name: amp-default-builder-service-account
+    name: amp-controllers
     namespace: amp-system
   order:
   - group:
@@ -158,7 +135,12 @@ spec:
     - id: paketo-community/rust
   - group:
     - id: paketo-buildpacks/dotnet-core
+
 ```
+
+> Note.
+ 1. `<Namespace>` is the domain name and space of Docker Registry, please fill in the real value with the Registries information in the first place.
+ 2. `serviceAccountRef` is the [`controllers.serviceAccount.name`](https://github.com/amphitheatre-app/charts/blob/master/charts/amphitheatre/) you filled in when you installed the server software values.yaml#L180), please change this value according to the real situation.
 
 Apply this builder to the cluster
 
@@ -166,6 +148,6 @@ Apply this builder to the cluster
 kubectl apply -f cluster-builder.yaml
 ```
 
-The execution time of the above resources depends on the internet speed at the time of pulling the image, you may have to wait a few minutes or so for all resources to be applied successfully and then you can access Amphithreatre.
+The execution time of the above resources depends on the internet speed at the time of pulling the image, you may have to wait a few minutes or so for all resources to be applied successfully and then you can access Amphitheatre.
 
 > Note: Learn more buildpacks and kpack with the [kpack documentation](https://github.com/pivotal/kpack)

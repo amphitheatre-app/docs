@@ -47,6 +47,11 @@ default configuration.
 The command removes all the Kubernetes components associated with the chart and
 deletes the release.
 
+## Next
+
+When successfully installed, you still need to do some initial configuration work,
+the details of which can be found in the [Initialize Amphitheatre in your infrastructure](@/getting-started/initialize.md).
+
 ## Troubleshooting
 
 If you have any trouble installing Amphitheatre API Server, look for the error
