@@ -13,7 +13,7 @@ We use [kpack](https://github.com/pivotal/kpack) to perform the build of the cod
 
 kpack provides a declarative builder resource that configures a Cloud Native Buildpacks build configuration with the desired buildpack order and operating system stack.
 
-So, after installing Amphitheatre, you need to initialize some configurations, one of the more important ones being the configuration of kpack custom resources.
+So, after installing Amphitheatre, you need to initialize some configurations, one of the more important ones being the configuration of kpack custom resources. You can get the manifests for the example from the [GitHub repository](https://github.com/amphitheatre-app/k8s-manifests-example). Include some configuration about k8s, and some example manifests.
 
 ### 1. Create a credentials configuration
 
@@ -135,12 +135,11 @@ spec:
     - id: paketo-community/rust
   - group:
     - id: paketo-buildpacks/dotnet-core
-
 ```
 
-> Note.
- 1. `<Namespace>` is the domain name and space of Docker Registry, please fill in the real value with the Registries information in the first place.
- 2. `serviceAccountRef` is the [`controllers.serviceAccount.name`](https://github.com/amphitheatre-app/charts/blob/master/charts/amphitheatre/) you filled in when you installed the server software values.yaml#L180), please change this value according to the real situation.
+1. `<Namespace>` is the domain name and space of Docker Registry, please fill in the real value with the Registries information in the first place.
+
+2. `serviceAccountRef` is the [`controllers.serviceAccount.name`](https://github.com/amphitheatre-app/charts/blob/master/charts/amphitheatre/) you filled in when you installed the server software values.yaml#L180), please change this value according to the real situation.
 
 Apply this builder to the cluster
 
