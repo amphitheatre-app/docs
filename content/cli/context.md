@@ -4,9 +4,9 @@ description = "Configure access to multiple clusters."
 weight = 1
 +++
 
-A context is a group of cluster access parameters. Each context contains a
-Kubernetes cluster, a user, and a namespace. The current context is the default
-cluster/namespace for any Amphitheatre CLI command.
+A context is a set of cluster access parameters. Each context contains its name and
+server address and access credentials, etc. The current context is the default value
+for any Amphitheatre CLI command.
 
 ## Available Commands
 - [show](#amp-context-show)     Print the current context
@@ -28,7 +28,7 @@ amp context show [options]
 ### Options
 
 ```
--c, --config <CONFIG>  File for global configurations [default: ~/.amp/config]
+-c, --config <CONFIG>  File for global configurations [default: ~/.config/amphitheatre/config.toml]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all
@@ -41,15 +41,12 @@ amp context show
 ```
 
 ```
-{
-  "name": "https://cloud.amphitheatre.app",
-  "token": "REDACTED",
-  "namespace": "default",
-  "builder": "tcp://builder.cloud.amphitheatre.app:1234",
-  "registry": "registry.cloud.amphitheatre.app",
+Context {
+    name: "default",
+    url: "http://localhost:8170",
+    token: "",
 }
 ```
-
 
 ## amp context list
 
@@ -63,7 +60,7 @@ amp context list [options]
 ### Options
 
 ```
--c, --config <CONFIG>  File for global configurations [default: ~/.amp/config]
+-c, --config <CONFIG>  File for global configurations [default: ~/.config/amphitheatre/config.toml]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -75,9 +72,16 @@ amp context list
 ```
 
 ```
-Name                              Namespace  Builder                                      Registry
-https://cloud.amphitheatre.app *  default    tcp://builder.cloud.amphitheatre.app:1234    registry.cloud.amphitheatre.app
-minikube                          default    docker                                       -
+Context {
+    name: "default",
+    url: "http://localhost:8170",
+    token: "",
+}
+Context {
+    name: "local",
+    url: "http://api.amphitheatre.local:8170",
+    token: "",
+}
 ```
 
 ## amp context use
@@ -86,12 +90,12 @@ Select one of your existing contexts or to create a new one
 
 ### Usage
 ```
-amp context use [OPTIONS] [URL]
+amp context use [OPTIONS] [NAME]
 ```
 
 ### Options
 ```
--c, --config <CONFIG>  File for global configurations [default: ~/.amp/config]
+-c, --config <CONFIG>  File for global configurations [default: ~/.config/amphitheatre/config.toml]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -106,9 +110,9 @@ amp context use
 
 This will prompt you to select one of your existing contexts or to create a new one.
 
-#### You can also specify an Amphitheatre URL:
+#### You can also specify a name:
 ```
-amp context use https://cloud.amphitheatre.app
+amp context use local
 ```
 
 ## amp context delete
@@ -117,20 +121,20 @@ Delete a context
 
 ### Usage
 ```
-amp context delete [OPTIONS] <URL>
+amp context delete [OPTIONS] <NAME>
 ```
 
 ### Options
 ```
--c, --config <CONFIG>  File for global configurations [default: ~/.amp/config]
+-c, --config <CONFIG>  File for global configurations [default: ~/.config/amphitheatre/config.toml]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
 
 ### Examples
 
-#### Delete the Amphitheatre Cloud context
+#### Delete the `local` context
 
 ```
-amp context delete https://cloud.amphitheatre.app
+amp context delete local
 ```
