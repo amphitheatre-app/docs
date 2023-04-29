@@ -25,12 +25,6 @@ Print the current context
 amp context show [options]
 ```
 
-### Options
-
-```
--c, --config <CONFIG>  File for global configurations [default: ~/.config/amphitheatre/config.toml]
-```
-
 > Use "amp options" for a list of global command-line options (applies to all
 > commands).
 
@@ -55,12 +49,6 @@ List all available contexts
 ### Usage
 ```
 amp context list [options]
-```
-
-### Options
-
-```
--c, --config <CONFIG>  File for global configurations [default: ~/.config/amphitheatre/config.toml]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -93,11 +81,6 @@ Select one of your existing contexts or to create a new one
 amp context use [OPTIONS] [NAME]
 ```
 
-### Options
-```
--c, --config <CONFIG>  File for global configurations [default: ~/.config/amphitheatre/config.toml]
-```
-
 > Use "amp options" for a list of global command-line options (applies to all commands).
 
 ### Examples
@@ -122,11 +105,6 @@ Delete a context
 ### Usage
 ```
 amp context delete [OPTIONS] <NAME>
-```
-
-### Options
-```
--c, --config <CONFIG>  File for global configurations [default: ~/.config/amphitheatre/config.toml]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).

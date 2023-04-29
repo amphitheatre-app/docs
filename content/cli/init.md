@@ -13,7 +13,6 @@ amp init [options]
 ## Options
 ```
     --assume-yes <ASSUME_YES>  If true, amp will skip yes/no confirmation from the user [default: true] [possible values: true, false]
--c, --config <CONFIG>          File for global configurations [default: ~/.amp/config]
 -f, --filename <FILENAME>      File to write generated manifests to [default: .amp.toml]
     --force                    Force the generation of the Amphitheatre character
     --name <NAME>              Set the character name. Defaults to the directory name
@@ -24,7 +23,6 @@ amp init [options]
 ## Environment vars
 
 * `AMP_ASSUME_YES` (same as `--assume-yes`)
-* `AMP_CONFIG` (same as `--config`)
 * `AMP_FILENAME` (same as `--filename`)
 * `AMP_FORCE` (same as `--force`)
 * `AMP_NAME` (same as `--name`)

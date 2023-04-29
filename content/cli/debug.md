@@ -17,7 +17,6 @@ amp debug [options]
     --auto-deploy              When set to false, deploys wait for API request instead of running automatically
     --auto-sync                When set to false, syncs wait for API request instead of running automatically
     --cleanup                  Delete deployments after dev or debug mode is interrupted
--c, --config <CONFIG>          File for global configurations [default: ~/.amp/config]
 -f, --filename <FILENAME>      Path or URL to the Amphitheatre config file [default: .amp.toml]
     --force                    Recreate Kubernetes resources if necessary for deployment, warning: might cause downtime!
     --iterative-status-check   Run `status-check` iteratively after each deploy step, instead of all-together at the end of all deploys (default)
@@ -45,7 +44,6 @@ amp debug --tail
 * `AMP_AUTO_DEPLOY` (same as `--auto-deploy`)
 * `AMP_AUTO_SYNC` (same as `--auto-sync`)
 * `AMP_CLEANUP` (same as `--cleanup`)
-* `AMP_CONFIG` (same as `--config`)
 * `AMP_FILENAME` (same as `--filename`)
 * `AMP_FORCE` (same as `--force`)
 * `AMP_ITERATIVE_STATUS_CHECK` (same as `--iterative-status-check`)

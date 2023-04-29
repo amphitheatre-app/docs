@@ -42,17 +42,19 @@ Other Commands:
 
 ## Global flags
 
-* `-v, --verbose...`         More output per occurrence
-* `-q, --quiet...`           Less output per occurrence
-* `-h, --help`               Print help information
-
+```
+-v	--verbose           	More output per occurrence
+-q	--quiet             	Less output per occurrence
+-c	--config            	File for global configurations
+	  --interactive       	Allow user prompts for more information
+	  --timestamps        	Print timestamps in logs
+	  --update-check      	Check for a more recent version of Amphitheatre
+	  --verbosity         	Log level: one of [panic fatal error warning info debug trace]
+```
 
 ## Global environment variables
 
-* `AMP_UPDATE_CHECK` Enables checking for latest version of the Amphitheatre binary. By default it's `true`.
-
-## Environment vars
-
+* `AMP_CONFIG` (same as `--config`)
 * `AMP_INTERACTIVE` (same as `--interactive`)
 * `AMP_TIMESTAMPS` (same as `--timestamps`)
 * `AMP_UPDATE_CHECK` (same as `--update-check`)

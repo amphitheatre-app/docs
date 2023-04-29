@@ -1,6 +1,6 @@
 +++
 title = "amp config"
-description = "Interact with the global Amphitheatre config file (defaults to `~/.amp/config`)"
+description = "Interact with the global Amphitheatre config file"
 weight = 1
 +++
 
@@ -40,7 +40,6 @@ amp config list [options]
 
 ```
 -a, --all              Show values for all configs
--c, --config <CONFIG>  Path to Amphitheatre config [default: $~/.amp/config]
 ```
 
 > Use "amp options" for a list of global command-line options (applies to all commands).
@@ -48,7 +47,6 @@ amp config list [options]
 ### Environment vars
 
 * `AMP_ALL` (same as `--all`)
-* `AMP_CONFIG` (same as `--config`)
 
 ## amp config set
 
@@ -61,7 +59,6 @@ amp config set [OPTIONS] <KEY> <VALUE>
 
 ### Options
 ```
-  -c, --config <CONFIG>  Path to Amphitheatre config [default: ~/.amp/config]
   -g, --global           Set value for global config
 ```
 
@@ -86,7 +83,6 @@ amp config set multi-level-repo true
 
 ### Environment vars
 
-* `AMP_CONFIG` (same as `--config`)
 * `AMP_GLOBAL` (same as `--global`)
 
 ## amp config unset
@@ -100,7 +96,6 @@ amp config unset [OPTIONS] <KEY>
 
 ### Options
 ```
--c, --config <CONFIG>  Path to Amphitheatre config [default: $HOME/.amp/config]
 -g, --global           Set value for global config
 ```
 
@@ -108,5 +103,4 @@ amp config unset [OPTIONS] <KEY>
 
 ### Environment vars
 
-* `AMP_CONFIG` (same as `--config`)
 * `AMP_GLOBAL` (same as `--global`)
