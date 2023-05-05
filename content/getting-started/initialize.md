@@ -26,12 +26,22 @@ metadata:
   name: amp-configurations
   namespace: amp-system
 data:
-  confgiuration.toml: |
-    [registry."https://index.docker.io/v1/"]
-    username = '<username>'
-    password = '<password>'
+  configuration.toml: |
+    [[registries]]
+    name = "Docker Hub"
+    default = true
+    server = "https://index.docker.io/v1/"
+    username = "<username>"
+    password = "<password>"
+    token = "<token>"
 
-    [repositories]
+    [[repositories]]
+    name = "GitHub"
+    driver = "github"
+    server = "https://github.com"
+    username = "<username>"
+    password = "<password>"
+    token = "<token>"
 ```
 
 Apply that configuration to the cluster
