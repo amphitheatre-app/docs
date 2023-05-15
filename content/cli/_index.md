@@ -39,6 +39,7 @@ Other Commands:
 * [amp config](@/cli/config.md) - interact with the global config file
 * [amp context](@/cli/context.md) - configure access to multiple clusters
 * [amp diagnose](@/cli/diagnose.md) - diagnostics of Amphitheatre works in your project
+* [amp list](@/cli/list.md) - List all the running instances
 
 ## Global flags
 
