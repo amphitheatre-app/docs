@@ -6,7 +6,12 @@ weight = 1
 
 ## Usage
 ```
-amp clean [options]
+amp clean [OPTIONS] <ID>
+```
+
+## Arguments:
+```
+  <ID>  The ID of the playbook to delete
 ```
 
 ## Options
@@ -22,7 +27,7 @@ amp clean [options]
 
 #### Print the resources to be deleted
 ```
-amp clean --dry-run
+amp clean --dry-run 0b59f0f4-9893-4635-9b72-ce92f320ddf1
 ```
 
 ## Environment vars
