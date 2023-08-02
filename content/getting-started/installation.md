@@ -28,6 +28,19 @@ To install the chart with the release name amp:
 helm install amp amphitheatre/amphitheatre --create-namespace --namespace amp-system
 ```
 
+Metrics Server is a crucial component in Kubernetes for monitoring container
+resource usage and serves as a prerequisite dependency for the Stats feature in
+the Amphitheatre project. In the Helm Chart, the `metrics-server.enabled`
+parameter defaults to true, ensuring Metrics Server is automatically installed
+during the Amphitheatre installation.
+
+However, if your cluster already has a global Metrics Server running and you
+wish to avoid redundant installation, you can disable the installation of
+Metrics Server by setting the `--set metrics-server.enabled=false` parameter
+when installing Amphitheatre.
+
+For more advanced installation configurations see [Installing API Server](@/installation/api-server.md).
+
 ## 2. Install Desktop Application
 
 Installation varies depending on your operating system, please select the
