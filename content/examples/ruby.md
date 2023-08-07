@@ -1,7 +1,7 @@
 +++
-title = "Run a Rust application"
-description = "Learn how to deploy a Rust application on Amphitheatre"
-weight = 7
+title = "Run a Ruby application"
+description = "Learn how to deploy a Ruby application on Amphitheatre"
+weight = 6
 +++
 
 Getting an application running on Amphitheatre is essentially working out how to
@@ -11,25 +11,24 @@ Amphitheatre platform.
 ## The Example Application
 
 You can get the code for the example from [the GitHub
-repository](https://github.com/amphitheatre-app/amp-example-rust). Just `git clone
-https://github.com/amphitheatre-app/amp-example-rust` to get a local copy.
+repository](https://github.com/amphitheatre-app/amp-example-ruby). Just `git clone
+https://github.com/amphitheatre-app/amp-example-ruby` to get a local copy.
 
-The `amp-example-rust` application is, as you'd expect for an example, small. It's a Rust
-application that loop print the 'Hello world'. Here's all the code from `main.rs`:
+The `amp-example-ruby` application is, as you'd expect for an example, small. It's a Ruby web
+application that response the 'Hello world'. Here's all the code from `app.rb`:
 
-```rust
-fn main() {
-    loop {
-        println!("Hello, world!");
-    }
-}
+```ruby
+class App
+  def self.call(env)
+    [ 200, {"Content-Type" => "text/html"}, ["hello world!"]]
+  end
+end
 ```
 
-## Building the Application
+## Running the Application
 
-As with most Rust applications with Cargo, a simple `cargo build` will create a binary
-which we can run. So, the raw application works. Now to package
-it up for Amphitheatre.
+Run `bundle exec rack` to start the application, And connect to localhost:9292 to confirm
+that you have a working Ruby application. Not to package it up to Amphitheatre.
 
 ## Install Amphitheatre
 
@@ -47,10 +46,10 @@ code, then prompt you to deploy.
 $ amp init
 
 Scanning source code
- Detected Rust app
+ Detected a Ruby app
  Using the following build configuration
          Builder: paketobuildpacks/builder:base
-         Buildpacks: docker.io/paketocommunity/rust
+         Buildpacks: gcr.io/paketo-buildpacks/ruby
 Wrote config file .amp.toml
 Your Character is ready. run with `amp run`
 ...
@@ -71,20 +70,17 @@ The `.amp.toml` file now contains a default configuration for deploying your
 `Character`. If we look at the `.amp.toml` file we can see it in there:
 
 ```toml
-version = 1
-
-[character]
-name = "amp-example-rust"
+name = "amp-example-ruby"
 version = "0.0.1"
 authors = ["Eguo Wang <wangeguo@gmail.com>"]
 edition = "v1"
-description = "A simple Rust example app"
+description = "A simple Ruby example app"
 readme = "README.md"
-homepage = "https://github.com/amphitheatre-app/amp-example-rust"
-repository = "https://github.com/amphitheatre-app/amp-example-rust"
+homepage = "https://github.com/amphitheatre-app/amp-example-ruby"
+repository = "https://github.com/amphitheatre-app/amp-example-ruby"
 license = "Apache-2.0"
 license-file = "LICENSE"
-keywords = ["example", "rust", "getting-started"]
+keywords = ["example", "ruby", "getting-started"]
 categories = ["example"]
 ```
 
@@ -93,7 +89,8 @@ exists, specifically for the Character name value at the start. That name will
 be used to identify the Character to the Amphitheatre platform. The rest of the
 file contains settings to be applied to the Character when it deploys.
 
-See the [Rust Cloud Native Buildpack](https://github.com/paketo-community/rust)
+See the [Paketo Ruby Buildpack
+documentation](https://paketo.io/docs/howto/ruby/)
 for more options.
 
 ## Deploying to Amphitheatre
@@ -104,10 +101,10 @@ To deploy your Character, just run:
 amp run
 ```
 
-This will lookup our `.amp.toml` file, and get the Character name `amp-example-rust`
+This will lookup our `.amp.toml` file, and get the Character name `amp-example-ruby`
 from there. Then `amp` will start the process of deploying our Character to the
 Amphitheatre platform. `amp` will return you to the command line when it's done.
 
 ## Arrived at Destination
 
-You have successfully built, deployed your first Rust application on Amphitheatre.
+You have successfully built, deployed your first Ruby application on Amphitheatre.
