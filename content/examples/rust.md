@@ -71,9 +71,6 @@ The `.amp.toml` file now contains a default configuration for deploying your
 `Character`. If we look at the `.amp.toml` file we can see it in there:
 
 ```toml
-version = 1
-
-[character]
 name = "amp-example-rust"
 version = "0.0.1"
 authors = ["Eguo Wang <wangeguo@gmail.com>"]

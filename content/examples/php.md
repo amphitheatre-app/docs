@@ -43,7 +43,7 @@ Hello, World!
 
 We are ready to start working with Amphitheatre and that means we need `amp`, our CLI
 app for managing apps on Amphitheatre. If you've already installed it, carry on. If not,
-hop over to [our installation guide](@/installation/_index.md). 
+hop over to [our installation guide](@/installation/_index.md).
 
 ## Initialize the Character
 
@@ -79,9 +79,6 @@ The `.amp.toml` file now contains a default configuration for deploying your
 `Character`. If we look at the `.amp.toml` file we can see it in there:
 
 ```toml
-version = 1
-
-[character]
 name = "amp-example-php"
 version = "0.0.1"
 authors = ["Eguo Wang <wangeguo@gmail.com>"]
