@@ -156,6 +156,9 @@ license = "Apache-2.0"
 license-file = "LICENSE"
 keywords = ["example", "static", "getting-started"]
 categories = ["example"]
+
+[build]
+dockerfile = "Dockerfile"
 ```
 
 The amp command will always refer to this file in the current directory if it
