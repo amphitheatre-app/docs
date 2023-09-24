@@ -1,6 +1,6 @@
 +++
-title = "The Manifest Format" 
-weight = 1 
+title = "The Manifest Format"
+weight = 1
 +++
 
 The `.amp.toml` file for each character is called its *manifest*. It is written
@@ -300,6 +300,33 @@ it when `--registry` flag is not specified.
 
 See the [specifying partners page](specifying-partners) for
 information on the `[partners]` section.
+
+### Sample `.amp.toml` file
+
+This sample `amp.toml` demonstrates how you can combine multiple settings in a
+single file. It’s not a comprehensive example of all available configuration options.
+
+```toml
+[character]
+name = "amp-example-go"
+version = "0.0.2"
+authors = ["Eguo Wang <wangeguo@gmail.com>"]
+edition = "v1"
+description = "A simple Golang example app"
+readme = "README.md"
+homepage = "https://github.com/amphitheatre-app/amp-example-go"
+repository = "https://github.com/amphitheatre-app/amp-example-go"
+license = "Apache-2.0"
+license-file = "LICENSE"
+keywords = ["example", "golang", "getting-started"]
+categories = ["example"]
+
+[partners]
+mysql = { version = "8.0", registry = "catalog" }
+my-storage-service = { version = "v1", registry = "hub" }
+bar = { repo = "https://github.com/foo/bar", branch = "master" }
+another-local-serivce = { path = "pkg/another-local-serivce" }
+```
 
 [`amp init`]: @/cli/init.md
 [`amp run`]: @/cli/run.md
