@@ -11,7 +11,7 @@ in the [TOML] format. Every manifest file consists of the following sections:
   * [`version`](#the-version-field) — The version of the character.
   * [`authors`](#the-authors-field) — The authors of the character.
   * [`description`](#the-description-field) — A description of the character.
-  * [`documentation`](#the-documentation-field) — URL of the package
+  * [`documentation`](#the-documentation-field) — URL of the character
     documentation.
   * [`readme`](#the-readme-field) — Path to the character's README file.
   * [`homepage`](#the-homepage-field) — URL of the character homepage.
