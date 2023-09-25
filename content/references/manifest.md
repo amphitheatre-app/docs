@@ -6,7 +6,7 @@ weight = 1
 The `.amp.toml` file for each character is called its *manifest*. It is written
 in the [TOML] format. Every manifest file consists of the following sections:
 
-* [`[character]`](#the-character-section) — Defines a character.
+* [`meta`](#the-meta-section) — Defines a character.
   * [`name`](#the-name-field) — The name of the character.
   * [`version`](#the-version-field) — The version of the character.
   * [`authors`](#the-authors-field) — The authors of the character.
@@ -30,12 +30,11 @@ in the [TOML] format. Every manifest file consists of the following sections:
     character.
 * [`[partners]`](#the-partners-section) — Partner dependencies.
 
-### The `[character]` section
+### The meta section
 
-The first section in a `.amp.toml` is `[character]`.
+The first section in a `.amp.toml` is metadata.
 
 ```toml
-[character]
 name = "hello_world" # the name of the character
 version = "0.1.0"    # the current version, obeying semver
 authors = ["Alice <a@example.com>", "Bob <b@example.com>"]
@@ -83,7 +82,6 @@ The `description` is a short blurb about the character. [Registry] will display
 this with your character. This should be plain text (not Markdown).
 
 ```toml
-[character]
 # ...
 description = "A short description of my character"
 ```
@@ -96,7 +94,6 @@ The `documentation` field specifies a URL to a website hosting the character’s
 documentation.
 
 ```toml
-[character]
 # ...
 documentation = "https://docs.rs/bitflags"
 ```
@@ -109,7 +106,6 @@ file will be transferred to the registry when you publish. [Registry] will
 interpret it as Markdown and render it on the character's page.
 
 ```toml
-[character]
 # ...
 readme = "README.md"
 ```
@@ -126,7 +122,6 @@ The `homepage` field should be a URL to a site that is the home page for your
 character.
 
 ```toml
-[character]
 # ...
 homepage = "https://example.com/"
 ```
@@ -137,7 +132,6 @@ The `repository` field should be a URL to the source repository for your
 character.
 
 ```toml
-[character]
 # ...
 repository = "https://github.com/amphitheatre-app/amp-example-go/"
 ```
@@ -157,7 +151,6 @@ SPDX license expressions support AND and OR operators to combine multiple
 licenses.
 
 ```toml
-[character]
 # ...
 license = "MIT OR Apache-2.0"
 ```
@@ -174,7 +167,6 @@ If a character is using a nonstandard license, then the `license-file` field may
 be specified in lieu of the `license` field.
 
 ```toml
-[character]
 # ...
 license-file = "LICENSE.txt"
 ```
@@ -188,7 +180,6 @@ can help when searching for the character on a registry, and you may choose any
 words that would help someone find this character.
 
 ```toml
-[character]
 # ...
 keywords = ["gamedev", "graphics"]
 ```
@@ -219,13 +210,11 @@ the `exclude` field identify a set of files that are not included, and the
 patterns in `include` specify files that are explicitly included.
 
 ```toml
-[character]
 # ...
 exclude = ["/ci", "images/", ".*"]
 ```
 
 ```toml
-[character]
 # ...
 include = ["/src", "COPYRIGHT", "/examples", "!/examples/big_example"]
 ```
@@ -296,7 +285,6 @@ character registry (like *[Registry]*) by mistake, for instance to keep a
 character private in a company.
 
 ```toml
-[character]
 # ...
 publish = false
 ```
@@ -305,7 +293,6 @@ The value may also be an array of strings which are registry names that are
 allowed to be published to.
 
 ```toml
-[character]
 # ...
 publish = ["some-registry-name"]
 ```
@@ -392,7 +379,6 @@ single file. It’s not a comprehensive example of all available configuration
 options.
 
 ```toml
-[character]
 name = "amp-example-go"
 version = "0.0.2"
 authors = ["Eguo Wang <wangeguo@gmail.com>"]
