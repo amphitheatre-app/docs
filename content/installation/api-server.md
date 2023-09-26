@@ -32,7 +32,7 @@ amphitheatre` to see the charts.
 To install the chart with the release name `amp`:
 
 ```sh
-  helm install amp amphitheatre/amphitheatre --create-namespace --namespace=amp-system
+  helm upgrade --install amp amphitheatre/amphitheatre --create-namespace --namespace=amp-system
 ```
 
 The command deploys Amphitheatre API Server on the Kubernetes cluster in the
