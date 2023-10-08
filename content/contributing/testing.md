@@ -23,8 +23,8 @@ code owners will be notified.
 
 ### Pre-Requisites for PR Merge
 
-In order for a PR to be merged, the following conditions should exist: 
-1. The PR has passed all the automated tests (style, build & conformance tests). 
-2. PR commits have been signed with the --signoff option. 
-3. PR was reviewed and approved by a code owner. 
+In order for a PR to be merged, the following conditions should exist:
+1. The PR has passed all the automated tests (style, build & conformance tests).
+2. PR commits have been signed with the `--signoff` option.
+3. PR was reviewed and approved by a code owner.
 4. PR is rebased against upstream's master branch.

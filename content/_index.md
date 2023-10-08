@@ -13,7 +13,7 @@ not use them for official production environments.
 Amphitheatre is an open source developer platform that facilitates continuous
 development of applications and microservices. You can iterate your application
 source code locally, then deploy to a local or remote Kubernetes cluster, just
-like docker build && kubectl apply or docker-compose up.
+like `docker build && kubectl apply` or `docker-compose up`.
 
 Amphitheatre handles the workflow of building, pushing, and deploying
 applications. It also provides building blocks and describes customization of
@@ -44,5 +44,5 @@ CI/CD pipelines.
 
 {{ grid(columns=2)}}
 {{ column() }}{{ card(title="References", text="Detailed documentation on the Amphitheatre API, CLI and more.", url="/references/") }}{{ end() }}
-{{ column() }}{{ card(title="Contributing", text="How to contribute to the Amphitheatre project and the various repositories.", url="/contributing/") }} {{ end() }} 
+{{ column() }}{{ card(title="Contributing", text="How to contribute to the Amphitheatre project and the various repositories.", url="/contributing/") }} {{ end() }}
 {{ end() }}
