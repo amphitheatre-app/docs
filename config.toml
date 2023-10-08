@@ -81,13 +81,14 @@ description = "查找用户指南、开发人员指南、API 参考资料、教�
 build_search_index = false
 
 [translations]
-# title = "Amphitheatre Docs"
-# description = "Find user guides, developer guides, API references, tutorials, and more."
 label_table_contents = "On this page"
 label_edit_button = "View on Github"
 label_edit_tips = "View and edit this file on Github"
 search_placeholder = "Search docs..."
 label_sidebar_title = "Browse docs"
+
+label_en = "English"
+label_zh = "简体中文"
 
 [languages.zh.translations]
 label_table_contents = "快速导航"
