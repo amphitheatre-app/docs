@@ -26,4 +26,9 @@ blockquote {
   margin-bottom: 1rem;
   border-left: 4px solid var(--bs-link-color);
   padding-left: 1rem;
+  background-color: #5d2f8624;
+}
+
+blockquote p {
+  padding: 10px;
 }

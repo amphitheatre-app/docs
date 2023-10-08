@@ -75,6 +75,27 @@ library = "katex"  # options: "katex", "mathjax". default is "katex".
 toc = true
 listing = true
 
+[languages.zh]
+title = "Amphitheatre 文档"
+description = "查找用户指南、开发人员指南、API 参考资料、教程等"
+build_search_index = false
+
+[translations]
+# title = "Amphitheatre Docs"
+# description = "Find user guides, developer guides, API references, tutorials, and more."
+label_table_contents = "On this page"
+label_edit_button = "View on Github"
+label_edit_tips = "View and edit this file on Github"
+search_placeholder = "Search docs..."
+label_sidebar_title = "Browse docs"
+
+[languages.zh.translations]
+label_table_contents = "快速导航"
+label_edit_button = "在 Github 上查看"
+label_edit_tips = "在 Github 上查看或编辑此文件"
+search_placeholder = "搜索此文档..."
+label_sidebar_title = "浏览文档"
+
 [[extra.menu.social]]
 name = "GitHub"
 pre = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>'
