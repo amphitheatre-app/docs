@@ -397,7 +397,7 @@ categories = ["example"]
 mysql = { version = "8.0", registry = "catalog" }
 my-storage-service = { version = "v1", registry = "hub" }
 bar = { repo = "https://github.com/foo/bar", branch = "master" }
-another-local-serivce = { path = "pkg/another-local-serivce" }
+another-local-service = { path = "pkg/another-local-service" }
 ```
 
 [`amp init`]: @/cli/init.md
