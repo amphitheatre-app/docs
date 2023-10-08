@@ -17,12 +17,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 {{ macros_head::stylesheet() }}
 
-{% if current_path -%}
-  {% set current_section = current_path | split(pat="/") | nth(n=0) -%}
-{% else -%}
-  {% set current_section = '/' -%}
-{% endif -%}
-
 {% block seo %}
   {% if config.extra.title_separator %}
     {% set title_separator = " " ~ config.extra.title_separator ~ " " %}
@@ -37,7 +31,7 @@
 {% block body %}{% set page_class="home" %}{% endblock body %}
 <body class="{{ page_class }}">
   {% block header %}
-    {{ macros_header::header(current_section="/") }}
+    {{ macros_header::header() }}
   {% endblock header %}
 
   <div class="container mt-3 my-md-4 docs-layout">

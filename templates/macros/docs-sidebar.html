@@ -11,7 +11,13 @@
       <nav class="docs-links w-100" id="docs-nav" aria-label="Docs navigation">
         <nav class="docs-links" role="navigation">
           <ul class="docs-link-nav list-unstyled">
-            {% set index = get_section(path="_index.md") %}
+            {% if lang == config.default_language %}
+              {% set root_section_path = "_index.md" %}
+            {% else %}
+              {% set root_section_path = "_index." ~ lang ~ ".md" %}
+            {% endif %}
+            {% set index = get_section(path=root_section_path) %}
+
             {% for s in index.subsections %}
               {% set subsection = get_section(path=s) %}
               <li>

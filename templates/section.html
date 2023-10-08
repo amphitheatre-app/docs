@@ -5,7 +5,7 @@
 {% block seo %}
   {{ super() }}
   {% set title_addition = "" %}
-  
+
   {% if section.title and config.title %}
     {% set title = section.title %}
     {% set title_addition = title_separator ~ config.title %}
@@ -14,18 +14,18 @@
   {% else %}
     {% set title = config.title %}
   {% endif %}
-  
+
   {% if section.description %}
     {% set description = section.description %}
   {% else %}
     {% set description = config.description %}
   {% endif %}
-  
+
   {{ macros_head::seo(title=title, title_addition=title_addition, description=description) }}
 {% endblock seo %}
 
 {% block header %}
-  {{ macros_header::header(current_section=current_section)}}
+  {{ macros_header::header()}}
 {% endblock header %}
 
 {% block body %}
@@ -49,7 +49,7 @@
     </div>
     {% if section.description %}<p class="text-muted mb-0">{{ section.description | safe }}</p>{% endif %}
   </div>
-  
+
     <div class="docs-content ps-lg-2">
       {{ section.content | safe }}
 
@@ -61,8 +61,7 @@
 
       {% if listing %}
         <div class="card-list">
-          {% set index_path = current_path ~ "_index.md" | trim_start_matches(pat="/") %}
-          {% set index = get_section(path=index_path) %}
+          {% set index = get_section(path=section.relative_path) %}
 
           {% for s in index.subsections %}
             {% set subsection = get_section(path=s) %}

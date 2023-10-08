@@ -8,7 +8,7 @@
   {% else %}
     {% set title = "" %}
   {% endif %}
-  
+
   {% if config.extra.title_addition and title %}
     {% set title_addition = title_separator ~ config.extra.title_addition %}
   {% elif config.extra.title_addition %}
@@ -16,14 +16,14 @@
   {% else %}
     {% set title_addition = "" %}
   {% endif %}
-  
+
   {% set description = config.description %}
-  
+
   {{ macros_head::seo(title=title, title_addition=title_addition, description=description, is_home=true) }}
 {% endblock seo %}
 
 {% block header %}
-  {{ macros_header::header(current_section=current_section)}}
+  {{ macros_header::header()}}
 {% endblock header %}
 
 {% block content %}
@@ -36,7 +36,7 @@
   </div>
 
   {{ macros_toc::docs_toc(page=section) }}
-  
+
     <div class="docs-content ps-lg-2">
       {{ section.content | safe }}
     </div>

@@ -1,4 +1,4 @@
-{% macro header(current_section) %}
+{% macro header() %}
 <div class="header-bar fixed-top"></div>
 <header class="navbar docs-navbar fixed-top navbar-expand-lg navbar-light">
 	<div class="container">
@@ -11,12 +11,12 @@
 						d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
 					</path>
 				</svg>
-		
+
 				<span class="d-none fs-6 pe-1">Browse</span>
 			</button>
 		</div>
 		<a class="navbar-brand order-1 order-md-0 me-auto" href="{{ config.base_url | safe }}">{{ config.title | default(value="Doks") }}</a>
-		
+
 		<input class="menu-btn order-4" type="checkbox" id="menu-btn">
 		<label class="menu-icon d-lg-none order-3" for="menu-btn">
 		<svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -31,27 +31,6 @@
 			{% endif %}
 		</ul>
 		<div class="collapse navbar-collapse order-4 order-md-1">
-			<ul class="navbar-nav main-nav me-auto order-5 order-md-2">
-				{% if lang == config.default_language %}
-					{% set rootsectionpath = "_index.md" %}
-				{% else %}
-					{% set rootsectionpath = "_index." ~ lang ~ ".md" %}
-				{% endif %}
-				{% set mainsec = get_section(path=rootsectionpath) %}
-				{% if mainsec.extra.menu.main %}
-					{% for val in mainsec.extra.menu.main %}
-						<li class="nav-item{% if current_section == val.section %} {{ current_section }} active{% endif %}">
-							<a class="nav-link" href="{{ get_url(path=val.url, trailing_slash=true) | safe }}">{{ val.name }}</a>
-						</li>
-					{% endfor %}
-				{% elif config.extra.menu.main %}
-					{% for val in config.extra.menu.main %}
-						<li class="nav-item{% if current_section == val.section %} {{ current_section }} active{% endif %}">
-							<a class="nav-link" href="{{ get_url(path=val.url, trailing_slash=true) | safe }}">{{ val.name }}</a>
-						</li>
-					{% endfor %}
-				{% endif %}
-			</ul>
 			<div class="break order-6 d-md-none"></div>
 			{% if config.build_search_index %}
 				<form class="navbar-form flex-grow-1 order-7 order-md-3">
