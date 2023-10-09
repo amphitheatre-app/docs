@@ -3,22 +3,18 @@ title = "介绍"
 description = "欢迎访问 Amphitheatre 文档站点！"
 +++
 
-> **重要!!!**\
-本文档仍在进行中，内容将随时更新，一些链接或指南是预览版，不代表实际可用性，请不要在正式生产环境中使用它们。
+> **重要提示!!!**\
+本文档仍在进行中，内容将随时更新，一些链接或指南是预览版，不代表实际可用性，请勿用于正式生产环境中。
 
 ## 什么是 Amphitheatre?
 
-Amphitheatre 是一个开源的开发者平台，用于支持应用程序和微服务的持续开发。您可以在本地迭代应用程序源代码，然后部署到本地或远程的 Kubernetes 集群，就像执行 `docker build && kubectl apply` 或 `docker-compose up` 一样。
-
-Amphitheatre 处理构建、推送和部署应用程序的工作流程。它还提供了构建块，并描述了自定义 CI/CD 流水线。
-
-{{ button(title="快速入门", url="/zh/getting-started/") }}
+**Amphitheatre** 是一个开源的开发者平台，旨在帮助开发者在云端立即启动新的自动化开发环境。它提供按需且预先配置好的所有工具、库和依赖项，以确保您能够立即开始编写代码。您可以在本地编辑应用程序源代码，Amphitheatre 会自动将您的变更增量部署到 Kubernetes 集群，使得在本地开发和远程部署之间的切换变得更加顺畅和高效。
 
 ## 使用 Amphitheatre 开始开发
 
 {{ grid(columns=3)}}
 {{ column() }}{{ card(title="入门指南", text="如何在您的环境中快速上手并运行 Amphitheatre。", url="/zh/getting-started/") }}{{ end() }}
-{{ column() }}{{ card(title="快速入门", text="包含代码示例的教程集合，帮助您快速入门 Amphitheatre。", url="/zh/getting-started/quickstart/") }} {{ end() }}
+{{ column() }}{{ card(title="快速入门", text="包含代码示例的教程集合，帮助您快速入门。", url="/zh/getting-started/quickstart/") }} {{ end() }}
 {{ column() }}{{ card(title="概念", text="了解 Amphitheatre，包括其主要功能和能力。", url="/zh/concepts/") }} {{ end() }}
 {{ end() }}
 
