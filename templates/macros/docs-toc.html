@@ -11,7 +11,7 @@
 	<button class="btn btn-link link-dark p-md-0 mb-2 mb-md-0 text-decoration-none docs-toc-toggle d-md-none"
 		type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false"
 		aria-controls="tocContents">
-		On this page
+		{{ trans(key="label_table_contents", lang=lang) }}
 		<svg class="bi d-md-none ms-2" aria-hidden="true">
 			<path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"></path>
 		</svg>
@@ -22,14 +22,14 @@
 		<nav id="TableOfContents">
 			<ul>
 				{% for h1 in page.toc %}
-				<li><a href="{{ h1.permalink | safe}}">{{ h1.title }}</a></li>
-				{% if h1.children %}
-				<ul>
-					{% for h2 in h1.children %}
-					<li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
-					{% endfor %}
-				</ul>
-				{% endif %}
+					<li><a href="{{ h1.permalink | safe}}">{{ h1.title }}</a></li>
+					{% if h1.children %}
+						<ul>
+							{% for h2 in h1.children %}
+								<li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
+							{% endfor %}
+						</ul>
+					{% endif %}
 				{% endfor %}
 			</ul>
 		</nav>
