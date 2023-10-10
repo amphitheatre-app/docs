@@ -7,46 +7,29 @@ weight = 3
 toc = false
 +++
 
+Amphitheatre CLI can be installed by using various package managers on Linux, macOS and Windows.
+The precompiled binaries are available from the [**GitHub releases page**](https://github.com/amphitheatre-app/cli/releases).
+Simply download the appropriate binary and add it to your `PATH`.
+
 For detailed install instructions, follow the guide for your operating system.
 
 {{ tabs(id="os", items=["Linux", "macOS", "Windows", "Docker"])}}
 
 {{ pane(tab="os", index=1) }}
 
-The latest stable binaries can be found here:
-
-- Linux x86_64 (amd64): [https://repo.amphitheatre.app/cli/releases/latest/amp-linux-amd64](https://repo.amphitheatre.app/cli/releases/latest/amp-linux-amd64)
-- Linux ARMv8 (arm64): [https://repo.amphitheatre.app/cli/releases/latest/amp-linux-arm64](https://repo.amphitheatre.app/cli/releases/latest/amp-linux-arm64)
-
-Simply download the appropriate binary and add it to your PATH. Or, copy+paste
-one of the following commands in your terminal:
-
-```
-# For Linux x86_64 (amd64)
-curl -Lo amp https://repo.amphitheatre.app/cli/releases/latest/amp-linux-amd64 && \
-sudo install amp /usr/local/bin/
-```
-
-```
-# For Linux ARMv8 (arm64)
-curl -Lo amp https://repo.amphitheatre.app/cli/releases/latest/amp-linux-arm64 && \
-sudo install amp /usr/local/bin/
-```
-
-We also release a bleeding edge build, built from the latest commit:
-
-- Linux x86_64 (amd64): [https://repo.amphitheatre.app/cli/builds/latest/amp-linux-amd64](https://repo.amphitheatre.app/cli/builds/latest/amp-linux-amd64)
-- Linux ARMv8 (arm64): [https://repo.amphitheatre.app/cli/builds/latest/amp-linux-arm64](https://repo.amphitheatre.app/cli/builds/latest/amp-linux-arm64)
+Copy and paste one of the following commands in your terminal:
 
 ```
 # For Linux on x86_64 (amd64)
-curl -Lo amp https://repo.amphitheatre.app/cli/builds/latest/amp-linux-amd64 && \
+curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-linux-amd64.tar.gz && \
+tar -xzf amp-linux-amd64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
 
 ```
-# For Linux on ARMv8 (arm64)
-curl -Lo amp https://repo.amphitheatre.app/cli/builds/latest/amp-linux-arm64 && \
+# For Linux on aarch64 (arm64)
+curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-linux-arm64.tar.gz && \
+tar -xzf amp-linux-arm64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
 
@@ -54,40 +37,19 @@ sudo install amp /usr/local/bin/
 
 {{ pane(tab="os", index=2) }}
 
-The latest stable binaries can be found here:
-
-- Darwin x86_64 (amd64): [https://repo.amphitheatre.app/cli/releases/latest/amp-darwin-amd64](https://repo.amphitheatre.app/cli/releases/latest/amp-darwin-amd64)
-- Darwin ARMv8 (arm64): [https://repo.amphitheatre.app/cli/releases/latest/amp-darwin-arm64](https://repo.amphitheatre.app/cli/releases/latest/amp-darwin-arm64)
-
-Simply download the appropriate binary and add it to your PATH. Or, copy+paste
-one of the following commands in your terminal:
+Copy and paste one of the following commands in your terminal:
 
 ```
 # For macOS on x86_64 (amd64)
-curl -Lo amp https://repo.amphitheatre.app/cli/releases/latest/amp-darwin-amd64 && \
+curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-darwin-amd64.tar.gz && \
+tar -xzf amp-darwin-amd64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
 
 ```
-# For macOS on ARMv8 (arm64)
-curl -Lo amp https://repo.amphitheatre.app/cli/releases/latest/amp-darwin-arm64 && \
-sudo install amp /usr/local/bin/
-```
-
-We also release a bleeding edge build, built from the latest commit:
-
-- Darwin x86_64 (amd64): [https://repo.amphitheatre.app/cli/builds/latest/amp-darwin-amd64](https://repo.amphitheatre.app/cli/builds/latest/amp-darwin-amd64)
-- Darwin ARMv8 (arm64): [https://repo.amphitheatre.app/cli/builds/latest/amp-darwin-arm64](https://repo.amphitheatre.app/cli/builds/latest/amp-darwin-arm64)
-
-```
-# For macOS on x86_64 (amd64)
-curl -Lo amp https://repo.amphitheatre.app/cli/builds/latest/amp-darwin-amd64 && \
-sudo install amp /usr/local/bin/
-```
-
-```
-# For macOS on ARMv8 (arm64)
-curl -Lo amp https://repo.amphitheatre.app/cli/builds/latest/amp-darwin-arm64 && \
+# For macOS on aarch64 (arm64)
+curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-darwin-arm64.tar.gz && \
+tar -xzf amp-darwin-arm64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
 
@@ -109,15 +71,18 @@ sudo port install amp
 
 {{ pane(tab="os", index=3) }}
 
-The latest stable release binary can be found here:
+1. First, visit the following link to download the file:
 
-[https://repo.amphitheatre.app/cli/releases/latest/amp-windows-amd64.exe](https://repo.amphitheatre.app/cli/releases/latest/amp-windows-amd64.exe)
+    [https://github.com/amphitheatre-app/cli/releases/download/latest/amp-windows-amd64.zip](https://github.com/amphitheatre-app/cli/releases/download/latest/amp-windows-amd64.zip)
 
-Simply download it and place it in your `PATH` as `amp.exe`.
+    Click on the link, and your browser will begin downloading the compressed file (`amp-windows-amd64.zip`).
 
-We also release a **bleeding edge** build, built from the latest commit:
+2. Once the download is complete, you can extract the file to a directory of your choice.
+    You can do this using the built-in decompression tool of your operating system or a third-party compression tool like 7-Zip or WinRAR.
 
-[https://repo.amphitheatre.app/cli/builds/latest/amp-windows-amd64.exe](https://repo.amphitheatre.app/cli/builds/latest/amp-windows-amd64.exe)
+3. After extraction, you will have an executable file named `amp.exe``.
+
+4. Finally, add the `amp.exe` file to your `PATH` environment variable so that you can conveniently run the `amp` command from any location.
 
 ### Scoop
 
@@ -150,15 +115,7 @@ choco install -y amp
 For the latest stable release, you can use:
 
 ```
-docker run amphitheatre/amp:latest amp <command>
-```
-
-### Bleeding edge binary
-
-For the latest bleeding edge build:
-
-```
-docker run amphitheatre/amp:edge amp <command>
+docker run ghcr.io/amphitheatre-app/amp:latest amp <command>
 ```
 
 {{ end() }}
