@@ -1,5 +1,5 @@
 +++
-title = "运行 Golang 应用程序"
+title = "运行 Golang 应用"
 description = "学习如何在 Amphitheatre 上部署 Golang 应用程序"
 weight = 1
 +++

@@ -1,5 +1,5 @@
 +++
-title = "示例"
+title = "示例程序"
 description = "语言和框架指南"
 weight = 40
 sort_by = "weight"

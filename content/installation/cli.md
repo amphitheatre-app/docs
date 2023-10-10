@@ -1,7 +1,7 @@
 +++
 title = "Installing CLI"
 description = "Install the Amphitheatre Command Line Tool."
-weight = 3
+weight = 4
 
 [extra]
 toc = false

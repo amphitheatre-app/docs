@@ -1,7 +1,7 @@
 +++
 title = "安装桌面应用程序"
 description = "安装 Amphitheatre 桌面应用程序。"
-weight = 1
+weight = 3
 +++
 
 Amphitheatre 桌面是轻量且易于在所有主要平台上安装的应用程序。您可以在 [Amphitheatre

@@ -1,5 +1,5 @@
 +++
-title = "贡献"
+title = "贡献指南"
 weight = 80
 sort_by = "weight"
 

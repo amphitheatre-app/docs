@@ -12,12 +12,22 @@ not use them for official production environments.
 
 **Amphitheatre** is an open-source developer platform designed to assist developers in quickly launching new automated development environments in the cloud. It provides on-demand, pre-configured tools, libraries, and dependencies, ensuring you can start coding immediately. You can edit your application source code locally, and Amphitheatre will automatically incrementally deploy your changes to a Kubernetes cluster, making the transition between local development and remote deployment smoother and more efficient.
 
+## Features
+
+- **No dependencies** No need to configure the local development environment and support for multiple programming languages and frameworks.
+
+- **Unlimited isolation environments** Rapidly generate countless isolated integration test environments without any limitations, streamlining the test process and reducing costs
+- **Multi-component applications** Supports applications with multiple components, ideal for microservices-based applications and collaborative multi-person development.
+- **Live Update** Lets you skip image builds altogether and update running containers with new code in seconds instead of minutes.
+- **Integrations** Integrate development, testing, deployment, and other tools to create a comprehensive software integration solution, automating workflow processes to streamline software development.
+- **Snapshots** Snapshots lets you share your dev environment and collaborate on issues as quickly as looking at the monitor next to you.
+
 ## Start developing with Amphitheatre
 
 {{ grid(columns=3)}}
 {{ column() }}{{ card(title="Getting started", text="How to get up and running with Amphitheatre in your environment in minutes.", url="/getting-started/") }}{{ end() }}
-{{ column() }}{{ card(title="Quickstarts", text="A collection of tutorials with code samples to get you started quickly with Amphitheatre.", url="/getting-started/quickstart/") }} {{ end() }}
-{{ column() }}{{ card(title="Concepts", text="Learn about Amphitheatre, including its main features and capabilities.", url="/concepts/") }} {{ end() }}
+{{ column() }}{{ card(title="Core Concepts", text="Learn about Amphitheatre, including its main features and capabilities.", url="/concepts/") }} {{ end() }}
+{{ column() }}{{ card(title="Installation Guide", text="Learn how to install and configure the Amphitheatre in your infrastructure.", url="/installation/") }} {{ end() }}
 {{ end() }}
 
 ## Language & Framework Guides

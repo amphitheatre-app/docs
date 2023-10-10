@@ -1,5 +1,5 @@
 +++
-title = "Builders" 
+title = "Builders"
 weight = 2
 +++
 
@@ -36,7 +36,7 @@ buildpack, you can specify it by name using the `buildpacks` setting in
 `.amp.toml`.
 
 Buildpack configuration options - such as `YARN_PRODUCTION` in the [Heroku Nodejs
-Buildpack](https://devcenter.heroku.com/articles/nodejs-support#using-npm-install) - 
+Buildpack](https://devcenter.heroku.com/articles/nodejs-support#using-npm-install) -
 can be set via [Docker build arguments](@/references/manifest.md).
 
 The deploy process works the same way with buildpacks.

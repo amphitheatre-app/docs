@@ -47,7 +47,7 @@ weight = 1
 
 ## 接下来
 
-成功安装后，您仍然需要进行一些初始配置工作，详情请参阅在[您的基础架构中初始化 Amphitheatre](@/getting-started/initialize.zh.md)。
+成功安装后，您仍然需要进行一些初始配置工作，详情请参阅在[您的基础架构中初始化 Amphitheatre](@/installation/configuration.zh.md)。
 
 ## 故障排除
 

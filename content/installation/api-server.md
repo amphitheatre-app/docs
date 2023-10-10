@@ -61,7 +61,7 @@ deletes the release.
 ## Next
 
 When successfully installed, you still need to do some initial configuration work,
-the details of which can be found in the [Initialize Amphitheatre in your infrastructure](@/getting-started/initialize.md).
+the details of which can be found in the [Initialize Amphitheatre in your infrastructure](@/installation/configuration.md).
 
 ## Troubleshooting
 

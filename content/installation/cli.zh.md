@@ -1,7 +1,7 @@
 +++
 title = "安装命令行工具"
 description = "安装 Amphitheatre 命令行工具。"
-weight = 3
+weight = 4
 
 [extra]
 toc = false

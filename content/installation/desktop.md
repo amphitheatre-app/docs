@@ -1,7 +1,7 @@
 +++
 title = "Installing Desktop"
 description = "Install the Amphitheatre Desktop Application"
-weight = 1
+weight = 3
 +++
 
 Amphitheatre Desktop is lightweight and simple to install on all major
