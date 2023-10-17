@@ -15,7 +15,11 @@
 				<span class="d-none fs-6 pe-1">Browse</span>
 			</button>
 		</div>
-		<a class="navbar-brand order-1 order-md-0 me-auto" href="https://amphitheatre.app/">Amphitheatre</a>
+		{% if lang == config.default_language %}
+			<a class="navbar-brand order-1 order-md-0 me-auto" href="https://amphitheatre.app/">Amphitheatre</a>
+		{% else %}
+			<a class="navbar-brand order-1 order-md-0 me-auto" href="https://amphitheatre.app/{{ lang }}/">Amphitheatre</a>
+		{% endif %}
 
 		<input class="menu-btn order-4" type="checkbox" id="menu-btn">
 		{% if config.build_search_index %}
@@ -37,9 +41,9 @@
 				{% for val in config.extra.menu.main %}
 					<li class="nav-item">
 						{%- if val.path -%}
-							<a class="nav-link {% if val.active %}active{% endif %}" href="{{ get_url(path=val.path, lang=lang) }}">{{ val.name }}</a>
+							<a class="nav-link {% if val.active %}active{% endif %}" href="{{ get_url(path=val.path, lang=lang) }}">{{ trans(key="menu_" ~  val.name, lang=lang) }}</a>
 						{%- else -%}
-							<a class="nav-link {% if val.active %}active{% endif %}" href="{{ val.url | safe }}">{{ val.name }}</a>
+							<a class="nav-link {% if val.active %}active{% endif %}" href="{{ val.url | safe }}">{{ trans(key="menu_" ~  val.name, lang=lang) }}</a>
 						{%- endif -%}
 					</li>
 				{% endfor %}

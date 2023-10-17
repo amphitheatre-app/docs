@@ -87,6 +87,8 @@ label_edit_tips = "View and edit this file on Github"
 search_placeholder = "Search docs..."
 label_sidebar_title = "Browse docs"
 
+menu_documentation = "Documentation"
+
 label_en = "English"
 label_zh = "简体中文"
 
@@ -97,8 +99,10 @@ label_edit_tips = "在 Github 上查看或编辑此文件"
 search_placeholder = "搜索此文档..."
 label_sidebar_title = "浏览文档"
 
+menu_documentation = "文档"
+
 [[extra.menu.main]]
-name = "Documentation"
+name = "documentation"
 path = "@/_index.md"
 active = true
 
