@@ -13,7 +13,7 @@
   {% else %}
     {% set title = config.title %}
   {% endif %}
-  
+
   {% if page.description %}
     {% set description = page.description %}
   {% else %}
@@ -24,12 +24,12 @@
   {% else %}
     {% set page_section = "" %}
   {% endif %}
-  
+
   {{ macros_head::seo(title=title, title_addition=title_addition, description=description, type="article", is_page=true, page_section=page_section) }}
 {% endblock seo %}
 
 {% block header %}
-  {{ macros_header::header(current_section=current_section)}}
+  {{ macros_header::header()}}
 {% endblock header %}
 
 {% block body %}
@@ -55,7 +55,7 @@
     </div>
 
     {{ macros_toc::docs_toc(page=page) }}
-    
+
       <div class="docs-content ps-lg-2">
         {{ page.content | safe }}
       </div>

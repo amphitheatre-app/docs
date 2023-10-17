@@ -15,7 +15,7 @@
 				<span class="d-none fs-6 pe-1">Browse</span>
 			</button>
 		</div>
-		<a class="navbar-brand order-1 order-md-0 me-auto" href="{{ get_url(path="@/_index.md", lang=lang) }}">{{ config.title | default(value="Doks") }}</a>
+		<a class="navbar-brand order-1 order-md-0 me-auto" href="https://amphitheatre.app/">Amphitheatre</a>
 
 		<input class="menu-btn order-4" type="checkbox" id="menu-btn">
 		{% if config.build_search_index %}
@@ -33,6 +33,17 @@
 			{% endif %}
 		</ul>
 		<div class="collapse navbar-collapse order-4 order-md-1">
+			<ul class="navbar-nav main-nav me-auto order-5 order-md-2">
+				{% for val in config.extra.menu.main %}
+					<li class="nav-item">
+						{%- if val.path -%}
+							<a class="nav-link {% if val.active %}active{% endif %}" href="{{ get_url(path=val.path, lang=lang) }}">{{ val.name }}</a>
+						{%- else -%}
+							<a class="nav-link {% if val.active %}active{% endif %}" href="{{ val.url | safe }}">{{ val.name }}</a>
+						{%- endif -%}
+					</li>
+				{% endfor %}
+			</ul>
 			<div class="break order-6 d-md-none"></div>
 			{% if config.build_search_index %}
 				<form class="navbar-form flex-grow-1 order-7 order-md-3">
