@@ -105,7 +105,7 @@ repository = "https://github.com/amphitheatre-app/amp-example-go/"
 
 `license` 字段包含角色所发布的软件许可证的名称。`license-file` 字段包含包含许可证文本的文件的路径（相对于这个 `.amp.toml`）。
 
-[Registry] 将 `license` 字段解释为 [SPDX 2.1 许可证表达式][spdx-2.1-license-expressions]。名称必须是 [SPDX 许可证列表 3.11][spdx-license-list-3.11] 中的已知许可证之一。当前不支持括号。有关更多信息，请参阅[SPDX 网站]。
+[Registry] 将 `license` 字段解释为 [SPDX 2.3 许可证表达式][spdx-2.3-license-expressions]。名称必须是 [SPDX 许可证列表 3.20][spdx-license-list-3.20] 中的已知许可证之一。当前不支持括号。有关更多信息，请参阅[SPDX 网站]。
 
 SPDX 许可证表达式支持 AND 和 OR 运算符，以组合多个许可证。
 
@@ -304,8 +304,7 @@ another-local-service = { path = "pkg/another-local-service" }
 [`amp run`]: @/cli/run.md
 [registry]: https://github.com/amphitheatre-app/catalog
 [publishing]: publishing
-[spdx-2.1-license-expressions]:
-    https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60
-[spdx-license-list-3.11]: https://github.com/spdx/license-list-data/tree/v3.11
-[SPDX site]: https://spdx.org/license-list
+[spdx-2.3-license-expressions]: https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/
+[spdx-license-list-3.20]: https://github.com/spdx/license-list-data/tree/v3.20
+[SPDX 网站]: https://spdx.org
 [TOML]: https://toml.io/

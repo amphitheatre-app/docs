@@ -142,9 +142,9 @@ The `license` field contains the name of the software license that the character
 is released under. The `license-file` field contains the path to a file
 containing the text of the license (relative to this `.amp.toml`).
 
-[Registry] interprets the `license` field as an [SPDX 2.1 license
-expression][spdx-2.1-license-expressions]. The name must be a known license from
-the [SPDX license list 3.11][spdx-license-list-3.11]. Parentheses are not
+[Registry] interprets the `license` field as an [SPDX 2.3 license
+expression][spdx-2.3-license-expressions]. The name must be a known license from
+the [SPDX license list 3.20][spdx-license-list-3.20]. Parentheses are not
 currently supported. See the [SPDX site] for more information.
 
 SPDX license expressions support AND and OR operators to combine multiple
@@ -404,8 +404,7 @@ another-local-service = { path = "pkg/another-local-service" }
 [`amp run`]: @/cli/run.md
 [registry]: https://github.com/amphitheatre-app/catalog
 [publishing]: publishing
-[spdx-2.1-license-expressions]:
-    https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60
-[spdx-license-list-3.11]: https://github.com/spdx/license-list-data/tree/v3.11
-[SPDX site]: https://spdx.org/license-list
+[spdx-2.3-license-expressions]: https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/
+[spdx-license-list-3.20]: https://github.com/spdx/license-list-data/tree/v3.20
+[SPDX site]: https://spdx.org
 [TOML]: https://toml.io/
