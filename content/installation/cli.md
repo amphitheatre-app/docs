@@ -115,7 +115,7 @@ choco install -y amp
 For the latest stable release, you can use:
 
 ```
-docker run ghcr.io/amphitheatre-app/amp:latest amp <command>
+docker run ghcr.io/amphitheatre-app/amp:latest <command>
 ```
 
 {{ end() }}

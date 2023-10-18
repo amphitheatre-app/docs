@@ -110,7 +110,7 @@ choco install -y amp
 对于最新的稳定版本，您可以使用以下命令：
 
 ```
-docker run ghcr.io/amphitheatre-app/amp:latest amp <command>
+docker run ghcr.io/amphitheatre-app/amp:latest <command>
 ```
 
 {{ end() }}

@@ -80,7 +80,7 @@ sudo install amp /usr/local/bin/
 ```
 
 ```
-docker run ghcr.io/amphitheatre-app/amp:latest amp <command>
+docker run ghcr.io/amphitheatre-app/amp:latest <command>
 ```
 
 After you install Amphitheatre CLI, verify that you installed it correctly with:
