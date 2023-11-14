@@ -1,34 +1,24 @@
 +++
-title = "amp diagnose"
-description = "运行 Amphitheatre 的诊断工具"
+title = "amp init"
+description = "在现有目录中创建 Amphitheatre 配置"
 weight = 1
 +++
 
 
 ## 用法
 ```
-amp diagnose [选项]
+amp init [选项]
 ```
 
 ## 选项
 ```
     --assume-yes <ASSUME_YES>  如果为 true，amp 将跳过用户的确认（是/否） [默认值：true] [可能的值：true, false]
--f, --filename <FILENAME>      Amphitheatre 配置文件的路径或 URL [默认值：.amp.toml]
--p, --profile <PROFILE>        通过名称激活配置文件（以 `-` 为前缀可禁用配置文件） [默认值：[]]
+-f, --filename <FILENAME>      要将生成的清单配置写入的文件[默认值：.amp.toml]
+    --force                    强制构建 Amphitheatre 配置
+    --name <NAME>              指定配置名字. 默认为目录名
 ```
 
 > 使用 "amp options" 查看全局命令行选项列表（适用于所有命令）。
-
-## 示例
-#### 搜索配置问题并打印生效的配置
-```
-amp diagnose
-```
-
-#### 打印给定配置文件的配置
-```
-amp diagnose --profile PROFILE
-```
 
 ## 环境变量
 
