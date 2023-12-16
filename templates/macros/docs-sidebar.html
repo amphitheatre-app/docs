@@ -18,22 +18,36 @@
             {% endif %}
             {% set index = get_section(path=root_section_path) %}
 
-            {% for s in index.subsections %}
-              {% set subsection = get_section(path=s) %}
+            {% for l1_relative_path in index.subsections %}
+              {% set l1_subsection = get_section(path=l1_relative_path) %}
               <li>
                 <strong class="docs-links-heading">
-                  {% if subsection.extra.sidebar.linkable %}
-                    <a href="{{ subsection.permalink }}"
-                      class="docs-link {% if current_path == subsection.path %}active{% endif %}">
-                      {{ subsection.extra.sidebar.title | default(value=subsection.title) }}
+                  {% if l1_subsection.extra.sidebar.linkable %}
+                    <a href="{{ l1_subsection.permalink }}"
+                      class="docs-link {% if current_path is starting_with(l1_subsection.path) %}active{% endif %}">
+                      {{ l1_subsection.extra.sidebar.title | default(value=l1_subsection.title) }}
                     </a>
                   {% else %}
-                    {{ subsection.title }}
+                    {{ l1_subsection.title }}
                   {% endif %}
                 </strong>
-                {% if subsection.pages %}
+
+                {% if l1_subsection.subsections %}
+                <ul class="list-unstyled pb-2">
+                  {% for l2_relative_path in l1_subsection.subsections %}
+                  {% set l2_subsection = get_section(path=l2_relative_path) %}
+                    <li>
+                      <a href="{{ l2_subsection.permalink }}" class="docs-links-link {% if current_path is starting_with(l2_subsection.path) %}active{% endif %}">
+                        {{ l2_subsection.extra.sidebar.title | default(value=l2_subsection.title) }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if l1_subsection.pages %}
                   <ul class="list-unstyled pb-2">
-                    {% for p in subsection.pages %}
+                    {% for p in l1_subsection.pages %}
                       <li>
                         <a href="{{ p.permalink }}" class="docs-links-link {% if current_path == p.path %}active{% endif %}">
                           {{ p.extra.sidebar.title | default(value=p.title) }}

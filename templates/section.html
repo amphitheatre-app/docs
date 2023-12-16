@@ -66,7 +66,6 @@
 
         {% for s in index.subsections %}
           {% set subsection = get_section(path=s) %}
-          {% if subsection.pages %}
           <div class="card my-3">
             <div class="card-body">
               <h5 class="card-title">
@@ -75,7 +74,6 @@
               {% if subsection.description %}<p class="card-text text-muted">{{ subsection.description | safe }}</p>{% endif %}
             </div>
           </div>
-          {% endif %}
         {% endfor %}
 
         {% for page in index.pages %}
