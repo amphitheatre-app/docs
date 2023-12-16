@@ -9,7 +9,7 @@ documentation. If this is the first Open Source project you've contributed to,
 we strongly suggest reading GitHub's excellent guide: How to [Contribute to Open
 Source](https://opensource.guide/how-to-contribute).
 
-## Finding Documentation Issues to Work On
+### Finding Documentation Issues to Work On
 
 You can find a list of open documentation-related issues
 [here](https://github.com/amphitheatre-app/docs/issues). When you find something
@@ -20,7 +20,7 @@ you would like to work on:
 - You can start working on the issue. When you're done, simply submit a pull
   request.
 
-## Requirements for Documentation Pull Requests
+### Requirements for Documentation Pull Requests
 
 When you create a new pull request, we expect some requirements to be met.
 
@@ -38,7 +38,7 @@ When you create a new pull request, we expect some requirements to be met.
 - For each pull request made, we run tests to check if there are any broken
   links, the markdown formatting is valid, and the linter is passing.
 
-## Testing Documentation Site Locally
+### Testing Documentation Site Locally
 
 Run a local instance of zola for developing the Amphitheatre Documentation.
 

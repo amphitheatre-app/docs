@@ -11,7 +11,7 @@ requests, as well as creating and deleting non-protected branches.
 
 The responsibilities of a community maintainer are listed below.
 
-## Issues Triage
+### Issues Triage
 
 - **Labeling Issues**: Label issues accordingly.
 - **Finding Duplicates**: Finding and closing duplicate issues.
@@ -20,4 +20,3 @@ The responsibilities of a community maintainer are listed below.
 - **Closing Irrelevant Issues**: Closing issues that are determined irrelevant,
   no longer needed, not relevant to the project and/or don't follow the issues
   guidelines.
-

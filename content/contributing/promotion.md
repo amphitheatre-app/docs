@@ -9,7 +9,7 @@ still contribute to the project – a lot – by helping us to promote it. As we
 a free and open source project, the community is our most important asset. Here
 are some ways that you can help the project continue to grow.
 
-## Follow, Like, Recommend, Favorite, Vote and Star Us
+### Follow, Like, Recommend, Favorite, Vote and Star Us
 There are many sites where you can vote, recommend, favorite, and star us.
 
 - Twitter - Like, comment and retweet our posts, and follow us on Twitter.
@@ -20,6 +20,6 @@ There are many sites where you can vote, recommend, favorite, and star us.
 - Hacker News - Upvote and be a Lens ambassador by participating in relevant
   discussions on Hacker News.
 
-## Write Blogs or Make Videos About Us
+### Write Blogs or Make Videos About Us
 
 Psst... If you have created some content around Amphitheatre, let us know!

@@ -4,14 +4,14 @@ description = "Contributor's Guide to Testing"
 weight = 50
 +++
 
-## Testing Your Code
+### Testing Your Code
 
 Amphitheathre uses github actions to run automated tests on any PR, before
 merging. However, a PR will not be reviewed before all tests are green, so to
 save time and prevent your PR from going stale, it is best to test it before
 submitting the PR.
 
-## Opening A Pull Request
+### Opening A Pull Request
 
 ### Draft Mode
 
