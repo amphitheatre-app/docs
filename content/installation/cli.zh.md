@@ -77,15 +77,18 @@ sudo port install amp
 
     单击链接，浏览器将开始下载压缩文件（`amp-windows-amd64.zip`）。
 
-2. 一旦下载完成，您可以将该文件解压缩到您喜欢的目录中。您可以使用操作系统内置的解压工具或第三方压缩工具（如 7-Zip 或 WinRAR ）来完成此操作。
+2. 一旦下载完成，您可以将该文件解压缩到您喜欢的目录中。您可以使用操作系统内置的
+   解压工具或第三方压缩工具（如 7-Zip 或 WinRAR ）来完成此操作。
 
 3. 解压缩后，您将获得一个名为 `amp.exe` 的可执行文件。
 
-最后，将 `amp.exe` 文件添加到您的 `PATH` 环境变量中，这样您就可以在任何位置方便地运行 `amp` 命令了。
+最后，将 `amp.exe` 文件添加到您的 `PATH` 环境变量中，这样您就可以在任何位置方便
+地运行 `amp` 命令了。
 
 ### Scoop
 
-Amphitheatre 命令行工具可以使用 `Scoop` 包管理器从 `extras` 存储桶安装。此包并非 Amphitheatre 团队维护。
+Amphitheatre 命令行工具可以使用 `Scoop` 包管理器从 `extras` 存储桶安装。此包并非
+Amphitheatre 团队维护。
 
 ```
 scoop bucket add extras
@@ -97,7 +100,9 @@ scoop install amp
 Amphitheatre 命令行工具可以使用 `Chocolatey` 包管理器安装。此包并非 Amphitheatre 团队维护。
 
 > **注意**\
-Chocolatey 的安装机制会干扰 `Ctrl+C` 处理并阻止 `amp` 清理部署。这无法通过 Amphitheatre 命令行工具修复。有关此缺陷的更多信息，请参阅 `chocolatey/shimgen#32`。
+Chocolatey 的安装机制会干扰 `Ctrl+C` 处理并阻止 `amp` 清理部署。这无法通过
+Amphitheatre 命令行工具修复。有关此缺陷的更多信息，请参阅
+`chocolatey/shimgen#32`。
 
 ```
 choco install -y amp

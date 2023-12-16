@@ -10,20 +10,25 @@ linkable = true
 
 ## 1. Install API Server
 
-Once **Helm** has been set up correctly, add the repo and install the chart with the release name `amp` as follows:
+Once **Helm** has been set up correctly, add the repo and install the chart with
+the release name `amp` as follows:
 
 ```sh
 helm repo add amphitheatre https://charts.amphitheatre.app
 helm install amp amphitheatre/amphitheatre --create-namespace --namespace amp-system
 ```
 
-For more advanced installation configurations see [Installing API Server](@/installation/api-server.md).
+For more advanced installation configurations see [Installing API
+Server](@/installation/api-server.md).
 
 ## 2. Configure the cluster
 
-After installing Amphitheatre, you need to initialize some configurations, one of the more important ones being the configuration of credentials.
+After installing Amphitheatre, you need to initialize some configurations, one
+of the more important ones being the configuration of credentials.
 
-Create a `Secret` with push credentials for the Docker Registry that you plan on publishing OCI images to with [`Builder`](@/concepts/builders.md). Your configuration create should look something like this:
+Create a `Secret` with push credentials for the Docker Registry that you plan on
+publishing OCI images to with [`Builder`](@/concepts/builders.md). Your
+configuration create should look something like this:
 
 ```yaml
 apiVersion: v1
@@ -56,14 +61,18 @@ Apply that configuration to the cluster
 kubectl apply -n amp-system -f amp-credentials.yaml
 ```
 
-For more advanced configurations see [Configure the Amphitheatre](@/installation/configuration.md).
+For more advanced configurations see [Configure the
+Amphitheatre](@/installation/configuration.md).
 
 ## 3. Install CLI
 
-Amphitheatre CLI can be installed by using various package managers on Linux, macOS and Windows. The precompiled binaries are available from the [**GitHub releases page**](https://github.com/amphitheatre-app/cli/releases).
-Simply download the appropriate binary and add it to your `PATH`.
+Amphitheatre CLI can be installed by using various package managers on Linux,
+macOS and Windows. The precompiled binaries are available from the [**GitHub
+releases page**](https://github.com/amphitheatre-app/cli/releases). Simply
+download the appropriate binary and add it to your `PATH`.
 
-For detailed install instructions, follow the guide for your operating system. Copy and paste one of the following commands in your terminal:
+For detailed install instructions, follow the guide for your operating system.
+Copy and paste one of the following commands in your terminal:
 
 ```
 # For Linux on x86_64 (amd64)
@@ -93,7 +102,9 @@ For more advanced installation configurations see [Installing CLI](@/installatio
 
 ## 4. Quick start
 
-Hit the ground running with our quick starts, complete with code samples aimed to get you started quickly with Amphitheatre. All templates are pre-configured to use Amphitheatre and ready-to-code:
+Hit the ground running with our quick starts, complete with code samples aimed
+to get you started quickly with Amphitheatre. All templates are pre-configured
+to use Amphitheatre and ready-to-code:
 
 {{ grid(columns=3)}}
 {{ column() }}{{ card(title="Golang", text="Learn how to deploy a Go application.", url="/examples/golang/") }}{{ end() }}
@@ -107,4 +118,5 @@ Hit the ground running with our quick starts, complete with code samples aimed t
 #### Tell us what you think!
 
 We’re continuously working to improve our Quickstart examples and value your
-feedback. If you run into any issues while following these steps, please reach out to us in the Amphitheatre Discord community.
+feedback. If you run into any issues while following these steps, please reach
+out to us in the Amphitheatre Discord community.

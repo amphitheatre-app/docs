@@ -77,12 +77,14 @@ sudo port install amp
 
     Click on the link, and your browser will begin downloading the compressed file (`amp-windows-amd64.zip`).
 
-2. Once the download is complete, you can extract the file to a directory of your choice.
-    You can do this using the built-in decompression tool of your operating system or a third-party compression tool like 7-Zip or WinRAR.
+2. Once the download is complete, you can extract the file to a directory of
+    your choice. You can do this using the built-in decompression tool of your
+    operating system or a third-party compression tool like 7-Zip or WinRAR.
 
 3. After extraction, you will have an executable file named `amp.exe``.
 
-4. Finally, add the `amp.exe` file to your `PATH` environment variable so that you can conveniently run the `amp` command from any location.
+4. Finally, add the `amp.exe` file to your `PATH` environment variable so that
+   you can conveniently run the `amp` command from any location.
 
 ### Scoop
 

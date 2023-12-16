@@ -15,13 +15,17 @@ amp completion [选项] <SHELL>
 
 > 使用 "amp options" 查看全局命令行选项列表（适用于所有命令）。
 
-通过软件包管理器安装 Amphitheatre CLI 时，可能无需额外的 shell 配置即可获得自动完成支持。对于 Homebrew，请参阅 [https://docs.brew.sh/Shell-Completion](https://docs.brew.sh/Shell-Completion)
+通过软件包管理器安装 Amphitheatre CLI 时，可能无需额外的 shell 配置即可获得自动
+完成支持。对于 Homebrew，请参阅
+[https://docs.brew.sh/Shell-Completion](https://docs.brew.sh/Shell-Completion)
 
-如果您需要手动设置自动完成，请按照以下说明进行操作。确切的配置文件位置可能因您的系统而异。在测试自动完成是否有效之前，请确保重新启动您的 shell。
+如果您需要手动设置自动完成，请按照以下说明进行操作。确切的配置文件位置可能因您的
+系统而异。在测试自动完成是否有效之前，请确保重新启动您的 shell。
 
 ## bash
 
-首先，请确保使用您的软件包管理器安装 bash-completion。然后，将以下内容添加到您的 `~/.bash_profile`：
+首先，请确保使用您的软件包管理器安装 bash-completion。然后，将以下内容添加到您的
+`~/.bash_profile`：
 
 ```
 eval "$(amp completion bash)"

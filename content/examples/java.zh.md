@@ -4,17 +4,22 @@ description = "学习如何在 Amphitheatre 上部署 Java 应用"
 weight = 2
 +++
 
-在 Amphitheatre 上运行应用程序基本上就是找出如何将其打包为可部署的镜像。一旦打包好，就可以部署到 Amphitheatre 平台。
+在 Amphitheatre 上运行应用程序基本上就是找出如何将其打包为可部署的镜像。一旦打包
+好，就可以部署到 Amphitheatre 平台。
 
 ## 示例应用程序
 
-我们的示例将是一个使用 Java 和 [Spring Boot](https://spring.io/projects/spring-boot) 的基本 "Hello World" 示例。
+我们的示例将是一个使用 Java 和 [Spring
+Boot](https://spring.io/projects/spring-boot) 的基本 "Hello World" 示例。
 
-您可以从 [GitHub 存储库](https://github.com/amphitheatre-app/amp-example-java) 获取示例的代码。只需运行 `git clone https://github.com/amphitheatre-app/amp-example-java` 来获取本地副本。
+您可以从 [GitHub 存储库](https://github.com/amphitheatre-app/amp-example-java)
+获取示例的代码。只需运行 `git clone
+https://github.com/amphitheatre-app/amp-example-java` 来获取本地副本。
 
 ### 创建一个简单的 Web 应用程序
 
-现在，您可以为一个简单的 Web 应用程序创建一个 Web 控制器，如下面的代码（来自 `src/main/java/hello/HelloController.java`）所示：
+现在，您可以为一个简单的 Web 应用程序创建一个 Web 控制器，如下面的代码（来自
+`src/main/java/hello/HelloController.java`）所示：
 
 ```java
 package hello;
@@ -33,7 +38,9 @@ public class HelloController {
 
 ### 创建一个应用程序类
 
-Spring Initializr 会为您创建一个简单的应用程序类。然而，在这种情况下，它太简单了。您需要修改应用程序类以匹配以下代码（来自 `src/main/java/hello/Application.java`）：
+Spring Initializr 会为您创建一个简单的应用程序类。然而，在这种情况下，它太简单
+了。您需要修改应用程序类以匹配以下代码（来自
+`src/main/java/hello/Application.java`）：
 
 ```java
 package hello;
@@ -66,11 +73,14 @@ Hello, World!
 
 ## 安装 Amphitheatre
 
-我们已准备好开始使用 Amphitheatre，这意味着我们需要 `amp`，我们的 CLI 应用程序，用于管理在 Amphitheatre 上的应用程序。如果您已经安装了它，请继续。如果没有，请转到 [我们的安装指南](@/installation/_index.md)。
+我们已准备好开始使用 Amphitheatre，这意味着我们需要 `amp`，我们的 CLI 应用程序，
+用于管理在 Amphitheatre 上的应用程序。如果您已经安装了它，请继续。如果没有，请转
+到 [我们的安装指南](@/installation/_index.md)。
 
 ## 初始化 Character
 
-要在 Amphitheatre 上启动应用程序，请在源代码所在的目录中运行 `amp init`。这将通过检查您的源代码来为您创建和配置一个 `Character`，然后提示您部署。
+要在 Amphitheatre 上启动应用程序，请在源代码所在的目录中运行 `amp init`。这将通
+过检查您的源代码来为您创建和配置一个 `Character`，然后提示您部署。
 
 ```
 $ amp init
@@ -85,13 +95,17 @@ Your Character is ready. run with `amp run`
 ...
 ```
 
-首先，此命令会扫描您的源代码，以确定如何构建部署镜像，以及识别应用程序所需的任何其他配置，如密钥和暴露的端口。
+首先，此命令会扫描您的源代码，以确定如何构建部署镜像，以及识别应用程序所需的任何
+其他配置，如密钥和暴露的端口。
 
-在扫描源代码并打印结果后，`amp` 会为您创建一个 `Character`，并将配置写入 `.amp.toml` 文件。然后，您将被提示构建和部署您的角色。一旦完成，您的应用程序将在 Amphitheatre 上运行。
+在扫描源代码并打印结果后，`amp` 会为您创建一个 `Character`，并将配置写入
+`.amp.toml` 文件。然后，您将被提示构建和部署您的角色。一旦完成，您的应用程序将在
+Amphitheatre 上运行。
 
 ## 在 .amp.toml 中
 
-`.amp.toml` 文件现在包含了部署您的 `Character` 的默认配置。如果我们查看 `.amp.toml` 文件，我们可以在其中看到它：
+`.amp.toml` 文件现在包含了部署您的 `Character` 的默认配置。如果我们查看
+`.amp.toml` 文件，我们可以在其中看到它：
 
 ```toml
 name = "amp-example-java"
@@ -108,7 +122,9 @@ keywords = ["example", "java", "getting-started"]
 categories = ["example"]
 ```
 
-`amp` 命令将始终引用当前目录中的此文件（如果存在），特别是以开始的角色名称值。该名称将用于标识 Amphitheatre 平台上的角色。文件的其余部分包含部署角色时要应用的设置。
+`amp` 命令将始终引用当前目录中的此文件（如果存在），特别是以开始的角色名称值。该
+名称将用于标识 Amphitheatre 平台上的角色。文件的其余部分包含部署角色时要应用的设
+置。
 
 有关更多选项，请参阅 [Paketo Java Buildpack 文档](https://paketo.io/docs/howto/java/)。
 
@@ -120,7 +136,9 @@ categories = ["example"]
 amp run
 ```
 
-这将查找我们的 `.amp.toml` 文件，并从中获取 Character 名称 `amp-example-java`。然后，`amp` 将开始部署我们的 `Character` 到 Amphitheatre 平台。完成后，`amp` 会将您返回到命令行。
+这将查找我们的 `.amp.toml` 文件，并从中获取 Character 名称 `amp-example-java`。
+然后，`amp` 将开始部署我们的 `Character` 到 Amphitheatre 平台。完成后，`amp` 会
+将您返回到命令行。
 
 ## 到达目的地
 

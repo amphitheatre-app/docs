@@ -23,7 +23,8 @@ Amphitheatre 桌面是轻量且易于在所有主要平台上安装的应用程�
 
 Amphitheatre 桌面已在以下平台上进行了测试：macOS、Windows 和 Linux。
 
-尽管 Amphitheatre 桌面可能仍可在操作系统的维护结束日期之后继续工作，但我们强烈建议使用支持的操作系统版本。请参阅支持的操作系统版本列表。
+尽管 Amphitheatre 桌面可能仍可在操作系统的维护结束日期之后继续工作，但我们强烈建
+议使用支持的操作系统版本。请参阅支持的操作系统版本列表。
 
 {{ tabs(id="os", items=["macOS", "Windows", "Linux"])}}
 
@@ -31,7 +32,8 @@ Amphitheatre 桌面已在以下平台上进行了测试：macOS、Windows 和 Li
 
 - 从 [Amphitheatre
   网站](https://amphitheatre.app/) 下载 macOS 版的 Amphitheatre 桌面。
-- 双击 amphitheatre-desktop-{version}.dmg 并将 amphitheatre-desktop.app 拖动到 Applications 文件夹中，使其在 macOS Launchpad 中可用。
+- 双击 amphitheatre-desktop-{version}.dmg 并将 amphitheatre-desktop.app 拖动到
+  Applications 文件夹中，使其在 macOS Launchpad 中可用。
 - 通过右键单击图标以打开上下文菜单并选择选项，将 Amphitheatre 桌面添加到 Dock。
 
 {{ end() }}
@@ -39,7 +41,9 @@ Amphitheatre 桌面已在以下平台上进行了测试：macOS、Windows 和 Li
 {{ pane(tab="os", index=2) }}
 
 - 从 [Amphitheatre 桌面安装程序](https://amphitheatre.app/) 下载 Windows 版。
-- 运行 Amphitheatre-Desktop-Setup-{version}.exe 安装程序来安装 Amphitheatre 桌面。默认情况下，Amphitheatre 桌面安装在 `C:\users\{username}\AppData\Local\Programs\AmphitheatreDesktop` 下。
+- 运行 Amphitheatre-Desktop-Setup-{version}.exe 安装程序来安装 Amphitheatre 桌
+  面。默认情况下，Amphitheatre 桌面安装在
+  `C:\users\{username}\AppData\Local\Programs\AmphitheatreDesktop` 下。
 
 {{ end() }}
 
@@ -81,7 +85,9 @@ Linux 用户有以下下载选项：`.rpm` 和 `.deb` 文件，`AppImage` 文件
     ./<file-name.AppImage>
     ```
 
-在手动安装 Amphitheatre 桌面（而不是使用包管理器文件，如 .deb 或 .rpm）后，需要执行以下操作以允许协议处理。这假定您的 Linux 发行版使用 xdg-open 和 xdg-* 程序集来确定哪个应用程序可以处理自定义 URI。
+在手动安装 Amphitheatre 桌面（而不是使用包管理器文件，如 .deb 或 .rpm）后，需要
+执行以下操作以允许协议处理。这假定您的 Linux 发行版使用 xdg-open 和 xdg-* 程序集
+来确定哪个应用程序可以处理自定义 URI。
 
 - 在以下路径之一创建一个名为 `amphitheatre-desktop.desktop` 的文件：
 
@@ -89,7 +95,8 @@ Linux 用户有以下下载选项：`.rpm` 和 `.deb` 文件，`AppImage` 文件
 
 - `/usr/share/applications`：为您的用户安装
 
-- 该文件应具有以下内容，其中 `<path/to/executable>` 是您已安装解压后的 Amphitheatre 桌面可执行文件的绝对路径：
+- 该文件应具有以下内容，其中 `<path/to/executable>` 是您已安装解压后的
+  Amphitheatre 桌面可执行文件的绝对路径：
 
     ```
     [Desktop Entry]
@@ -130,11 +137,14 @@ Amphitheatre 桌面支持自动更新。当有新版本可用时，应用程序�
 > **注意**\
 自动更新仅适用于 exe、dmg 和 AppImage 安装。对其他发行版进行手动更新。
 
-请查看 Amphitheatre 桌面的 [发布说明](https://github.com/amphitheatre-app/desktop/releases) 以获取有关功能、维护等信息。
+请查看 Amphitheatre 桌面的 [发布说
+明](https://github.com/amphitheatre-app/desktop/releases) 以获取有关功能、维护等
+信息。
 
 ## 备份和恢复数据
 
-当升级到主要版本的 Amphitheatre 桌面时，用户数据，例如集群、偏好设置等，会迁移到新的数据结构。但我们建议您备份用户数据，这些数据通常存储在以下位置：
+当升级到主要版本的 Amphitheatre 桌面时，用户数据，例如集群、偏好设置等，会迁移到
+新的数据结构。但我们建议您备份用户数据，这些数据通常存储在以下位置：
 
 - macOS：`~/Library/Application Support/AmphitheatreDesktop/`
 - Windows：`%APPDATA%\AmphitheatreDesktop\`
@@ -142,4 +152,5 @@ Amphitheatre 桌面支持自动更新。当有新版本可用时，应用程序�
 
 ## 故障排除
 
-如果在安装 Amphitheatre 桌面时遇到任何问题，请查看故障排除 FAQ 中的错误消息和其 [Github 问题](https://github.com/amphitheatre-app/desktop/issues)。
+如果在安装 Amphitheatre 桌面时遇到任何问题，请查看故障排除 FAQ 中的错误消息和其
+[Github 问题](https://github.com/amphitheatre-app/desktop/issues)。

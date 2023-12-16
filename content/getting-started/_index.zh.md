@@ -22,7 +22,9 @@ helm install amp amphitheatre/amphitheatre --create-namespace --namespace amp-sy
 
 ## 2. 配置集群
 
-安装 Amphitheatre 后，您需要初始化一些配置，其中一个更重要的配置是凭据的配置。创建一个 `Secret`，用于 Docker Registry 的推送凭据，您计划使用 [`Builder`](@/concepts/builders.zh.md) 发布 OCI 镜像。您的配置应该如下所示：
+安装 Amphitheatre 后，您需要初始化一些配置，其中一个更重要的配置是凭据的配置。创
+建一个 `Secret`，用于 Docker Registry 的推送凭据，您计划使用
+[`Builder`](@/concepts/builders.zh.md) 发布 OCI 镜像。您的配置应该如下所示：
 
 ```yaml
 apiVersion: v1
@@ -59,7 +61,10 @@ kubectl apply -n amp-system -f amp-credentials.yaml
 
 ## 3. 安装 CLI
 
-Amphitheatre CLI 可以通过 Linux、macOS 和 Windows 上的各种包管理器进行安装。预编译的二进制文件可从 [**GitHub 发布页面**](https://github.com/amphitheatre-app/cli/releases) 获取。只需下载适当的二进制文件并将其添加到您的 `PATH`。
+Amphitheatre CLI 可以通过 Linux、macOS 和 Windows 上的各种包管理器进行安装。预编
+译的二进制文件可从 [**GitHub 发布页面
+**](https://github.com/amphitheatre-app/cli/releases) 获取。只需下载适当的二进制
+文件并将其添加到您的 `PATH`。
 
 有关详细的安装说明，请按照您的操作系统的指南进行操作。在终端中复制并粘贴以下命令中的一个：
 
@@ -91,7 +96,8 @@ amp version
 
 ## 4. 快速入门
 
-使用我们的快速入门，其中包含代码示例，旨在让您快速开始使用 Amphitheatre。所有模板都预配置为使用 Amphitheatre 并准备好进行编码：
+使用我们的快速入门，其中包含代码示例，旨在让您快速开始使用 Amphitheatre。所有模
+板都预配置为使用 Amphitheatre 并准备好进行编码：
 
 {{ grid(columns=3)}}
 {{ column() }}{{ card(title="Golang", text="学习如何部署 Go 应用程序。", url="/zh/examples/golang/") }}{{ end() }}
@@ -104,4 +110,5 @@ amp version
 
 #### 告诉我们您的看法！
 
-我们不断努力改进我们的快速入门示例，并重视您的反馈意见。如果您在按照这些步骤操作时遇到任何问题，请随时在 Amphitheatre Discord 社区中与我们联系。
+我们不断努力改进我们的快速入门示例，并重视您的反馈意见。如果您在按照这些步骤操作
+时遇到任何问题，请随时在 Amphitheatre Discord 社区中与我们联系。
