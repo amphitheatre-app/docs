@@ -21,14 +21,14 @@ Amphitheatre CLI 可以使用 Linux、macOS 和 Windows 上的各种包管理器
 
 ```
 # For Linux on x86_64 (amd64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-linux-amd64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-linux-amd64.tar.gz && \
 tar -xzf amp-linux-amd64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
 
 ```
 # For Linux on aarch64 (arm64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-linux-arm64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-linux-arm64.tar.gz && \
 tar -xzf amp-linux-arm64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
@@ -41,14 +41,14 @@ sudo install amp /usr/local/bin/
 
 ```
 # For macOS on x86_64 (amd64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-darwin-amd64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-darwin-amd64.tar.gz && \
 tar -xzf amp-darwin-amd64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
 
 ```
 # For macOS on aarch64 (arm64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-darwin-arm64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-darwin-arm64.tar.gz && \
 tar -xzf amp-darwin-arm64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
@@ -73,7 +73,7 @@ sudo port install amp
 
 1. 首先，访问以下链接以下载文件：
 
-    [https://github.com/amphitheatre-app/cli/releases/download/latest/amp-windows-amd64.zip](https://github.com/amphitheatre-app/cli/releases/download/latest/amp-windows-amd64.zip)
+    [https://github.com/amphitheatre-app/cli/releases/latest/download/amp-windows-amd64.zip](https://github.com/amphitheatre-app/cli/releases/latest/download/amp-windows-amd64.zip)
 
     单击链接，浏览器将开始下载压缩文件（`amp-windows-amd64.zip`）。
 

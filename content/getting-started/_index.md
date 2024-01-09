@@ -76,14 +76,14 @@ Copy and paste one of the following commands in your terminal:
 
 ```
 # For Linux on x86_64 (amd64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-linux-amd64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-linux-amd64.tar.gz && \
 tar -xzf amp-linux-amd64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
 
 ```
 # For macOS on aarch64 (arm64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-darwin-arm64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-darwin-arm64.tar.gz && \
 tar -xzf amp-darwin-arm64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```

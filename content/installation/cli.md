@@ -21,14 +21,14 @@ Copy and paste one of the following commands in your terminal:
 
 ```
 # For Linux on x86_64 (amd64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-linux-amd64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-linux-amd64.tar.gz && \
 tar -xzf amp-linux-amd64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
 
 ```
 # For Linux on aarch64 (arm64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-linux-arm64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-linux-arm64.tar.gz && \
 tar -xzf amp-linux-arm64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
@@ -41,14 +41,14 @@ Copy and paste one of the following commands in your terminal:
 
 ```
 # For macOS on x86_64 (amd64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-darwin-amd64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-darwin-amd64.tar.gz && \
 tar -xzf amp-darwin-amd64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
 
 ```
 # For macOS on aarch64 (arm64)
-curl -L https://github.com/amphitheatre-app/cli/releases/download/latest/amp-darwin-arm64.tar.gz && \
+curl -L https://github.com/amphitheatre-app/cli/releases/latest/download/amp-darwin-arm64.tar.gz && \
 tar -xzf amp-darwin-arm64.tar.gz && \
 sudo install amp /usr/local/bin/
 ```
@@ -73,7 +73,7 @@ sudo port install amp
 
 1. First, visit the following link to download the file:
 
-    [https://github.com/amphitheatre-app/cli/releases/download/latest/amp-windows-amd64.zip](https://github.com/amphitheatre-app/cli/releases/download/latest/amp-windows-amd64.zip)
+    [https://github.com/amphitheatre-app/cli/releases/latest/download/amp-windows-amd64.zip](https://github.com/amphitheatre-app/cli/releases/latest/download/amp-windows-amd64.zip)
 
     Click on the link, and your browser will begin downloading the compressed file (`amp-windows-amd64.zip`).
 
