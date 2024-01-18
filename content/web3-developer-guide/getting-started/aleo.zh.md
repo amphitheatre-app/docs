@@ -1,11 +1,10 @@
 +++
 title = "运行 Aleo 应用"
-description = "学习如何在 Amphitheatre 上部署 Aleo 应用程序"
+description = "学习如何在 Amphitheatre 上部署 Aleo 智能合约"
 weight = 1
 +++
 
-在 Amphitheatre 上运行应用程序实际上是找出如何将其打包成可部署的镜像。一旦打包完
-成，就可以将其部署到 Amphitheatre 平台。
+在 Amphitheatre 上运行 Web2 应用程序与 Web3 应用程序有所差异，因此，部署 Aleo 智能合约之前，您需要先构建合约，然后，将合约部署到集群内的 DevNet 上，以此查看合约的运行情况。
 
 ## 示例应用程序
 
@@ -13,8 +12,7 @@ weight = 1
 取示例的代码。只需运行以下命令以获取本地副本：`git clone
 https://github.com/amphitheatre-app/amp-example-aleo`。
 
-`amp-example-aleo` 应用程序是一个小型示例，正如您所期望的那样。它是一个 Aleo 应用程
-序，会打印 '3u32'。
+`amp-example-aleo` 应用程序是一个小型示例，正如您所期望的那样。它是一个 Aleo 智能合约，会打印 '3u32'。
 
 `src/main.leo` 代码如下所示：
 
@@ -30,7 +28,7 @@ program snarkos.aleo {
 
 `inputs/snarkos.in` 代码如下所示：
 
-```toml
+```
 // The program input for snarkos/src/main.leo
 [main]
 public a: u32 = 1u32;
