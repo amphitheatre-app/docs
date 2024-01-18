@@ -1,5 +1,5 @@
 +++
-title = "Run a Aleo application"
+title = "Run a Aleo application with Aleo"
 description = "How to develop smart contract programs on Aleo"
 weight = 1
 +++
