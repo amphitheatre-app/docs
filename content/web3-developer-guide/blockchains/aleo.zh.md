@@ -1,6 +1,6 @@
 +++
-title = "运行 Aleo 应用"
-description = "学习如何在 Amphitheatre 上部署 Aleo 智能合约"
+title = "Aleo"
+description = "如何在 Aleo 上开发智能合约程序"
 weight = 1
 +++
 
