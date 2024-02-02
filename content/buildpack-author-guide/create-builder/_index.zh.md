@@ -14,13 +14,13 @@ linkable = true
 
 ## builder, meta-buildpack 和 buildpack 三者关系
 
-为了更好地理解 builder、meta-buildpack 以及 buildpack 三者之间的层次关系，我们继续以"Leo"为例进行分析。
+为了更好地理解 `builder`、`meta-buildpack` 以及 `buildpack` 三者之间的层次关系，我们继续以"Leo"为例进行分析。
 
-• 在 builder 层面，我们指的是 leo-builder，它仅包含 meta-buildpack。
+• 在 `builder` 层面，我们指的是 `leo-builder`，它仅包含 `meta-buildpack`。
 
-• meta-buildpack 则是一个更为综合的概念，它包含了多个底层包以及 procfile。以 leo 为例，它涵盖了 leo-dist buildpack以及procfile buildpack。
+• `meta-buildpack` 则是一个更为综合的概念，它包含了多个底层包以及 `procfile`。以 `leo` 为例，它涵盖了 `leo-dist buildpack` 以及 `procfile buildpack`。
 
-• 而 buildpack 则构成了整个架构的最底层实现，它分布在多个仓库中。以 leo-dist buildpack 为例，它们分别包含了业务逻辑的实现，这是基本上所有链都需要实现的功能，比如钱包初始化、devnet取水、合约编译、合约部署等重要操作。这些操作往往需要花费较长时间来完成，这也体现了对智能合约以及区块链知识的理解和熟悉程度。
+• 而 `buildpack` 则构成了整个架构的最底层实现，它分布在多个仓库中。以 `leo-dist buildpack` 为例，它们分别包含了业务逻辑的实现，这是基本上所有链都需要实现的功能，比如钱包初始化、devnet取水、合约编译、合约部署等重要操作。这些操作往往需要花费较长时间来完成，这也体现了对智能合约以及区块链知识的理解和熟悉程度。
 
 ## 整体流程
 

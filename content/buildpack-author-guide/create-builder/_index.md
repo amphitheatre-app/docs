@@ -13,13 +13,13 @@ To comply with the Buildpacks specification, creating a `Builder` requires you t
 
 ## Relationship between Builder, Meta-Buildpack, and Buildpack
 
-To better understand the hierarchical relationship between builder, meta-buildpack, and buildpack, let's continue to analyze with the example of "Leo".
+To better understand the hierarchical relationship between `builder`, `meta-buildpack`, and `buildpack`, let's continue to analyze with the example of `Leo`.
 
-• At the builder level, we refer to leo-builder, which only contains meta-buildpack.
+• At the `builder` level, we refer to `leo-builder`, which only contains `meta-buildpack`.
 
-• Meta-buildpack is a more comprehensive concept, which includes multiple underlying packages and a procfile. Taking Leo as an example, it covers leo-dist buildpack and procfile buildpack.
+• `Meta-buildpack` is a more comprehensive concept, which includes multiple underlying packages and a `procfile`. Taking `Leo` as an example, it covers `leo-dist buildpack` and `procfile buildpack`.
 
-• Buildpack constitutes the lowest level implementation of the entire architecture, distributed across multiple repositories. Taking leo-dist buildpack as an example, they respectively include the implementation of business logic, which are basically functions that all chains need to implement, such as wallet initialization, fetch devnet faucet, contract compilation, contract deployment, and other important operations. These operations often require a significant amount of time to complete, reflecting the understanding and familiarity with smart contracts and blockchain knowledge.
+• `Buildpack` constitutes the lowest level implementation of the entire architecture, distributed across multiple repositories. Taking `leo-dist buildpack` as an example, they respectively include the implementation of business logic, which are basically functions that all chains need to implement, such as wallet initialization, fetch devnet faucet, contract compilation, contract deployment, and other important operations. These operations often require a significant amount of time to complete, reflecting the understanding and familiarity with smart contracts and blockchain knowledge.
 
 ## Overall Process
 
