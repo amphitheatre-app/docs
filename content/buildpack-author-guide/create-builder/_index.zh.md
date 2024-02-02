@@ -14,7 +14,7 @@ linkable = true
 
 ## builder, meta-buildpack 和 buildpack 三者关系
 
-为了更好地理解 `builder`、`meta-buildpack` 以及 `buildpack` 三者之间的层次关系，我们继续以"Leo"为例进行分析。
+为了更好地理解 `builder`、`meta-buildpack` 以及 `buildpack` 三者之间的层次关系，我们继续以 `Leo` 为例进行分析。
 
 • 在 `builder` 层面，我们指的是 `leo-builder`，它仅包含 `meta-buildpack`。
 
