@@ -216,7 +216,7 @@ func (r Leo) BuildProcessTypes(cr libpak.ConfigurationResolver, app libcnb.Appli
 
 > Below are two GitHub repositories provided by AMP for the implementation of Buildpacks, please refer to them:
 
-* leo: https://github.com/amp-buildpacks/leo-dist/tree/main/leo
-* aleo: https://github.com/amp-buildpacks/aleo/tree/main/aleo
+* [leo-dist buildpack](https://github.com/amp-buildpacks/leo-dist/tree/main/leo)
+* [aleo buildpack](https://github.com/amp-buildpacks/aleo/tree/main/aleo)
 
 > These links will direct you to the corresponding GitHub repositories, which contain the details and documentation of the Buildpack implementations supported by AMP officially.
