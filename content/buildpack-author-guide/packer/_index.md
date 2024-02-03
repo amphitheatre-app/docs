@@ -10,7 +10,7 @@ linkable = true
 
 ## 1. Introduction
 
-Packer is an independently developed Buildpack command-line tool by the AMP team, written in the Rust programming language, designed to provide an efficient and convenient experience for creating build packages.
+Packer is an independently developed Buildpack command-line tool by the Amphitheatre team, written in the Rust programming language, designed to provide an efficient and convenient experience for creating build packages.
 
 By using Packer in local development environments, you can not only improve the efficiency of creating build packages but also help you invest your valuable time and energy into the development of core business logic.
 

@@ -215,9 +215,9 @@ func (r Leo) BuildProcessTypes(cr libpak.ConfigurationResolver, app libcnb.Appli
 }
 ```
 
-> 以下是 AMP 官方提供的两个 Buildpack 实现仓库，请予以查阅：
+> 以下是 Amphitheatre 官方提供的两个 Buildpack 实现仓库，请予以查阅：
 
 * [leo-dist buildpack](https://github.com/amp-buildpacks/leo-dist/tree/main/leo)
 * [aleo buildpack](https://github.com/amp-buildpacks/aleo/tree/main/aleo)
 
-> 这些链接将引导您进入相应的 GitHub 仓库，其中包含了 AMP 官方支持的 Buildpack 实现细节和文档。
+> 这些链接将引导您进入相应的 GitHub 仓库，其中包含了 Amphitheatre 官方支持的 Buildpack 实现细节和文档。

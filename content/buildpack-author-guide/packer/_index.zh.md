@@ -10,7 +10,7 @@ linkable = true
 
 ## 1. 简介
 
-Packer 是由 AMP 团队自主研发的一款 Buildpack 命令行工具，采用 Rust 编程语言编写，旨在提供高效便捷的构建包创建体验。
+Packer 是由 Amphitheatre 团队自主研发的一款 Buildpack 命令行工具，采用 Rust 编程语言编写，旨在提供高效便捷的构建包创建体验。
 
 在本地开发环境中运用 Packer，不仅能够提升构建包创建的效率，还能帮助您将宝贵的时间和精力投入到核心业务逻辑的开发上。
 
