@@ -13,7 +13,7 @@ running becomes unavailable, users do not experience interruptions of service.
 - Kubernetes 1.19+
 - Helm 3.9.0+
 - PV provisioner support in the underlying infrastructure
-- ReadWriteMany volumes for deployment scaling
+- **ReadWriteMany** volumes for deployment scaling
 
 ## Add Repository
 
@@ -23,20 +23,18 @@ Once Helm has been set up correctly, add the repo as follows:
   helm repo add amphitheatre https://charts.amphitheatre.app
 ```
 
-If you had already added this repo earlier, run `helm repo update` to retrieve
-the latest versions of the packages.  You can then run `helm search repo
-amphitheatre` to see the charts.
-
 ## Installation
 
 To install the chart with the release name `amp`:
 
 ```sh
-  helm upgrade --install amp amphitheatre/amphitheatre --create-namespace --namespace=amp-system
+  helm install amp amphitheatre/amphitheatre --create-namespace --namespace=amp-system
 ```
 
 The command deploys Amphitheatre API Server on the Kubernetes cluster in the
 default configuration.
+
+### Metrics
 
 Metrics Server is a crucial component in Kubernetes for monitoring container
 resource usage and serves as a prerequisite dependency for the Stats feature in
@@ -48,6 +46,28 @@ However, if your cluster already has a global Metrics Server running and you
 wish to avoid redundant installation, you can disable the installation of
 Metrics Server by setting the `--set metrics-server.enabled=false` parameter
 when installing Amphitheatre.
+
+### Persistence
+
+When deployed in clusters with multiple nodes, PVCs created by `amp-controllers`
+require the `access_modes` to be `["ReadWriteMany"]`, so you need to set `persistence.storageClass`
+ to a `StorageClass` that supports this mode, e.g. `--set persistence.storageClass=standard`.
+
+ > Please set `persistence.storageClass` correctly, otherwise it will not work properly.
+
+If your Kubernetes cluster doesn't provide a suitable StorageClass, you
+can try the [Dynamic NFS Volume Provisioner](https://github.com/openebs/dynamic-nfs-provisioner).
+
+## Upgrade
+
+If you had already added this repo earlier, run `helm repo update` to retrieve
+the latest versions of the packages.  You can then run `helm search repo amphitheatre` to see the charts.
+
+To upgrade the chart with the release name `amp`:
+
+```sh
+  helm upgrade amp amphitheatre/amphitheatre --create-namespace --namespace=amp-system
+```
 
 ## Uninstall
 

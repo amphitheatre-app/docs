@@ -23,18 +23,17 @@ weight = 1
   helm repo add amphitheatre https://charts.amphitheatre.app
 ```
 
-如果您之前已经添加过该仓库，请运行 `helm repo update` 来获取软件包的最新版本。然
-后您可以运行 `helm search repo amphitheatre` 来查看图表。
-
 ## 安装
 
 要使用发布名称 `amp` 安装图表：
 
 ```sh
-  helm upgrade --install amp amphitheatre/amphitheatre --create-namespace --namespace=amp-system
+  helm install amp amphitheatre/amphitheatre --create-namespace --namespace=amp-system
 ```
 
 该命令会在 Kubernetes 集群中部署 Amphitheatre API 服务器，使用默认配置。
+
+### 指标
 
 在 Kubernetes 中，Metrics Server 是一个用于监控容器资源使用情况的关键组件，它是
 Amphitheatre 项目中 Stats 功能的先决依赖项。在 Helm Chart
@@ -44,6 +43,26 @@ Amphitheatre 项目中 Stats 功能的先决依赖项。在 Helm Chart
 但是，如果您的集群中已经运行了全局 Metrics Server 并且希望避免多余的安装，您可以
 通过在安装 Amphitheatre 时设置 `--set metrics-server.enabled=false` 参数来禁用
 Metrics Server 的安装。
+
+### 持久化存储
+
+在具有多个节点的群集中部署时，由 `amp-controllers` 创建的 PVC
+要求 `access_modes` 为 `["ReadWriteMany"]`，因此您需要将 `persistence.storageClass` 设置为支持该模式的 `StorageClass`，例如 `-set persistence.storageClass=standard`。
+
+> 请正确设置 `persistence.storageClass`，否则将无法正常工作。
+
+如果你的 Kubernetes 集群没有提供合适的 StorageClass，你可以尝试使用 [Dynamic NFS Volume Provisioner](https://github.com/openebs/dynamic-nfs-provisioner)。
+
+## 升级
+
+如果您之前已经添加过该仓库，请运行 `helm repo update` 来获取软件包的最新版本。然
+后您可以运行 `helm search repo amphitheatre` 来查看图表。
+
+升级原 `amp` 图表：
+
+```sh
+  helm upgrade amp amphitheatre/amphitheatre --create-namespace --namespace=amp-system
+```
 
 ## 卸载
 
