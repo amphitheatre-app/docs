@@ -13,7 +13,7 @@ running becomes unavailable, users do not experience interruptions of service.
 - Kubernetes 1.19+
 - Helm 3.9.0+
 - PV provisioner support in the underlying infrastructure
-- **ReadWriteMany** volumes for deployment scaling
+- **`ReadWriteMany`** volumes for deployment scaling
 
 ## Add Repository
 
@@ -50,10 +50,12 @@ when installing Amphitheatre.
 ### Persistence
 
 When deployed in clusters with multiple nodes, PVCs created by `amp-controllers`
-require the `access_modes` to be `["ReadWriteMany"]`, so you need to set `persistence.storageClass`
- to a `StorageClass` that supports this mode, e.g. `--set persistence.storageClass=standard`.
+require the `access_modes` to be `["ReadWriteMany"]`, so you need to set
+ `persistence.storageClass` to a `StorageClass` that supports this mode, e.g.
+ `--set persistence.storageClass=standard`, and `--set
+ persistence.accessMode=ReadWriteMany`.
 
- > Please set `persistence.storageClass` correctly, otherwise it will not work properly.
+ > Please set `storageClass` and `accessMode` correctly, otherwise it will not work properly.
 
 If your Kubernetes cluster doesn't provide a suitable StorageClass, you
 can try the [Dynamic NFS Volume Provisioner](https://github.com/openebs/dynamic-nfs-provisioner).

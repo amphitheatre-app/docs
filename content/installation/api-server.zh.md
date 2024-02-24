@@ -13,7 +13,7 @@ weight = 1
 - Kubernetes 1.19+
 - Helm 3.9.0+
 - 底层基础设施支持 PV 配置器
-- 用于部署扩展的 `ReadWriteMany` 卷
+- 用于部署扩展的 **`ReadWriteMany`** 卷
 
 ## 添加仓库
 
@@ -46,10 +46,12 @@ Metrics Server 的安装。
 
 ### 持久化存储
 
-在具有多个节点的群集中部署时，由 `amp-controllers` 创建的 PVC
-要求 `access_modes` 为 `["ReadWriteMany"]`，因此您需要将 `persistence.storageClass` 设置为支持该模式的 `StorageClass`，例如 `-set persistence.storageClass=standard`。
+在具有多个节点的群集中部署时，由 `amp-controllers` 创建的 PVC要求 `access_modes`
+为 `["ReadWriteMany"]`，因此您需要将 `persistence.storageClass` 设置为支持该模式
+的 `StorageClass`，例如 `--set persistence.storageClass=standard` 和 `--set
+persistence.accessMode=ReadWriteMany`。
 
-> 请正确设置 `persistence.storageClass`，否则将无法正常工作。
+> 请正确设置 `storageClass` 和 `accessMode`，否则将无法正常工作。
 
 如果你的 Kubernetes 集群没有提供合适的 StorageClass，你可以尝试使用 [Dynamic NFS Volume Provisioner](https://github.com/openebs/dynamic-nfs-provisioner)。
 
