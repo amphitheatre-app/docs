@@ -176,7 +176,7 @@ BP_ENABLE_STARKNET_DEPLOY = "false"
 名称值。该名称将用于标识 Character 到 Amphitheatre 平台。文件的其余部分包含部署
 Character 时要应用的设置。
 
-有关更多选项，请参阅 [move-builder 文档](https://github.com/amp-buildpacks/move-builder)。
+有关更多选项，请参阅 [cairo-builder 文档](https://github.com/amp-buildpacks/cairo-builder)。
 
 ## 部署到 Amphitheatre
 

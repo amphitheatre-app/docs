@@ -179,8 +179,8 @@ exists, specifically for the Character name value at the start. That name will
 be used to identify the Character to the Amphitheatre platform. The rest of the
 file contains settings to be applied to the Character when it deploys.
 
-See the [move-builder
-documentation](https://github.com/amp-buildpacks/move-builder)
+See the [cairo-builder
+documentation](https://github.com/amp-buildpacks/cairo-builder)
 for more options.
 
 ## Deploying to Amphitheatre
