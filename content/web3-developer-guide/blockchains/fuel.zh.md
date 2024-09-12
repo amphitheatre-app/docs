@@ -1,10 +1,10 @@
 +++
-title = "Sway"
-description = "如何在 Sway 上开发智能合约程序"
+title = "Fuel"
+description = "如何在 Fuel 上开发智能合约程序"
 weight = 1
 +++
 
-在 Amphitheatre 上运行 Web2 应用程序与 Web3 应用程序有所差异，因此，部署 Sway 智能合约之前，您需要先构建合约，然后，将合约部署到集群内的 DevNet 上，以此查看合约的运行情况。
+在 Amphitheatre 上运行 Web2 应用程序与 Web3 应用程序有所差异，因此，部署 Fuel 智能合约之前，您需要先构建合约，然后，将合约部署到集群内的 DevNet 上，以此查看合约的运行情况。
 
 ## 示例应用程序
 
@@ -12,7 +12,7 @@ weight = 1
 取示例的代码。只需运行以下命令以获取本地副本：`git clone
 https://github.com/amphitheatre-app/amp-example-sway`。
 
-`amp-example-sway` 应用程序是一个小型示例，正如您所期望的那样。它是一个 Sway 智能合约。
+`amp-example-sway` 应用程序是一个小型示例，正如您所期望的那样。它是一个 Fuel 智能合约。
 
 `src/main.sw` 代码如下所示：
 
@@ -47,7 +47,7 @@ impl Counter for Contract {
 
 ## 构建应用程序
 
-与大多数 Sway 应用程序一样，简单的 `forc build` 将创建一个可运行的二进制文件。因此，
+与大多数 Fuel 应用程序一样，简单的 `forc build` 将创建一个可运行的二进制文件。因此，
 原始应用程序可以正常运行。现在，将其打包以供 Amphitheatre 使用。
 
 ## 安装 Amphitheatre
@@ -65,20 +65,20 @@ Amphitheatre 上应用程序的 CLI 应用程序。如果您已经安装了它�
 name = "amp-example-sway"
 version = "0.1.0"
 edition = "v1"
-description = "A simple Sway example app"
+description = "A simple Fuel example app"
 readme = "README.md"
 homepage = "https://github.com/amphitheatre-app/amp-example-sway"
 repository = "https://github.com/amphitheatre-app/amp-example-sway"
 license = "Apache-2.0"
 license-file = "LICENSE"
-keywords = ["example", "sway", "getting-started"]
+keywords = ["example", "fuel", "sway", "getting-started"]
 categories = ["example"]
 
 [build]
 builder = "ghcr.io/amp-buildpacks/sway-builder"
 
 [partners]
-sway = { version = "stable", registry = "catalog" }
+fuel = { version = "stable", registry = "catalog" }
 
 [build.env]
 BP_ENABLE_FORC_DEPLOY = "true"
