@@ -82,7 +82,7 @@ fuel = { version = "latest", registry = "catalog" }
 
 [build.env]
 BP_ENABLE_FORC_DEPLOY = "true"
-BP_HOME = "/layers/amp-buildpacks_sway/forc-amd64/fuel"
+BP_HOME = "/layers/amp-buildpacks_forc/forc-amd64/fuel"
 ```
 
 如果该文件存在，amp 命令将始终引用当前目录中的此文件，特别是开始时的 Character
