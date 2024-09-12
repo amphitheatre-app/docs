@@ -80,7 +80,7 @@ categories = ["example"]
 builder = "ghcr.io/amp-buildpacks/sway-builder"
 
 [partners]
-fuel = { version = "stable", registry = "catalog" }
+fuel = { version = "latest", registry = "catalog" }
 
 [build.env]
 BP_ENABLE_FORC_DEPLOY = "true"
