@@ -84,7 +84,7 @@ fuel = { version = "latest", registry = "catalog" }
 
 [build.env]
 BP_ENABLE_FORC_DEPLOY = "true"
-BP_HOME = "/layers/amp-buildpacks_sway/forc-amd64/fuel"
+BP_HOME = "/layers/amp-buildpacks_forc/forc-amd64/fuel"
 ```
 
 The amp command will always refer to this file in the current directory if it
