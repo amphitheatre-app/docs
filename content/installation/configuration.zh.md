@@ -10,12 +10,12 @@ weight = 2
 
 ```yaml
 apiVersion: v1
-kind: ConfigMap
+kind: Secret
 metadata:
-  name: amp-configurations
+  name: amp-credentials
   namespace: amp-system
-data:
-  configuration.toml: |
+stringData:
+  credentials: |
     [[registries]]
     name = "Docker Hub"
     default = true
@@ -36,7 +36,7 @@ data:
 将该配置应用到集群
 
 ```bash
-kubectl apply -n amp-system -f amp-configurations.yaml
+kubectl apply -n amp-system -f amp-credentials.yaml
 ```
 
 您可以从 [GitHub仓库](https://github.com/amphitheatre-app/k8s-manifests-example)
