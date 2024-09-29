@@ -74,7 +74,7 @@ keywords = ["example", "solana", "getting-started"]
 categories = ["example"]
 
 [build]
-builder = "ghcr.io/amp-buildpacks/solana"
+buildpacks = ["ghcr.io/amp-buildpacks/solana"]
 
 [build.env]
 BP_ENABLE_DEPLOY_SOLANA_CONTRACT = "true"
