@@ -74,6 +74,9 @@ categories = ["example"]
 [build]
 buildpacks = ["ghcr.io/amp-buildpacks/solana"]
 
+[partners]
+solana = { version = "stable", registry = "catalog" }
+
 [build.env]
 BP_ENABLE_DEPLOY_SOLANA_CONTRACT = "true"
 # BP_SOLANA_DEPLOY_NETWORK = "devnet"
